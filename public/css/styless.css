@@ -1,0 +1,1938 @@
+/*client-form css start*/
+/*.recoleta-font {*/
+/*    font-family: 'Recoleta', serif;*/
+/*}*/
+.louis-george-font {
+    font-family: 'Louis George Cafe', sans-serif;
+}
+
+section.how-it-works-section.nother {
+    background-color: #fff4e7;
+        padding: 40px 10px 0 10px!important;
+}
+
+/* Form Layout Containers */
+.form-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+}
+
+.trademark-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Column Definitions */
+.form-row.two-col .form-group { flex: 1 1 50%; }
+.form-row.three-col .form-group { flex: 1 1 33.33%; }
+.form-row.four-col .form-group { flex: 1 1 25%; }
+
+/* Custom split row for Description/Logo Use */
+.form-row.split-row {
+    align-items: flex-start;
+}
+.form-row.split-row .wide-group { flex: 1 1 60%; } /* Approx 60% width */
+.form-row.split-row .narrow-group { flex: 1 1 40%; } /* Approx 40% width */
+
+/* Input Styling */
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Louis George Cafe', sans-serif;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="date"], select, textarea {
+    padding: 12px;
+    border: 1px solid #687189;
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    font-family: 'Louis George Cafe', sans-serif;
+    font-size: 1em;
+    min-height: 40px; /* Ensure consistent height */
+        background-color: #f4f4f4;
+    
+}
+
+/* File Upload Button Styling to match the theme */
+input[type="file"] {
+    border: 1px solid black;
+    padding: 25px; /* Less vertical padding to balance the button height */
+    background-color: #f4f4f4; /* Slightly darker background for the file field */
+    border-radius: 8px;
+}
+
+
+/* Submission Button */
+.submit-btn {
+    margin-top: 20px;
+    background-color: #f75531;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 25%;
+    margin: 0 auto;
+}
+.submit-btn:hover {
+        background-color: #f67457;
+}
+
+
+
+/*client-form css end*/
+
+
+/*new testimonials start*/
+
+    .r9k3-section {
+      background-color: #fff2e6;
+      text-align: center;
+      padding: 60px 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .r9k3-section h2 {
+      color: #132c4e;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .r9k3-section p {
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .r3f2-box {
+      display: flex;
+      justify-content: center;
+    }
+
+    .r3a1-card {
+      display: flex;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 100%;
+      max-width: 1000px;
+      transition: all 0.4s ease;
+    }
+
+    .imgk5 {
+      flex: 1;
+    }
+
+    .imgk5 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .txtp9 {
+      flex: 1;
+      padding: 80px;
+      text-align: left;
+      position: relative;
+    }
+
+    .qt8i {
+      color: #e74c3c;
+      font-size: 28px;
+    }
+
+    .txr2 {
+      font-size: 17px;
+      color: #222;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .nm2b {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .srcv3 {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .nvg7 {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .nvg7 button {
+      background-color: #132c4e;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .nvg7 button:hover {
+      background-color: #1a3f72;
+    }
+
+/*new testimonials end*/
+/*pop up form css*/
+textarea.comments.form-control.mb-3 {
+     width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    background-color: #f4f4f4;
+    padding: 10px 12px;
+    font-family: 'Inter';
+    border-radius: 7px;
+}
+
+.modal-body a {
+    color: black;
+    margin-top: 10px !important;
+        font-family: 'Inter';
+}
+.modal-header hr {
+    border: 1px solid #023b9c;
+    margin: 12px 0;
+}
+
+input#phoneNum3 {
+    padding: 90px 12px;
+}
+
+.logo-modal h2 {
+    font-size: 22px;
+}
+
+.nav-actions {
+    display: flex
+;
+    align-items: center;
+    gap: 10px;
+}
+
+    .fcmp-button-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px 0;
+    }
+
+    /*#fcmp-trigger-button {*/
+    /*  padding: 12px 25px;*/
+    /*  font-size: 16px;*/
+    /*  background-color: #26406d;*/
+    /*  color: white;*/
+    /*  border: none;*/
+    /*  border-radius: 8px;*/
+    /*  cursor: pointer;*/
+    /*  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
+    /*}*/
+
+    #fcmp-modal-wrapper {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #fcmp-modal {
+      background: #f3fcff;;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      overflow-y: auto;
+      max-height: 90vh;
+      animation: fcmp-fadein 0.3s ease;
+    }
+
+    @keyframes fcmp-fadein {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    #fcmp-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 32px;
+      color: #000000;
+      cursor: pointer;
+    }
+
+    /* Form Styling */
+    .modal-content {
+      background: transparent;
+      box-shadow: none;
+    }
+    .modal-header {
+      text-align: left;
+    }
+    .modal-header img {
+      max-width: 250px;
+    }
+    .exclusive {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: normal;
+      font-family: Inter;
+    }
+    .fld-input {
+      margin-top: 15px;
+    }
+    .fld-input input {
+        width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #687189;
+    font-size: 15px;
+    background-color: #f4f4f4;
+    }
+    .fld-btn button {
+/* margin-top: 20px; */
+    background-color: #f75531;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 50%;
+    }
+
+/*pop up form css end */
+
+
+button.register-btn.nto a {
+    color: white;
+    text-decoration: none;
+}
+
+button.register-btn.nto:hover {
+    background-color: #f37154!important;
+}
+
+button.register-btn.nto {
+    background-color: #f75531!important
+    ;
+}
+
+button.cta-button.premium-btn:hover {
+    background-color: rgb(254 113 76);
+}
+.two button.cta-button.standard-btn:hover {
+    background-color: #497ded;
+}
+.one button.cta-button.basic-btn:hover {
+    background-color: #24417e;
+}
+button.main-cta-btn:hover {
+    background-color: #24417e;
+    color: rgb(255, 255, 255);
+}
+
+button.register-btn:hover {
+    background-color: #033392;
+}
+.call-text {
+    margin-right: 30px!important;
+}
+span.phone-icon img {
+    height: 30px!important;
+}
+span.phone-icon img {
+    height: 30px;
+}
+span.step-number {
+    font-family: 'Inter';
+}
+
+button.cta-button.basic-btn {
+    font-family: 'Inter' !important;
+}
+button.cta-button.standard-btn {
+    font-family: 'Inter' !important;
+}
+button.cta-button.premium-btn {
+    font-family: 'Inter' !important;
+}
+span.price-value {
+    font-family: 'Inter';
+}
+/* css for footer  */
+
+.container.footer-legal {
+    padding: 20px 0;
+}
+footer.main-footer {
+    padding: 20px 0;
+}
+ul.connect-links a {
+    color: white;
+    text-decoration: none;
+}
+footer.main-footer {
+    background-color: #192e5a;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Space out the two remaining columns */
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 0 !important;
+}
+
+.footer-col {
+    /* Adjust flex basis for a better 60/40 or 70/30 split */
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Give the info column more space */
+.footer-info {
+    flex: 1.5; 
+}
+
+/* Give the connect column less space */
+.footer-connect {
+    flex: 1; 
+}
+
+.footer-info .footer-mission {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.footer-info .footer-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+    width: 80%;
+}
+
+.call-us-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.phone-icon {
+    font-size: 24px;
+    color: var(--primary-color); /* Orange/Red color */
+    background-color: white;
+    padding: 8px;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.call-text .call-number {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.call-text .phone-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+        font-weight: 600;
+}
+
+.call-text .hours {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Connect Links and Social Links */
+.footer-connect h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-connect .follow-title {
+    margin-top: 30px;
+}
+
+.footer-connect .connect-links {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.footer-connect .connect-links li {
+    margin-bottom: 8px;
+}
+
+.footer-connect .social-links img {
+    height: 24px;
+    width: 24px;
+    margin-right: 15px;
+    filter: brightness(0.9); /* Slight fade for dark background */
+}
+
+/* Footer Bottom (Legal/Copyright Bar) */
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align to the bottom for the legal text */
+    padding: 15px 0;
+}
+
+.footer-legal .legal-info {
+    max-width: 60%;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: left;
+}
+
+.footer-legal .privacy-policy-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.footer-legal .legal-info a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-legal .payment-copyright {
+    text-align: right;
+}
+
+.footer-legal .payment-icons img {
+    height: 17px;
+    margin-left: 10px;
+    opacity: 0.8;
+}
+
+.footer-legal .copyright-text {
+    font-size: 13px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* css for footer end */
+
+section.disclaimer-section p {
+    margin-bottom: 30px;
+}
+
+
+/* --- 9. Legal Disclaimer / Fine Print Section Styles --- */
+
+.disclaimer-section {
+    /* Use a light background to contrast the potential dark footer */
+    background-color: #ffffff; 
+    padding: 60px 0;
+    font-family: inherit;
+}
+
+.disclaimer-text-wrapper {
+    /* Center the text block and limit its maximum width */
+    max-width: 900px;
+    margin: 0 auto;
+    
+    /* Ensure the text is aligned as shown in the screenshot */
+    text-align: left; 
+}
+
+.disclaimer-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6a6a6a;
+    margin-bottom: 25px;
+    font-weight: 600;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.disclaimer-section p:last-child {
+    margin-bottom: 0;
+}
+
+.disclaimer-section a {
+    color: var(--primary-color); /* Use your primary color for links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.disclaimer-section a:hover {
+    text-decoration: underline;
+}
+
+
+.container.new {
+    max-width: 100% !important;
+    width: 100%;
+    margin: 0 auto;
+}
+.container.reviews {
+    max-width: 930px;
+}
+/* card testimonials  */
+/* --- 8. Customer Reviews & Testimonials Section Styles --- */
+
+.reviews-section {
+    background-color: var(--background-color); /* Light tan background */
+    padding: 80px 0 120px;
+    text-align: center;
+}
+
+.reviews-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.reviews-section .subtitle {
+    font-size: 16px;
+    color: #6a6a6a;
+    margin-bottom: 60px;
+}
+
+.testimonial-carousel-wrapper {
+    /* Set up a viewport for the carousel */
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden; /* Important to hide cards that are off-screen */
+}
+
+.testimonial-track {
+    /* This will be handled by JavaScript/Carousel Library, but for structure: */
+    display: flex;
+    transition: transform 0.3s ease-out; 
+    /* The track needs to be wide enough to hold all cards side-by-side */
+    /* Example: If 3 cards are visible at once, width might be 300% */
+    width: 200%; 
+}
+
+.testimonial-card {
+    /* Card design matching the screenshot */
+    flex-shrink: 0; /* Important: Prevents cards from shrinking */
+    width: 50%; /* Card takes up half the track width (shows two side-by-side) */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    margin: 0 15px; /* Spacing between cards */
+    min-height: 450px; /* Ensure a minimum height */
+    overflow: hidden;
+}
+
+.testimonial-image-col {
+    width: 40%; /* Image column takes 45% */
+    overflow: hidden;
+}
+
+.customer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area */
+    display: block;
+}
+
+.testimonial-text-col {
+    width: 55%; /* Text column takes 55% */
+    padding: 40px;
+    text-align: left;
+    position: relative;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 180px;
+    left: 40px;
+    font-size: 80px; /* Large size for the quote icon */
+    font-weight: 800;
+    color: var(--primary-color); /* Orange/Red color */
+    line-height: 1;
+    opacity: 0.8;
+}
+
+.quote-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    padding-top: 50%;
+    margin-bottom: 30px;
+}
+
+.customer-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.customer-source {
+    font-size: 14px;
+    color: #777;
+}
+
+/* --- Carousel Navigation Arrows --- */
+/* .carousel-nav {
+    text-align: right;
+    margin-top: 30px;
+    padding-right: 15px;
+} */
+.carousel-nav {
+    text-align: right;
+    /* margin-top: 30px; */
+    padding-right: 15px;
+    position: absolute;
+    bottom: 80px;
+    left: 65%;
+}
+
+.arrow-btn {
+    background-color: #2c3e50; /* Dark blue background */
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.2s;
+}
+
+.arrow-btn:hover {
+    background-color: var(--primary-color); /* Hover effect */
+}
+
+/* counter */
+/* --- 7. Stats / Metrics Section Styles --- */
+
+.stats-section {
+    background-color: var(--background-color); /* Light tan background */
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.stats-container {
+    background-color: #192e5a; /* Dark blue background, matching review card */
+    color: white;
+    width: 100%;
+    max-width: 1155px; 
+    padding: 60px 40px;
+    border-radius: 10px;
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly */
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+    flex: 1; /* Each item takes equal space */
+    padding: 0 15px;
+}
+
+.stat-number {
+    /* Large, bold, orange number */
+    font-size: 55px;
+    font-weight: 800;
+    color: #ffcc8f;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.stat-description {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7); /* Lighter text for description */
+    font-weight: 500;
+}
+/* counterend */
+
+/* --- 6. Testimonial / Social Proof Section Styles (REVISED) --- */
+p.review-status {
+    text-decoration: underline;
+}
+
+.testimonial-section {
+    /* Background color based on the screenshot (light tan/beige) */
+    background-color: #fff4e7; 
+    padding: 100px 0; /* Increased padding to match spacing */
+    text-align: center;
+}
+
+.testimonial-section .section-tagline {
+    font-size: 16px;
+    /* Font color is a muted gray */
+    color: #6a6a6a; 
+    margin-bottom: 20px;
+    font-family: inter;
+    font-weight: 500;
+}
+
+.main-rating-title {
+    font-size: 40px;
+    font-weight: 800;
+    width: 70%;
+    color: #192e5a;
+    margin-bottom: 60px;
+    line-height: 1.2;
+    /* max-width: 700px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-card-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.review-card {
+    /* Dark blue background matching the navbar/pricing section */
+    background-color: #192e5a; 
+    color: white;
+    width: 90%;
+    max-width: 100%;
+        padding: 40px 50px; /* Generous padding */
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.review-header .star-icon {
+    font-size: 30px; /* Larger star icon */
+    color: white; 
+    margin-right: 15px;
+    line-height: 1;
+}
+
+.review-header .platform-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.testimonial-text {
+    /* Font size and line height match the visual appearance */
+ font-size: 24px;
+    line-height: 1.6;
+    font-weight: 500;
+    /* Specific font weight for emphasized words */
+}
+
+.testimonial-text strong {
+    font-weight: 700;
+}
+
+.review-footer {
+    display: flex;
+    align-items: center;
+    /* Trustpilot stars and text are left-aligned below the status */
+    justify-content: flex-start; 
+    padding-top: 20px;
+    /* A faint separation line */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.review-footer .review-status {
+    color: white; /* "Excellent" is white text */
+    font-weight: 500;
+    margin-right: 20px;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.trustpilot-rating {
+    display: flex;
+    align-items: center;
+    /* Trustpilot green star background/color placeholder */
+    /* background-color: #00b67b;  */
+    padding: 3px 6px;
+    border-radius: 3px;
+    gap: 5px;
+}
+
+.trustpilot-rating .star-images {
+    height: 38px; 
+    width: auto;
+}
+
+.trustpilot-rating .trustpilot-logo {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+/* checking */
+/* --- 5. Services/Value Proposition Section Styles --- */
+
+/* ... (Keep general section styles like .services-section, .services-content, etc.) ... */
+
+/* Steps/Features List Styling */
+.service-steps {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 15px; /* Reduced gap to bring boxes closer */
+    padding-bottom: 10px; /* Space for the bottom border */
+}
+
+.step-item {
+    cursor: pointer;
+    text-align: left;
+    flex-basis: 25%;
+    padding: 10px 10px 5px; /* Padding inside the box */
+    
+    /* Default: Orange border for all tabs */
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.step-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ccc; /* Light grey for unhighlighted numbers */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.3;
+}
+
+/* --- Active Tab Styling --- */
+
+.step-item.active-tab .step-number {
+    color: var(--primary-color); /* Orange/Red for the active number */
+}
+
+.step-item.active-tab .step-text {
+    color: #2c3e50; /* Darker text for the active item */
+    font-weight: 700;
+    
+    /* Highlighted text color change */
+    text-decoration: underline; 
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 2px;
+}
+
+/* Tab Content Visibility */
+/* .services-description {
+    
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    
+    display: none; 
+} */
+
+/* .services-description.active-content {
+    display: block;
+} */
+
+/* ... (Keep image and link styles) ... */
+
+/* ... (Keep Media Queries for Responsiveness) ... */
+
+/* checking */
+
+
+
+
+.two button.cta-button.standard-btn {
+    /* color: #3c6acd; */
+    background-color: #3c6acd;
+    color: white;
+}
+.pricing-card.standard-package.two h3 {
+    color: #3c6acd;
+}
+.two span.price-value {
+    color: #3c6acd;
+}
+.one button.cta-button.basic-btn {
+    color: white;
+    background-color: #192e5a;
+}
+.one span.price-value {
+    color: #192e5a;
+}
+.one h3 {
+    color: #192e5a;
+}
+
+/* Basic Reset and Setup */
+:root {
+    --blue-color: #192E5A;
+    --primary-color: #f75531; /* Red/Orange for buttons/highlights */
+    --secondary-color: #333;
+    --background-color: #fff4e7; /* Light beige/tan background */
+     --primary-font: 'Inter', sans-serif;
+    /* You can define a secondary font for body text if needed */
+    --body-font: 'Inter', sans-serif; /* NEW: Use Montserrat for body */
+
+}
+h1, h2, h3, h4, 
+.logo span, 
+.nav-links a, 
+.section-tagline, 
+.section-header h2 {
+    font-family: var(--primary-font);
+}
+p, li {
+    /* If the body selector is strong enough, inherit works. 
+       If not, explicitly set it to the body font variable. */
+    font-family: var(--body-font);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+      font-family: var(--secondary-font); /* Or just 'sans-serif' if no other font is used */
+    /* ... rest of body styles */
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+.hero-title {
+    font-family: var(--primary-font);
+    font-weight: 900; /* Use a strong weight for the main title */
+}
+.reviews-title {
+    font-family: var(--primary-font);
+    font-weight: 800;
+}
+.container {
+    max-width: 1200px; /* Standard container width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 1. Navigation Bar Styles --- */
+
+/* --- Navigation Bar Mobile Styles --- */
+
+/* Initially hide the toggle button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.navbar {
+    background-color: white;
+    padding: 0px 0;
+    border-bottom: 1px solid #eee;
+        box-shadow: 0px 0px 15px #868686;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: var(--secondary-color);
+    /* Space for the logo image */
+}
+
+.logo-img {
+    height: 40px; /* Adjust as needed for the logo */
+    width: auto;
+    margin-right: 5px;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 16px;
+}
+
+.my-account {
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin-right: 15px;
+}
+
+.register-btn {
+   background-color: #192e5a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+
+/* --- 2. Hero Section Styles --- */
+.hero-section {
+    padding: 60px 0;
+    position: relative; /* Needed for the floating icon */
+}
+
+.hero-content {
+    display: flex;
+    gap: 60px; /* Space between the two columns */
+    align-items: center; /* Aligns content to the top */
+}
+
+.hero-text-col {
+    flex: 1; /* Takes up 50% of the space */
+    max-width: 50%;
+    padding-top: 50px; /* Adjust alignment to match screenshot */
+}
+
+.hero-image-col {
+    flex: 1; /* Takes up 50% of the space */
+    max-width: 50%;
+}
+
+.hero-title {
+  font-size: 2.2vw;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #192e5a;
+}
+
+.hero-title .highlight {
+    /* No visual difference in the provided text, but useful for styling later */
+}
+
+.hero-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+    max-width: 500px;
+}
+
+.hero-list {
+    list-style: none;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+.hero-list li {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.hero-list li::before {
+    content: '•'; /* Bullet point */
+    color: var(--primary-color); /* Orange/Red bullet */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.main-cta-btn {
+    background-color: #192e5a;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: inter;
+}
+
+.trust-badges {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.badge img {
+    height: 40px; /* Adjust size for the badge images */
+    width: auto;
+}
+
+.image-placeholder {
+    /* This is where your image will be placed (potentially as a background image) */
+    /*background-color: #f0e6da; */
+    height: 550px; /* Adjust height based on your image */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.floating-icon {
+    position: absolute;
+    bottom: 20px;
+    left: 20px; /* Adjust position as needed */
+    z-index: 10;
+}
+
+.floating-icon img {
+    height: 50px; /* Size of the small bottom-left icon */
+}
+/* --- 3. How It Works Section Styles --- */
+
+.how-it-works-section {
+    padding: 80px 0;
+    background-color: white; /* Contrast background for separation */
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #192e5a; /* Dark blue/black text */
+    margin-bottom: 10px;
+}
+
+.section-header .subtitle {
+    font-size: 20px;
+    color: #555;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Space between the cards */
+    padding: 0 0px; /* Internal padding to keep cards away from container edges */
+}
+
+.step-card {
+    flex: 1; /* Each card takes up equal space */
+    border: 1px solid #ffccb8; /* Light orange border */
+    border-radius: 8px;
+    padding: 30px;
+    text-align: left;
+    background-color: white;
+    /* Optional: box-shadow for a slight lift effect */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s;
+}
+
+/* Hover effect on cards */
+.step-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--background-color);
+}
+
+.step-icon-wrapper {
+    background-color: var(--primary-color); /* Uses the red/orange from the first section */
+    height: 50px;
+    width: 50px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step-icon {
+    font-size: 24px;
+    color: white;
+    line-height: 1; /* Ensures the emoji/icon is centered */
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #192e5a;
+    margin-bottom: 15px;
+}
+
+.step-description {
+    font-size: 15px;
+    color: #5b5d65;
+}
+/* --- 4. Pricing Section Styles --- */
+
+.pricing-section {
+    background-color: #192e5a; /* Dark blue background */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.pricing-section .section-header h2,
+.pricing-section .section-header .subtitle {
+    color: white;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between cards */
+    margin-top: 40px;
+}
+
+.pricing-card {
+    flex: 1; /* Equal width for all cards */
+    max-width: 375px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex; /* For internal flex layout (header/body) */
+    flex-direction: column;
+}
+
+/* Base Card Header Styles */
+.card-header {
+    padding: 30px 20px;
+    background-color: #f8f8f800; /* Light gray background for contrast */
+}
+
+.pricing-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.tagline {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.price-block {
+    margin-bottom: 20px;
+}
+
+.price-value {
+    font-size: 40px;
+    font-weight: 800;
+    color: #333;
+    display: block;
+}
+
+.fees {
+    font-size: 14px;
+    color: #777;
+}
+
+/* CTA Buttons */
+.cta-button {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.basic-btn, .standard-btn {
+    background-color: #e0eaf4; /* Light blue/gray */
+    color: #2c3e50; /* Dark blue text */
+}
+
+.premium-btn {
+    background-color: var(--primary-color); /* Orange/Red */
+    color: white;
+}
+
+/* Card Body (Features List) Styles */
+.card-body {
+    padding: 30px;
+    text-align: left;
+    flex-grow: 1; /* Makes the body take up remaining space, important for equal height */
+}
+
+.includes-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 15px;
+    color: #555;
+}
+
+/* Icons for feature list */
+.check-icon, .star-icon {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.check-icon {
+    color: #5cb85c; /* Green checkmark */
+}
+
+.star-icon {
+    color: var(--primary-color); /* Orange/Red star */
+    font-size: 18px;
+}
+
+/* --- Highlighted Premium Card Specific Styles --- */
+.highlight-card {
+    /* Slightly different border color */
+    border: 3px solid var(--primary-color); 
+}
+
+.highlight-card .price-value {
+    color: var(--primary-color); /* Orange price for emphasis */
+}
+.pricing-card.premium-package.highlight-card.three {
+    background-color: #fff4e7;
+}
+.pricing-card.standard-package.two {
+    background-color: #effaff;
+    border: 3px solid #3c6acd;
+}
+.pricing-card.basic-package.one {
+    background-color: #ffffff;
+}
+.pricing-card.basic-package.one {
+    background-color: #ffffff;
+    border: 3px solid #fab564;
+}
+/* --- 5. Services/Value Proposition Section Styles --- */
+
+.services-section {
+    background-color: white; /* White background */
+    padding: 80px 0;
+}
+
+.services-content {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 60px;
+}
+
+/* .services-text-col {
+    flex: 1;
+    max-width: 50%;
+} */
+
+.services-image-col {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+}
+
+.section-tagline {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--primary-color); /* Orange/Red color */
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.services-title {
+    font-size: 40px;
+    font-weight: 800;
+    color: #2c3e50; /* Dark blue/black text */
+    margin-bottom: 40px;
+}
+
+/* Steps/Features List Styling */
+.service-steps {
+    display: flex;
+    margin-bottom: 30px;
+    /* This creates the space between the numbers/text blocks */
+    gap: 30px; 
+}
+
+.step-item {
+    cursor: pointer;
+    text-align: left;
+    /* Define the width of the step column to control spacing */
+    flex-basis: 25%; 
+    border: none;
+}
+
+.step-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ccc; /* Light grey for unhighlighted numbers */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.3;
+}
+
+/* Highlighted Step Styling */
+.highlighted-step .step-number {
+    color: var(--primary-color); /* Orange/Red for the highlighted number */
+}
+
+.highlighted-step .step-text {
+    color: #2c3e50; /* Darker text for the highlighted item */
+    font-weight: 700;
+}
+
+.highlighted-step {
+    /* The underline effect below the number/text */
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* .services-description {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+} */
+
+/* Learn More Link Styling */
+.learn-more-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 16px;
+    transition: color 0.2s;
+    font-family: inter;
+}
+
+.arrow-icon {
+    margin-left: 5px;
+}
+
+/* Image Illustration Styling */
+.services-illustration {
+    width: 90%; /* Adjust size of the illustration */
+    height: auto;
+    display: block;
+}
+
+/* Media Query for basic responsiveness (adjusts to a single column on small screens) */
+/* Media Query for Responsiveness (Stacking Cards) */
+@media (max-width: 1024px) {
+    .pricing-container {
+        flex-wrap: wrap;
+    }
+
+    .pricing-card {
+        flex-basis: 45%; /* Two cards per row on tablets */
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 900px) {
+    .hero-section {
+    padding: 20px 0;
+}
+    .image-placeholder {
+    height: 320px!important;
+}
+
+    /* tectimonials section */
+   .testimonial-section {
+        padding: 60px 0;
+    }
+    
+    .main-rating-title {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+
+    .review-card {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+    
+    .review-footer {
+        flex-wrap: wrap;
+    }
+
+    /* tectimonials sectionend */
+    .hero-content {
+        flex-direction: column-reverse!Important;
+        gap: 0px;
+    }
+
+    .hero-text-col, .hero-image-col {
+        max-width: 100%;
+    }
+
+    .hero-text-col {
+        padding-top: 20px;
+    }
+
+    .hero-title {
+        font-size: 8vw;
+    }
+      .steps-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .step-card {
+        margin-bottom: 20px;
+    }
+     .services-content {
+        flex-direction: column;
+    }
+
+    .services-text-col, .services-image-col {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .services-image-col {
+        /* Move image above text on mobile or keep it at the bottom */
+        order: -1; 
+        margin-bottom: 40px;
+        justify-content: center; /* Center the image on mobile */
+    }
+
+    .services-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    
+    .service-steps {
+        /* Allow steps to wrap if needed, or adjust spacing */
+        flex-wrap: wrap; 
+        gap: 20px;
+    }
+
+    .step-item {
+        /* Make steps a bit wider on mobile to prevent squishing */
+        flex-basis: 40%; 
+    }
+}
+
+/* Media Query for Mobile/Tablet: Stack columns and show one card at a time */
+@media (max-width: 992px) {
+    .testimonial-card {
+        flex-direction: column; /* Stack image and text vertically */
+        width: 100%; /* Card takes full width of the track */
+        margin: 0 10px;
+    }
+    
+    .testimonial-track {
+        width: 400%; /* Update track width if showing one card at a time */
+    }
+
+    .testimonial-image-col {
+        width: 100%;
+        height: 200px; /* Give image a fixed height on mobile */
+    }
+    
+    .testimonial-text-col {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    
+    .quote-text {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .stats-container {
+    width: 90%;
+}
+            .main-rating-title {
+            width: 100%;
+        }
+    .navbar .container {
+    display: flex
+;
+    justify-content: space-around!important;
+    /* align-items: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+}
+    .navbar {
+
+    padding: 30px 0;
+}
+    .nav-actions {
+    display: none!Important;
+}
+    footer.main-footer {
+    background-color: #192e5a;
+    padding: 20px;
+}
+    
+    /*client-form css*/
+      .form-section {
+        margin: 20px;
+        padding: 15px;
+    }
+    
+    /* Stack form groups vertically on small screens */
+    .form-row, .form-row.three-col {
+        flex-direction: column;
+        gap: 0; /* Remove gap when stacking */
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input[type="text"], input[type="email"], select, textarea {
+        padding: 10px;
+    }
+
+    /* for footer */
+.footer-content {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .call-us-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-legal .legal-info {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .footer-legal .payment-copyright {
+        text-align: center;
+    }
+
+
+    /* for footer end */
+}
+/* Ensure the text adjusts nicely on mobile */
+@media (max-width: 768px) {
+    .reviews-section {
+    padding: 20px 0 20px;
+    
+}
+    .services-section {
+    padding: 0px 0;
+}
+    
+     .r3a1-card {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .txtp9 {
+        padding: 25px;
+        text-align: center;
+      }
+
+    /* counter */
+  .stats-section {
+        padding: 10px 0;
+    }
+    
+    .stats-container {
+        flex-direction: column; /* Stack vertically */
+        padding: 40px 20px;
+    }
+
+    .stat-item {
+        margin-bottom: 30px;
+    }
+
+    .stat-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .stat-number {
+        font-size: 40px;
+    }
+
+    /* counter end */
+    .navbar .container {
+        /* Align logo left, actions (including toggle) right */
+        flex-wrap: wrap; 
+    }
+
+    .nav-links {
+        /* Initially hide the navigation links */
+        display: none; 
+        /* Take full width when shown */
+        width: 100%;
+        order: 3; /* Push links below logo/actions */
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+        margin-top: 10px;
+    }
+
+    .nav-links.active {
+        display: block; /* Show menu when active class is added by JS */
+    }
+    
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .my-account {
+        display: none; /* Often hidden or moved to the menu on mobile */
+    }
+
+    .register-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .menu-toggle {
+        display: block; /* Show the toggle button */
+    }
+
+     .testimonial-section {
+        padding: 20px 0;
+    }
+    
+    .main-rating-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .review-card {
+        padding: 30px 20px;
+    }
+    
+    .review-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+@media (max-width: 650px) {
+    .how-it-works-section {
+    padding: 20px 0;
+}
+    .pricing-section {
+    padding: 20px 0;
+}
+    .services-content {
+    gap: 0px;
+}
+    .hero-image-col img {
+    width: 100%;
+}
+     .form-row, .form-row.three-col, .form-row.four-col {
+        flex-direction: column;
+        gap: 0; 
+    }
+     #fcmp-modal {
+        padding: 20px;
+      }
+    .pricing-container {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .pricing-card {
+        max-width: 90%; /* Take up most of the mobile screen width */
+    }
+}
+
+@media (max-width: 500px) {
+    .step-item {
+        /* Force single column for steps */
+        flex-basis: 100%;
+    }
+    
+}
