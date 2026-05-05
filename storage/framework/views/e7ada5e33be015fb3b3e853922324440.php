@@ -2,17 +2,17 @@
     <div class="sidebar-inner slimscroll">
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
-            @if(auth()->user()->role === 'user')
-                <li class="{{ request()->routeIs('admin.dashboard', 'dashboard', 'user.applications.*') ? 'active' : '' }}">
-                    <a href="{{ auth()->user()->role === 'admin' ? route('admin.dashboard') : route('dashboard') }}">
-                        <img src="{{ asset('assets/img/icons/dashboard.svg') }}" alt="img">
+            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(auth()->user()->role === 'user'): ?>
+                <li class="<?php echo e(request()->routeIs('admin.dashboard', 'dashboard', 'user.applications.*') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(auth()->user()->role === 'admin' ? route('admin.dashboard') : route('dashboard')); ?>">
+                        <img src="<?php echo e(asset('assets/img/icons/dashboard.svg')); ?>" alt="img">
                         <span>Account Setting</span>
                     </a>
                 </li>
-                @endif
-                @if(auth()->user()->role === 'admin')
+                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                <?php if(auth()->user()->role === 'admin'): ?>
                 <!-- <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/product.svg')); ?>" alt="img"><span>
                             Product</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="productlist.html">Product List</a></li>
@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/sales1.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/sales1.svg')); ?>" alt="img"><span>
                             Sales</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="saleslist.html">Sales List</a></li>
@@ -39,9 +39,9 @@
                         <li><a href="createsalesreturns.html">New Sales Return</a></li>
                     </ul>
                 </li> -->
-                @endif
+                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
                 <!-- <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/expense1.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/expense1.svg')); ?>" alt="img"><span>
                             Expense</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="expenselist.html">Expense List</a></li>
@@ -50,7 +50,7 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/quotation1.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/quotation1.svg')); ?>" alt="img"><span>
                             Quotation</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="quotationList.html">Quotation List</a></li>
@@ -58,7 +58,7 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/transfer1.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/transfer1.svg')); ?>" alt="img"><span>
                             Transfer</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="transferlist.html">Transfer List</a></li>
@@ -67,7 +67,7 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/return1.svg')); ?>" alt="img"><span>
                             Return</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="salesreturnlist.html">Sales Return List</a></li>
@@ -76,14 +76,14 @@
                         <li><a href="createpurchasereturn.html">Add Purchase Return </a></li>
                     </ul>
                 </li> -->
-                @if(auth()->user()->role === 'admin')
-                <li class="submenu {{ request()->routeIs('admin.user.*') ? 'active' : '' }}">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/users1.svg') }}" alt="img"><span>
+                <?php if(auth()->user()->role === 'admin'): ?>
+                <li class="submenu <?php echo e(request()->routeIs('admin.user.*') ? 'active' : ''); ?>">
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/users1.svg')); ?>" alt="img"><span>
                             Users</span> <span class="menu-arrow"></span></a>
                     <ul>
-                        <li><a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"
+                        <li><a href="<?php echo e(route('admin.dashboard')); ?>" class="<?php echo e(request()->routeIs('admin.dashboard') ? 'active' : ''); ?>"
                         >User Lists</a></li>
-                        <!-- <li><a href="#" class="{{ request()->routeIs('admin.user.applications') ? 'active' : '' }}"
+                        <!-- <li><a href="#" class="<?php echo e(request()->routeIs('admin.user.applications') ? 'active' : ''); ?>"
                         >User Applications</a></li> -->
                         <!-- <li><a href="#">Add User </a></li> -->
                         <!-- <li><a href="supplierlist.html">Supplier List</a></li>
@@ -94,9 +94,9 @@
                         <li><a href="addstore.html">Add Store</a></li> -->
                     </ul>
                 </li>
-                @endif
+                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
                 <!-- <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/places.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/places.svg')); ?>" alt="img"><span>
                             Places</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="newcountry.html">New Country</a></li>
@@ -193,7 +193,7 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/product.svg')); ?>" alt="img"><span>
                             Application</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="chat.html">Chat</a></li>
@@ -202,7 +202,7 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/time.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/time.svg')); ?>" alt="img"><span>
                             Report</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="purchaseorderreport.html">Purchase order report</a></li>
@@ -215,7 +215,7 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/users1.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/users1.svg')); ?>" alt="img"><span>
                             Users</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="newuser.html">New User </a></li>
@@ -223,7 +223,7 @@
                     </ul>
                 </li> 
                 <li class="submenu">
-                    <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/settings.svg') }}" alt="img"><span>
+                    <a href="javascript:void(0);"><img src="<?php echo e(asset('assets/img/icons/settings.svg')); ?>" alt="img"><span>
                             Settings</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="generalsettings.html">General Settings</a></li>
@@ -234,25 +234,25 @@
                         <li><a href="taxrates.html">Tax Rates</a></li>
                     </ul>
                 </li>-->
-                @if(auth()->user()->role === 'admin')
-                <li class="{{ request()->routeIs('admin.leads.index') ? 'active' : '' }}">
-                    <a href="{{ route('admin.leads.index') }}">
-                    <!--<img src="{{ asset('assets/img/icons/settings.svg') }}" alt="img">-->
+                <?php if(auth()->user()->role === 'admin'): ?>
+                <li class="<?php echo e(request()->routeIs('admin.leads.index') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(route('admin.leads.index')); ?>">
+                    <!--<img src="<?php echo e(asset('assets/img/icons/settings.svg')); ?>" alt="img">-->
                     <i data-feather="box"></i>
                         <span>Popup Form</span>
                     </a>
                 </li>
-                <li class="{{ request()->routeIs('admin.client.applications.index') ? 'active' : '' }}">
-                    <a href="{{ route('admin.client.applications.index') }}">
-                    <!--<img src="{{ asset('assets/img/icons/settings.svg') }}" alt="img">-->
+                <li class="<?php echo e(request()->routeIs('admin.client.applications.index') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(route('admin.client.applications.index')); ?>">
+                    <!--<img src="<?php echo e(asset('assets/img/icons/settings.svg')); ?>" alt="img">-->
                     <i data-feather="file-text"></i>
                         <span>Client Form</span>
                     </a>
                 </li>
-                @endif
-                <li class="{{ request()->routeIs('profile.edit', 'admin.profile.edit') ? 'active' : '' }}">
-                    <a href="{{ auth()->user()->role === 'admin' ? route('profile.edit') : route('profile.edit') }}">
-                    <img src="{{ asset('assets/img/icons/settings.svg') }}" alt="img">
+                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                <li class="<?php echo e(request()->routeIs('profile.edit', 'admin.profile.edit') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(auth()->user()->role === 'admin' ? route('profile.edit') : route('profile.edit')); ?>">
+                    <img src="<?php echo e(asset('assets/img/icons/settings.svg')); ?>" alt="img">
                         <span>Account Update</span>
                     </a>
                 </li>
@@ -261,3 +261,4 @@
     </div>
 </div>
 
+<?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/components/dashboard/sidebar.blade.php ENDPATH**/ ?>

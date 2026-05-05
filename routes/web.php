@@ -18,7 +18,7 @@ use Stripe\Checkout\Session as StripeSession;
 // use App\Http\Controllers\Auth\VerifyEmailCodeController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ClientFormController;
-   
+
 /*
 |--------------------------------------------------------------------------
 | Public Website Routes
@@ -232,9 +232,15 @@ Route::middleware(['auth', 'verified', 'admin'])
 
         Route::resource('packages', PackageController::class);
         Route::resource('addons', AddonController::class);
-        
+
         Route::get('/dashboard/leads', [ModalFormController::class, 'index'])
-        ->name('leads.index');
+            ->name('leads.index');
+
+        Route::get('/client-applications', [ClientFormController::class, 'adminIndex'])
+            ->name('client.applications.index');
+
+        Route::get('/client-applications/{id}', [ClientFormController::class, 'adminShow'])
+            ->name('client.applications.show');
     });
 
 
@@ -263,26 +269,25 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
     //     $application = null; // <-- fix: define it
     //     return view('user.dashboard', compact('applications', 'application'));
     // })->name('dashboard');
-    
+
     Route::get('/dashboard', function () {
         /** @var \App\Models\User $user */
         $user = Auth::user();
-    
+
         if (!$user->hasVerifiedEmail()) {
             return redirect()->route('verify.code');
         }
-    
+
         if ($user->role === 'admin') {
             return redirect()->route('admin.dashboard');
         }
-    
+
         $applications = TrademarkApplication::where('user_id', Auth::id())
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-    
+
         $application = null;
         return view('user.dashboard', compact('applications', 'application'));
-    
     })->name('dashboard');
 
     Route::get('/payment/{application}/pay', function (\App\Models\TrademarkApplication $application) {
@@ -321,12 +326,12 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
         //     ],
         // ]);
 
-        
+
 
         $session = StripeSession::create([
             'payment_method_types' => ['card'],
             'mode' => 'payment',
-    
+
             'line_items' => [[
                 'price_data' => [
                     'currency' => 'usd',
@@ -338,12 +343,12 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
                 ],
                 'quantity' => 1,
             ]],
-    
+
             'customer_email' => $application->email,
-    
+
             'success_url' => route('stripe.success') . '?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url'  => route('stripe.cancel'),
-    
+
             'metadata' => [
                 'application_id' => $application->id,
                 'user_id' => Auth::id(),
@@ -370,7 +375,7 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
 
     Route::get('/my-applications/{id}', [UserApplicationController::class, 'show'])
         ->name('user.applications.show');
-        
+
     // Route::get('/verify-code', function () {
     //     return view('auth.verify-code');
     // })->name('verify.code');
