@@ -18,7 +18,7 @@ use Stripe\Checkout\Session as StripeSession;
 // use App\Http\Controllers\Auth\VerifyEmailCodeController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ClientFormController;
-
+   
 /*
 |--------------------------------------------------------------------------
 | Public Website Routes
