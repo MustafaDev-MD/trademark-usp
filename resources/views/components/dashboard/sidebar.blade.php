@@ -242,7 +242,7 @@
                         <span>Popup Form</span>
                     </a>
                 </li>
-                <li class="{{ request()->routeIs('admin.client.applications.index') ? 'active' : '' }}">
+                <li class="{{ request()->routeIs('admin.client.applications.index', 'admin.client.applications.show') ? 'active' : '' }}">
                     <a href="{{ route('admin.client.applications.index') }}">
                     <!--<img src="{{ asset('assets/img/icons/settings.svg') }}" alt="img">-->
                     <i data-feather="file-text"></i>
