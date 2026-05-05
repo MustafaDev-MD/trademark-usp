@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\AdminUserController;
 use Stripe\Checkout\Session as StripeSession;
 // use App\Http\Controllers\Auth\VerifyEmailCodeController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\ClientFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +100,12 @@ Route::get('/privacy-policy', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/client-form', function () {
+    return view('client-form');
+})->name('client-form');
+
+Route::post('/client-form-submit', [ClientFormController::class, 'submitForm'])->name('client.form.submit');
 
 Route::get('/term-of-service', function () {
     return view('term-of-service');
