@@ -71,7 +71,7 @@
             @if($app->logo_file)
                 @php $ext = pathinfo($app->logo_file, PATHINFO_EXTENSION); @endphp
                 @if(in_array(strtolower($ext), ['jpg','jpeg','png','gif','webp','svg']))
-                    <img src="{{ asset('storage/' . $app->logo_file) }}" alt="Logo" class="img-fluid" style="max-height:auto; width: 100%; height: 100%;">
+                    <img src="{{ asset('storage/' . $app->logo_file) }}" alt="Logo" class="img-fluid" style="width: 150px; height: 150px; object-fit: cover;">
                     <div class="mt-2">
                         <a href="{{ asset('storage/' . $app->logo_file) }}" download class="btn btn-sm btn-outline-primary">⬇ Download</a>
                     </div>
