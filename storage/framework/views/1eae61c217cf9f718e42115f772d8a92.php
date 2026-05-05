@@ -29,7 +29,7 @@
                     <!-- HONEYPOT + TIME TRAP -->
                     <input type="text" name="website" style="display:none">
                     <input type="hidden" name="form_time" value="<?php echo e(time()); ?>">
-                    <!-- <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"> -->
+                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 
                     <div class="fld-input">
                         <input type="text" id="name" name="customer_full_name" placeholder="Name" required>
@@ -251,62 +251,62 @@ document.addEventListener("DOMContentLoaded", function () {
         submitBtn.disabled = true;
         if(loader) loader.style.display = "flex";
 
-        // grecaptcha.ready(function () {
-        //     grecaptcha.execute('<?php echo e(env("NOCAPTCHA_SITEKEY")); ?>', { action: 'modal_form' })
-        //     .then(function (token) {
-        //         document.getElementById("g-recaptcha-response").value = token;
+        grecaptcha.ready(function () {
+            grecaptcha.execute('<?php echo e(env("NOCAPTCHA_SITEKEY")); ?>', { action: 'modal_form' })
+            .then(function (token) {
+                document.getElementById("g-recaptcha-response").value = token;
 
-        //         fetch(form.action, {
-        //             method: "POST",
-        //             headers: {
-        //                 "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
-        //                 "Accept": "application/json"
-        //             },
-        //             body: new FormData(form)
-        //         })
-        //         .then(res => res.json())
-        //         .then(data => {
-        //             if(loader) loader.style.display = "none";
+                fetch(form.action, {
+                    method: "POST",
+                    headers: {
+                        "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
+                        "Accept": "application/json"
+                    },
+                    body: new FormData(form)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(loader) loader.style.display = "none";
 
-        //             if (data.success) {
-        //                 window.location.href = data.redirect;
-        //             } else {
-        //                 Toastify({
-        //                     text: data.message || "Server error. Please try again.",
-        //                     duration: 5000,
-        //                     gravity: "top",
-        //                     position: "center",
-        //                     close: true,
-        //                     style: {
-        //                         background: "#F97555",
-        //                         color: "#FFF4E7",
-        //                         border: "2px solid #475676",
-        //                         borderRadius: "10px"
-        //                     }
-        //                 }).showToast();
-        //                 submitBtn.disabled = false;
-        //             }
-        //         })
-        //         .catch(error => {
-        //             if(loader) loader.style.display = "none";
-        //             Toastify({
-        //                 text: "Server error. Please try again.",
-        //                 duration: 5000,
-        //                 gravity: "top",
-        //                 position: "center",
-        //                 close: true,
-        //                 style: {
-        //                     background: "#F97555",
-        //                     color: "#FFF4E7",
-        //                     border: "2px solid #475676",
-        //                     borderRadius: "10px"
-        //                 }
-        //             }).showToast();
-        //             submitBtn.disabled = false;
-        //         });
+                    if (data.success) {
+                        window.location.href = data.redirect;
+                    } else {
+                        Toastify({
+                            text: data.message || "Server error. Please try again.",
+                            duration: 5000,
+                            gravity: "top",
+                            position: "center",
+                            close: true,
+                            style: {
+                                background: "#F97555",
+                                color: "#FFF4E7",
+                                border: "2px solid #475676",
+                                borderRadius: "10px"
+                            }
+                        }).showToast();
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    if(loader) loader.style.display = "none";
+                    Toastify({
+                        text: "Server error. Please try again.",
+                        duration: 5000,
+                        gravity: "top",
+                        position: "center",
+                        close: true,
+                        style: {
+                            background: "#F97555",
+                            color: "#FFF4E7",
+                            border: "2px solid #475676",
+                            borderRadius: "10px"
+                        }
+                    }).showToast();
+                    submitBtn.disabled = false;
+                });
 
-        //     });
-        // });
+            });
+        });
 
     });
 
