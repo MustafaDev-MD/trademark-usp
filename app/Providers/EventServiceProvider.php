@@ -1,8 +1,13 @@
 <?php
 
-use Laravel\Cashier\Events\WebhookReceived;
+namespace App\Providers;
 
-class EventServiceProvider extends EventServiceProvider
+use Laravel\Cashier\Events\WebhookReceived;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Auth\Notifications\VerifyEmail;
+use App\Notifications\CustomVerifyEmail;
+
+class EventServiceProvider extends ServiceProvider
 {
 protected $listen = [
     WebhookReceived::class => [
