@@ -60,7 +60,7 @@
             <ul>
                 <li><a href="<?php echo e(route('about-us')); ?>">About Us</a></li>
                 <li><a href="<?php echo e(route('careers')); ?>">Careers</a></li>
-                <li><a href="<?php echo e(route('guarantee')); ?>">Our Guarantee</a></li>
+                <!-- <li><a href="<?php echo e(route('guarantee')); ?>">Our Guarantee</a></li> -->
                 <li><a href="<?php echo e(route('privacy-policy')); ?>">Privacy Settings</a></li>
             </ul>
         </div>

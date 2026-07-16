@@ -60,7 +60,7 @@
             <ul>
                 <li><a href="{{ route('about-us') }}">About Us</a></li>
                 <li><a href="{{ route('careers') }}">Careers</a></li>
-                <li><a href="{{ route('guarantee') }}">Our Guarantee</a></li>
+                <!-- <li><a href="{{ route('guarantee') }}">Our Guarantee</a></li> -->
                 <li><a href="{{ route('privacy-policy') }}">Privacy Settings</a></li>
             </ul>
         </div>

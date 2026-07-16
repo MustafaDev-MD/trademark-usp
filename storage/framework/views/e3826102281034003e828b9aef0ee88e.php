@@ -1,14 +1,14 @@
-@extends('layouts.app')
 
-@section('title', 'Privacy Policy - Trademark USP')
 
-@section('content')
+<?php $__env->startSection('title', 'Privacy Policy - Trademark USP'); ?>
+
+<?php $__env->startSection('content'); ?>
 
 <section style="background-image: url(./imagees/Guarentee/guarantee-background.png);" class="legal-hero-section">
     <div class="legal-hero-wrapper">
 
         <nav class="legal-hero-breadcrumbs">
-            <a href="{{ route('home') }}" class="legal-hero-breadcrumb-link">Home</a>
+            <a href="<?php echo e(route('home')); ?>" class="legal-hero-breadcrumb-link">Home</a>
             <span class="legal-hero-separator">/</span>
             <span class="legal-hero-current">Legal</span>
         </nav>
@@ -27,10 +27,10 @@
 
                 <ul class="legal-layout-nav-list">
                     <!-- <li><a href="#terms-service" class="legal-layout-nav-link legal-layout-active-link">Trademark USP Terms Of Service</a></li> -->
-                    <li><a href="{{ route('privacy-policy') }}" class="legal-layout-nav-link">Privacy Policy</a></li>
-                    <li><a href="{{ route('guarantee') }}" class="legal-layout-nav-link">Our Guarantee</a></li>
+                    <li><a href="<?php echo e(route('privacy-policy')); ?>" class="legal-layout-nav-link">Privacy Policy</a></li>
+                    <li><a href="<?php echo e(route('guarantee')); ?>" class="legal-layout-nav-link">Our Guarantee</a></li>
                     <!-- <li><a href="#user-obligations" class="legal-layout-nav-link">User Obligations</a></li> -->
-                    <li><a href="{{ route('term-of-service') }}" class="legal-layout-nav-link">Terms of Service</a></li>
+                    <li><a href="<?php echo e(route('term-of-service')); ?>" class="legal-layout-nav-link">Terms of Service</a></li>
                 </ul>
             </div>
         </aside>
@@ -356,4 +356,5 @@
     </div>
 </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/privacy-policy.blade.php ENDPATH**/ ?>
