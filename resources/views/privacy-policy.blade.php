@@ -29,7 +29,7 @@
                     <!-- <li><a href="#terms-service" class="legal-layout-nav-link legal-layout-active-link">Trademark USP Terms Of Service</a></li> -->
                     <li><a href="{{ route('privacy-policy') }}" class="legal-layout-nav-link">Privacy Policy</a></li>
                     <li><a href="{{ route('guarantee') }}" class="legal-layout-nav-link">Our Guarantee</a></li>
-                    <!-- <li><a href="#user-obligations" class="legal-layout-nav-link">User Obligations</a></li> -->
+                    <!-- <li><a href="#user-obligations" class="legal-layout-nav-link">User Obligations</a></li> --> 
                     <li><a href="{{ route('term-of-service') }}" class="legal-layout-nav-link">Terms of Service</a></li>
                 </ul>
             </div>
