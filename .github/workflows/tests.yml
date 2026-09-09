@@ -7,6 +7,7 @@ on:
       - main
       - master
       - workos
+
   pull_request:
     branches:
       - develop
@@ -20,6 +21,7 @@ permissions:
 jobs:
   ci:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         php-version: ['8.4', '8.5']
@@ -50,12 +52,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        uses: actions/checkout@v5
         with:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
           extensions: pdo_mysql, mbstring, bcmath
@@ -63,7 +65,7 @@ jobs:
           coverage: none
 
       - name: Setup Node
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
 
@@ -87,8 +89,8 @@ jobs:
       - name: Build Assets
         run: npm run build
 
-      - name: Run Type Analysis
-        run: composer types:check
+      - name: Run Pint
+        run: ./vendor/bin/pint --test
 
       - name: Run Tests
         run: php artisan test
