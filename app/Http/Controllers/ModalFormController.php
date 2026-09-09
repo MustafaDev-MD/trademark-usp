@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Lead;
 use App\Mail\LeadMail;
+use App\Models\Lead;
+use Illuminate\Http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Http\Client\Response;
 use Illuminate\Validation\ValidationException;
 
 class ModalFormController extends Controller
 {
-
     public function index()
     {
         // $leads = Lead::latest()->paginate(20);
         $leads = Lead::latest()->get();
+
         return view('admin.leads.index', compact('leads'));
     }
 
@@ -56,11 +56,9 @@ class ModalFormController extends Controller
     //         ->with('success', 'Thank you! We will contact you shortly.');
     // }
 
-
     // public function submit(Request $request)
     // {
     //     // \Log::info('MODAL FORM HIT', $request->all());
-
 
     //     try {
     //         $validated = $request->validate([
@@ -102,7 +100,6 @@ class ModalFormController extends Controller
     //         ->with('success', 'Thank you! We will contact you shortly.');
     // }
 
-
     public function submit(Request $request)
     {
         // HONEYPOT
@@ -114,7 +111,7 @@ class ModalFormController extends Controller
         if ($request->has('form_time') && time() - $request->form_time < 3) {
             return response()->json(['success' => false, 'message' => 'Too fast. Please try again.'], 422);
         }
-        
+
         $phone = preg_replace('/\D/', '', $request->customer_phone);
         $request->merge(['customer_phone' => $phone]);
 
@@ -135,11 +132,9 @@ class ModalFormController extends Controller
 
             return response()->json([
                 'success' => false,
-                'errors' => $e->errors()
+                'errors' => $e->errors(),
             ], 422);
         }
-
-
 
         // RECAPTCHA
         $verify = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
@@ -149,9 +144,8 @@ class ModalFormController extends Controller
         ]);
 
         /** @var Response $verify */
-
         $captcha = $verify->json();
-        if (!($captcha['success'] ?? false) || ($captcha['score'] ?? 0) < 0.5) {
+        if (! ($captcha['success'] ?? false) || ($captcha['score'] ?? 0) < 0.5) {
             return response()->json(['success' => false, 'message' => 'reCAPTCHA verification failed. Are you a robot?'], 422);
         }
 
@@ -182,7 +176,7 @@ class ModalFormController extends Controller
         // ]);
         return response()->json([
             'success' => true,
-            'redirect' => route('thank-you')
+            'redirect' => route('thank-you'),
         ]);
     }
 }

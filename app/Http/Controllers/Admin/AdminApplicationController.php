@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Models\TrademarkApplication;
+use App\Models\User;
 
 class AdminApplicationController extends Controller
 {
@@ -26,9 +25,7 @@ class AdminApplicationController extends Controller
         abort_if($application->user_id !== $user->id, 404);
 
         return view('admin.application-detail', [
-            'application' => $application
+            'application' => $application,
         ]);
     }
-
-    
 }

@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
 class OtpVerified
 {
@@ -34,7 +34,7 @@ class OtpVerified
         // }
 
         // return $next($request);
-        
+
         // $user = Auth::user();
 
         // // If user is logged in AND not verified
@@ -53,7 +53,7 @@ class OtpVerified
         // }
 
         // return $next($request);
-        
+
         // $user = Auth::user();
 
         // if (!$user || !$user->hasVerifiedEmail()) {
@@ -61,21 +61,23 @@ class OtpVerified
         // }
 
         // return $next($request);
-        
+
         $user = Auth::user();
 
-    // If no user, allow
-    if (!$user) return $next($request);
+        // If no user, allow
+        if (! $user) {
+            return $next($request);
+        }
 
-    // If user is not verified and route is not allowed, redirect to OTP
-    $allowedRoutes = [
-        'login', 'register', 'verify.code', 'verify.code.submit', 'resend.otp', 'logout'
-    ];
+        // If user is not verified and route is not allowed, redirect to OTP
+        $allowedRoutes = [
+            'login', 'register', 'verify.code', 'verify.code.submit', 'resend.otp', 'logout',
+        ];
 
-    if (!$user->hasVerifiedEmail() && !in_array($request->route()->getName(), $allowedRoutes)) {
-        return redirect()->route('verify.code');
-    }
+        if (! $user->hasVerifiedEmail() && ! in_array($request->route()->getName(), $allowedRoutes)) {
+            return redirect()->route('verify.code');
+        }
 
-    return $next($request);
+        return $next($request);
     }
 }

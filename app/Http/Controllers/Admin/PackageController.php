@@ -11,6 +11,7 @@ class PackageController extends Controller
     public function index()
     {
         $packages = Package::latest()->get();
+
         return view('admin.packages.index', compact('packages'));
     }
 
@@ -24,7 +25,7 @@ class PackageController extends Controller
         $request->validate([
             'name' => 'required',
             'type' => 'required',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
         ]);
 
         Package::create([
@@ -32,11 +33,11 @@ class PackageController extends Controller
             'type' => $request->type,
             'price' => $request->price,
             'is_popular' => $request->has('is_popular'),
-            'is_active' => true
+            'is_active' => true,
         ]);
 
         return redirect()->route('admin.packages.index')
-            ->with('success','Package added successfully');
+            ->with('success', 'Package added successfully');
     }
 
     public function edit(Package $package)
@@ -49,7 +50,7 @@ class PackageController extends Controller
         $request->validate([
             'name' => 'required',
             'type' => 'required',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
         ]);
 
         $package->update([
@@ -61,7 +62,7 @@ class PackageController extends Controller
         ]);
 
         return redirect()->route('admin.packages.index')
-            ->with('success','Package updated');
+            ->with('success', 'Package updated');
     }
 
     public function destroy(Package $package)
@@ -69,6 +70,6 @@ class PackageController extends Controller
         $package->delete();
 
         return redirect()->back()
-            ->with('success','Package deleted');
+            ->with('success', 'Package deleted');
     }
 }

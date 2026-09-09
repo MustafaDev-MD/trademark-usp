@@ -43,11 +43,11 @@ Route::middleware('auth')->group(function () {
     // Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
     //     ->middleware(['signed', 'throttle:6,1'])
     //     ->name('verification.verify');
-    
+
     // Route::get('/verify-code', fn() => view('auth.verify-code'))->name('verify.code');
     // Route::post('/verify-code', VerifyEmailController::class)
     // ->name('verify.code.submit');
-    
+
     // Route::get('/resend-otp', function () {
     //     $user = Auth::user();
     //     // OTP resend logic
@@ -60,20 +60,20 @@ Route::middleware('auth')->group(function () {
 
     //     return back()->with('success', 'OTP has been resent.');
     // })->name('resend.otp');
-    
+
     // // OTP resend
     // Route::get('/resend-otp', [VerifyEmailController::class, 'resend'])
     //     ->name('resend.otp');
-    
+
     Route::get('/verify-code', function () {
         return view('auth.verify-code');
     })->name('verify.code');
 
     Route::post('/verify-code', VerifyEmailController::class)
         ->name('verify.code.submit');
-        
+
     Route::get('/resend-otp', [VerifyEmailController::class, 'resend'])
-    ->name('resend.otp');
+        ->name('resend.otp');
 
     // Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
     //     ->middleware('throttle:6,1')

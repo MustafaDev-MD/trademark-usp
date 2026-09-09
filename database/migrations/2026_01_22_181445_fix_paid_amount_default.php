@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('trademark_applications', function (Blueprint $table) {
             $table->decimal('paid_amount', 10, 2)->default(0)->change();
         });
-        
+
     }
 
     /**

@@ -20,7 +20,7 @@ class AdminMiddleware
         //     abort(403, 'Unauthorized');
         // }
 
-        if (!Auth::check()) {
+        if (! Auth::check()) {
             return redirect()->route('dashboard');
         }
 

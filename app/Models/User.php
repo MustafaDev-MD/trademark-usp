@@ -77,7 +77,6 @@
 //     }
 // }
 
-
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -125,10 +124,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getAvatarUrlAttribute()
     {
         return $this->avatar
-            ? asset('storage/' . $this->avatar)
+            ? asset('storage/'.$this->avatar)
             : asset('assets/img/customer/default-avatar.png');
     }
-    
+
     public function getAgeAttribute()
     {
         return $this->dob ? $this->dob->age : null;
@@ -141,7 +140,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function hasVerifiedEmail(): bool
     {
-        return !is_null($this->email_verified_at);
+        return ! is_null($this->email_verified_at);
     }
 
     public function sendEmailVerificationNotification()

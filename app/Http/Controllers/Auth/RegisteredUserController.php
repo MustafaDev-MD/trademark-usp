@@ -52,12 +52,11 @@
 //     }
 // }
 
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Models\TrademarkApplication;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -87,10 +86,10 @@ class RegisteredUserController extends Controller
         $code = rand(100000, 999999); // 6 digit OTP
 
         $user = User::create([
-            'name'  => $request->name,
+            'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'dob'   => $request->dob,
+            'dob' => $request->dob,
             'password' => Hash::make($request->password),
             'email_verification_code' => $code,
             'email_verification_expires_at' => now()->addMinutes(10),
@@ -101,10 +100,10 @@ class RegisteredUserController extends Controller
             "Your email verification code is: {$code}\n\nThis code will expire in 10 minutes.",
             function ($message) use ($user) {
                 $message->to($user->email)
-                        ->subject('Verify Your Email');
+                    ->subject('Verify Your Email');
             }
         );
-        
+
         // Save email and phone in applications table
         TrademarkApplication::create([
             'user_id' => $user->id,

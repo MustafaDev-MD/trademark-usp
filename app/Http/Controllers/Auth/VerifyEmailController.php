@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\SendOtpMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Mail\SendOtpMail;
 use Illuminate\Support\Facades\Mail;
 
 class VerifyEmailController extends Controller
@@ -18,7 +18,7 @@ class VerifyEmailController extends Controller
 
         $user = Auth::user();
 
-        if (!$user) {
+        if (! $user) {
             return redirect()->route('login')->withErrors(['email' => 'User not found.']);
         }
 
@@ -33,7 +33,7 @@ class VerifyEmailController extends Controller
             $user->save();
 
             return redirect()->route('trademark.apply', ['verified' => 1])
-                             ->with('success', 'Email verified successfully!');
+                ->with('success', 'Email verified successfully!');
         }
 
         return back()->withErrors(['code' => 'Invalid or expired verification code.']);
@@ -43,7 +43,7 @@ class VerifyEmailController extends Controller
     {
         $user = Auth::user();
 
-        if (!$user) {
+        if (! $user) {
             return redirect()->route('login')->withErrors(['email' => 'User not found.']);
         }
 
@@ -56,19 +56,19 @@ class VerifyEmailController extends Controller
 
         return back()->with('success', 'OTP has been resent to your email.');
     }
-    
+
     // public function verify(Request $request)
     // {
     //     $request->validate([
     //         'code' => 'required|digits:6',
     //     ]);
-    
+
     //     $user = Auth::user();
-    
+
     //     if (!$user) {
     //         return redirect()->route('login')->withErrors(['email' => 'User not found.']);
     //     }
-    
+
     //     if (
     //         $user->email_verification_code === $request->code &&
     //         $user->email_verification_expires_at &&
@@ -78,11 +78,11 @@ class VerifyEmailController extends Controller
     //         $user->email_verification_code = null;
     //         $user->email_verification_expires_at = null;
     //         $user->save();
-    
+
     //         return redirect()->route('trademark.apply', ['verified' => 1])
     //                          ->with('success', 'Email verified successfully!');
     //     }
-    
+
     //     return back()->withErrors(['code' => 'Invalid or expired verification code.']);
     // }
 }

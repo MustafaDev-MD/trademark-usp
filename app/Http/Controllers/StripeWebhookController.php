@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Stripe\Webhook;
 use App\Models\TrademarkApplication;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Stripe\Webhook;
 
 class StripeWebhookController extends Controller
 {
@@ -43,10 +43,8 @@ class StripeWebhookController extends Controller
     //             'status' => 'paid',
     //         ]);
 
-
     //     return response()->json(['status' => 'success']);
     // }
-
 
     public function handle(Request $request)
     {
@@ -86,18 +84,20 @@ class StripeWebhookController extends Controller
                 default:
                     // Other event types you might ignore
                     Log::info('Unhandled Stripe event type', ['type' => $event->type]);
+
                     return response()->json(['status' => 'ignored']);
             }
 
-            if (!$applicationId) {
+            if (! $applicationId) {
                 Log::warning('Stripe event missing application_id', ['event_type' => $event->type]);
+
                 return response()->json(['error' => 'No application_id in metadata'], 400);
             }
 
             $application = TrademarkApplication::find($applicationId);
 
             if ($application && $application->payment_status !== 'paid') {
-                $finalTotal = (float)($application->total ?? 0) - (float)($application->discount ?? 0);
+                $finalTotal = (float) ($application->total ?? 0) - (float) ($application->discount ?? 0);
 
                 $application->paid_amount = $finalTotal;
                 $application->payment_status = 'paid';
@@ -108,7 +108,7 @@ class StripeWebhookController extends Controller
                 Log::info('TrademarkApplication updated after Stripe payment', [
                     'application_id' => $application->id,
                     'paid_amount' => $application->paid_amount,
-                    'event_type' => $event->type
+                    'event_type' => $event->type,
                 ]);
             }
 
@@ -116,9 +116,8 @@ class StripeWebhookController extends Controller
 
         } catch (\Exception $e) {
             Log::error('Stripe Webhook Error', ['error' => $e->getMessage()]);
+
             return response()->json(['error' => $e->getMessage()], 400);
         }
     }
 }
-
-

@@ -22,27 +22,27 @@ class ClientFormController extends Controller
 
         // DB mein save karo
         ClientApplication::create([
-            'first_name'           => $request->firstName,
-            'last_name'            => $request->lastName,
-            'owner_of_mark'        => $request->ownerMark,
-            'dba'                  => $request->dba,
-            'business_name'        => $request->businessName,
-            'business_nature'      => $request->bizNature,
-            'mailing_address'      => $request->mailAddress,
-            'city'                 => $request->city,
-            'state'                => $request->state,
-            'country'              => $request->country,
-            'zip_code'             => $request->zipCode,
-            'phone_number'         => $request->phoneNumber,
-            'website'              => $request->website,
-            'email_address'        => $request->emailAddress,
-            'trademark_type'       => $request->trademarkType,
-            'mark_details'         => $request->markDetails,
+            'first_name' => $request->firstName,
+            'last_name' => $request->lastName,
+            'owner_of_mark' => $request->ownerMark,
+            'dba' => $request->dba,
+            'business_name' => $request->businessName,
+            'business_nature' => $request->bizNature,
+            'mailing_address' => $request->mailAddress,
+            'city' => $request->city,
+            'state' => $request->state,
+            'country' => $request->country,
+            'zip_code' => $request->zipCode,
+            'phone_number' => $request->phoneNumber,
+            'website' => $request->website,
+            'email_address' => $request->emailAddress,
+            'trademark_type' => $request->trademarkType,
+            'mark_details' => $request->markDetails,
             'business_description' => $request->businessDescription,
-            'using_logo'           => $request->usingLogo ?? 'No',
-            'logo_file'            => $logoPath,
-            'usage_list'           => $request->usageList,
-            'date_of_use'          => $request->dateOfUse ?: null,
+            'using_logo' => $request->usingLogo ?? 'No',
+            'logo_file' => $logoPath,
+            'usage_list' => $request->usageList,
+            'date_of_use' => $request->dateOfUse ?: null,
         ]);
 
         // Email bhejna (pehle wala code)
@@ -54,12 +54,12 @@ class ClientFormController extends Controller
 
                 $html = "<h3>New Application Details</h3><table border='1' cellpadding='8' style='border-collapse:collapse; width:100%;'>";
                 foreach ($allData as $key => $value) {
-                    if (!is_object($value)) {
+                    if (! is_object($value)) {
                         $label = ucwords(preg_replace('/(?<!^)[A-Z]/', ' $0', $key));
-                        $html .= "<tr><td style='background:#f4f4f4;'><b>$label</b></td><td>" . nl2br(htmlspecialchars($value)) . "</td></tr>";
+                        $html .= "<tr><td style='background:#f4f4f4;'><b>$label</b></td><td>".nl2br(htmlspecialchars($value)).'</td></tr>';
                     }
                 }
-                $html .= "</table>";
+                $html .= '</table>';
                 $message->html($html);
 
                 if ($request->hasFile('logoFile')) {
@@ -80,12 +80,14 @@ class ClientFormController extends Controller
     public function adminIndex()
     {
         $applications = \App\Models\ClientApplication::latest()->get();
+
         return view('admin.client-applications.index', compact('applications'));
     }
 
     public function adminShow($id)
     {
         $app = \App\Models\ClientApplication::findOrFail($id);
+
         return view('admin.client-applications.show', compact('app'));
     }
 }

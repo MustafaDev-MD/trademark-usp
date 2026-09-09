@@ -31,7 +31,7 @@
 //     public $last_name;
 //     public $email;
 //     public $phone;
-    // public $sms_consent = false;
+// public $sms_consent = false;
 
 //     // STEP 4 – PLAN
 //     public $plan;
@@ -104,7 +104,6 @@
 //             ->latest()
 //             ->first();
 
-
 //         // If no application exists, create a draft
 //         if (!$this->application) {
 //             $this->application = TrademarkApplication::create([
@@ -152,7 +151,6 @@
 //         $this->saveData();
 //     }
 
-
 //     public function selectPlanAndContinue($plan)
 //     {
 //         $this->plan = $plan;
@@ -199,7 +197,6 @@
 
 //         $this->next();
 //     }
-
 
 //     // AUTO RECALCULATE
 //     public function updated($property)
@@ -279,7 +276,6 @@
 //         $this->total = max($subtotal - $this->discount, 0);
 //     }
 
-
 //     // SAVE
 //     // protected function saveData()
 //     // {
@@ -344,7 +340,6 @@
 //         }
 //     }
 
-
 //     // public function checkout()
 //     // {
 
@@ -407,11 +402,11 @@
 
 //     //     return redirect($session->url);
 //     // }
-    
+
 //     public function checkout()
 //     {
 //         $this->calculateTotal();
-    
+
 //         // Application update
 //         $this->application->update([
 //             'payment_status' => 'pending',
@@ -419,15 +414,15 @@
 //             'project_status' => 'pending',
 //             'submitted_at'   => now(),
 //         ]);
-    
+
 //         // USER KO UPDATE KAREIN (Taki middleware ko pata chale ke form bhar diya gaya hai)
 //         $user = Auth::user();
 //         $user->update([
 //             'is_applied' => true, // Ensure karein ke users table mein ye column ho
 //         ]);
-    
+
 //         session()->flash('success', 'Your application has been successfully submitted.');
-    
+
 //         return redirect()->route('dashboard');
 //     }
 
@@ -489,8 +484,6 @@
 //     //     $this->showPriorityModal = false;
 //     // }
 
-
-
 //     public function openModal($type)
 //     {
 //         $this->resetModals();
@@ -510,7 +503,6 @@
 //             $this->showPriorityModal = true;
 //         }
 //     }
-
 
 //     public function closeModal()
 //     {
@@ -559,16 +551,14 @@
 //     }
 // }
 
-
-
 namespace App\Livewire;
 
-use Livewire\Component;
 use App\Models\TrademarkApplication;
-use Illuminate\Support\Facades\Auth;
-use Stripe\Stripe;
-use Stripe\Checkout\Session as StripeSession;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Livewire\Component;
+use Stripe\Checkout\Session as StripeSession;
+use Stripe\Stripe;
 
 class TrademarkWizard extends Component
 {
@@ -579,12 +569,16 @@ class TrademarkWizard extends Component
 
     // BASIC
     public $application;
+
     public $step = 1;
 
     // STEP 1–2
     public $trademark_type;
+
     public $trademark_text;
+
     public $logo_name;
+
     public $logo_description;
 
     // STEP 3
@@ -596,14 +590,17 @@ class TrademarkWizard extends Component
 
     // STEP 4 – PLAN
     public $plan;
+
     public $plan_price = 0;
 
     // STEP 5 – ADDONS
     public $addons = [];
+
     public $addons_price = 0;
 
     // STEP 6 – PRIORITY
     public $priority;
+
     public $priority_price = 0;
 
     // TOTAL
@@ -618,14 +615,14 @@ class TrademarkWizard extends Component
 
     public $addonList = [
         'basic' => 0,
-        'standard'    => 99,
-        'premium'  => 149,
+        'standard' => 99,
+        'premium' => 149,
     ];
 
     public $priorities = [
-        'standard'    => 0,   // Standard – 3 weeks
-        'express'  => 50,  // Express – 5 days
-        'priority'   => 100, // Priority – 48 hours
+        'standard' => 0,   // Standard – 3 weeks
+        'express' => 50,  // Express – 5 days
+        'priority' => 100, // Priority – 48 hours
     ];
 
     // MOUNT
@@ -705,7 +702,9 @@ class TrademarkWizard extends Component
 
     public function mount()
     {
-        if (!Auth::check()) abort(403);
+        if (! Auth::check()) {
+            abort(403);
+        }
 
         // Get draft application
         $this->application = TrademarkApplication::where('user_id', Auth::id())
@@ -713,14 +712,14 @@ class TrademarkWizard extends Component
             ->latest()
             ->first();
 
-        if (!$this->application) {
+        if (! $this->application) {
             $this->application = TrademarkApplication::create([
                 'user_id' => Auth::id(),
                 'current_step' => 1,
                 'status' => 'draft',
             ]);
         }
-    
+
         $user = Auth::user();
 
         // STEP
@@ -760,7 +759,7 @@ class TrademarkWizard extends Component
     public function selectPlanAndContinue($plan)
     {
         $this->plan = $plan;
-        
+
         // plan select validation
         $this->validate([
             'plan' => 'required|in:basic,standard,premium',
@@ -778,7 +777,7 @@ class TrademarkWizard extends Component
     public function selectAddonAndContinue($addon)
     {
         $this->addons = [$addon];
-        
+
         // plan select validation
         $this->validate([
             'addons.' => 'in:basic,standard,premium',
@@ -855,13 +854,13 @@ class TrademarkWizard extends Component
     //     $this->step = min($this->step + 1, 7);
     //     $this->application->update(['current_step' => $this->step]);
     // }
-    
+
     // public function next()
     // {
     //     if ($this->step === 1) {
     //         $this->validate(['trademark_type' => 'required']);
     //     }
-    
+
     //     if ($this->step === 2) {
     //         if ($this->trademark_type === 'logo') {
     //             $this->validate([
@@ -874,41 +873,40 @@ class TrademarkWizard extends Component
     //             ]);
     //         }
     //     }
-    
+
     //     // STEP 3 SKIP
-    
+
     //     if ($this->step === 4) {
     //         $this->validate(['plan' => 'required']);
     //     }
-    
+
     //     if ($this->step === 5) {
     //         $this->validate(['addons' => 'required|array']);
     //     }
-    
+
     //     if ($this->step === 6) {
     //         $this->validate(['priority' => 'required']);
     //         $this->calculateTotal();
     //     }
-    
+
     //     $this->saveData();
-    
+
     //     // Skip Step 3: if current step is 2, go to 4
     //     if ($this->step === 2) {
     //         $this->step = 4;
     //     } else {
     //         $this->step = min($this->step + 1, 7);
     //     }
-    
+
     //     $this->application->update(['current_step' => $this->step]);
     // }
-    
-    
+
     public function next()
     {
         if ($this->step === 1) {
             $this->validate(['trademark_type' => 'required']);
         }
-    
+
         if ($this->step === 2) {
             if ($this->trademark_type === 'logo') {
                 $this->validate([
@@ -921,37 +919,37 @@ class TrademarkWizard extends Component
                 ]);
             }
         }
-    
+
         // STEP 3 SKIP
-    
+
         if ($this->step === 4) {
             $this->validate(['plan' => 'required']);
         }
-    
+
         if ($this->step === 5) {
             $this->validate(['addons' => 'required|array']);
         }
-    
+
         if ($this->step === 6) {
             $this->validate(['priority' => 'required']);
             $this->calculateTotal();
         }
-    
+
         // SMS Consent required on final step (Step 7)
         if ($this->step === 7) {
             $this->validate([
                 'sms_consent' => 'accepted',
             ]);
         }
-    
+
         $this->saveData();
-    
+
         if ($this->step === 2) {
             $this->step = 4; // skip step 3
         } else {
             $this->step = min($this->step + 1, 7);
         }
-    
+
         $this->application->update(['current_step' => $this->step]);
     }
 
@@ -963,18 +961,18 @@ class TrademarkWizard extends Component
     //         $this->application->update(['current_step' => $this->step]);
     //     }
     // }
-    
+
     public function back()
     {
         if ($this->step > 1) {
-    
+
             // Agar current step 4 hai, aur step 3 skip kiya hai, directly 2 par jao
             if ($this->step === 4) {
                 $this->step = 2;
             } else {
                 $this->step--;
             }
-    
+
             $this->application->update(['current_step' => $this->step]);
         }
     }
@@ -985,7 +983,7 @@ class TrademarkWizard extends Component
         $this->plan_price = $this->plans[$this->plan] ?? 0;
 
         $this->addons_price = collect($this->addons)
-            ->sum(fn($a) => $this->addonList[$a] ?? 0);
+            ->sum(fn ($a) => $this->addonList[$a] ?? 0);
 
         $this->priority_price = $this->priorities[$this->priority] ?? 0;
 
@@ -1043,7 +1041,7 @@ class TrademarkWizard extends Component
     //     ], fn($v) => $v !== null);
 
     //     $this->application->update($data);
-    
+
     //     // ALSO update user's profile
     //     $user = Auth::user();
     //     if ($user instanceof User) {
@@ -1072,13 +1070,13 @@ class TrademarkWizard extends Component
             'trademark_text' => $this->trademark_text,
             'logo_name' => $this->logo_name,
             'logo_description' => $this->logo_description,
-    
+
             // 'first_name' => $this->first_name,
             // 'last_name'  => $this->last_name,
             // 'email'      => $this->email,
             // 'phone'      => $this->phone,
-            'sms_consent'=> $this->sms_consent,
-    
+            'sms_consent' => $this->sms_consent,
+
             'plan' => $this->plan,
             'addons' => $this->addons,
             'priority' => $this->priority,
@@ -1093,7 +1091,7 @@ class TrademarkWizard extends Component
         ]);
 
         //  UPDATE USER PROFILE
-        
+
         $user = Auth::user();
 
         // $user->update([
@@ -1182,7 +1180,7 @@ class TrademarkWizard extends Component
         $this->validate([
             'sms_consent' => 'accepted',
         ]);
-        
+
         $this->calculateTotal();
 
         $this->application->update([
@@ -1191,8 +1189,8 @@ class TrademarkWizard extends Component
             'project_status' => 'pending',
             'submitted_at' => now(),
         ]);
-        
-         // USER KO UPDATE KAREIN (Taki middleware ko pata chale ke form bhar diya gaya hai)
+
+        // USER KO UPDATE KAREIN (Taki middleware ko pata chale ke form bhar diya gaya hai)
         $user = Auth::user();
         $user->update([
             'is_applied' => true, // Ensure karein ke users table mein ye column ho
@@ -1208,11 +1206,15 @@ class TrademarkWizard extends Component
 
     // MODALS
     public $showPlanModal = false;
+
     public $showAddonModal = false;
+
     public $showPriorityModal = false;
 
     public $tempPlan;
+
     public $tempAddon;
+
     public $tempPriority;
 
     public function openPlanModal()
@@ -1223,7 +1225,9 @@ class TrademarkWizard extends Component
 
     public function updatePlan()
     {
-        if (!$this->tempPlan) return;
+        if (! $this->tempPlan) {
+            return;
+        }
 
         $this->plan = $this->tempPlan;
 
@@ -1235,7 +1239,9 @@ class TrademarkWizard extends Component
 
     public function updateAddon()
     {
-        if (!$this->tempAddon) return;
+        if (! $this->tempAddon) {
+            return;
+        }
 
         $this->addons = [$this->tempAddon];
 
@@ -1247,7 +1253,9 @@ class TrademarkWizard extends Component
 
     public function updatePriority()
     {
-        if (!$this->tempPriority) return;
+        if (! $this->tempPriority) {
+            return;
+        }
 
         $this->priority = $this->tempPriority;
 
@@ -1297,9 +1305,11 @@ class TrademarkWizard extends Component
     }
 
     public $promoCode;
+
     public $discount = 0;
 
     public $promoMessage = null;
+
     public $promoSuccess = false;
 
     public function applyPromo()

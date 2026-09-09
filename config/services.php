@@ -46,5 +46,4 @@ return [
         'secret' => env('NOCAPTCHA_SECRET'),
     ],
 
-
 ];

@@ -11,6 +11,6 @@ class Package extends Model
         'type',
         'price',
         'is_popular',
-        'is_active'
+        'is_active',
     ];
 }

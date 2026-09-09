@@ -18,15 +18,15 @@ return new class extends Migration
             // if (!Schema::hasColumn('users', 'avatar')) {
             //     $table->string('avatar')->nullable()->after('last_name');
             // }
-            if (!Schema::hasColumn('users', 'first_name')) {
+            if (! Schema::hasColumn('users', 'first_name')) {
                 $table->string('first_name')->nullable()->after('name');
             }
 
-            if (!Schema::hasColumn('users', 'last_name')) {
+            if (! Schema::hasColumn('users', 'last_name')) {
                 $table->string('last_name')->nullable()->after('first_name');
             }
 
-            if (!Schema::hasColumn('users', 'avatar')) {
+            if (! Schema::hasColumn('users', 'avatar')) {
                 $table->string('avatar')->nullable()->after('last_name');
             }
         });

@@ -6,14 +6,13 @@ use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-
     /**
      * Display the user's profile form.
      */
@@ -88,7 +87,7 @@ class ProfileController extends Controller
         $user = $request->user();
 
         $user->first_name = $request->first_name;
-        $user->last_name  = $request->last_name;
+        $user->last_name = $request->last_name;
 
         // Avatar
         if ($request->hasFile('avatar')) {
@@ -111,7 +110,7 @@ class ProfileController extends Controller
             \App\Models\TrademarkApplication::where('user_id', $user->id)
                 ->update([
                     'first_name' => $user->first_name,
-                    'last_name'  => $user->last_name,
+                    'last_name' => $user->last_name,
                 ]);
         }
 
@@ -126,9 +125,6 @@ class ProfileController extends Controller
             ->route('profile.edit')
             ->with('success', 'Profile updated successfully');
     }
-
-
-
 
     /**
      * Delete the user's account.

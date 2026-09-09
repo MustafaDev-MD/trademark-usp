@@ -30,44 +30,44 @@ return new class extends Migration
             // $table->decimal('discount', 10, 2)->default(0);
             // $table->string('promo_code')->nullable();
             // $table->decimal('total', 10, 2)->default(0);
-           
-            if (!Schema::hasColumn('trademark_applications', 'payment_status')) {
+
+            if (! Schema::hasColumn('trademark_applications', 'payment_status')) {
                 $table->string('payment_status')->default('unpaid');
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'project_status')) {
+            if (! Schema::hasColumn('trademark_applications', 'project_status')) {
                 $table->string('project_status')->default('pending');
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'paid_amount')) {
+            if (! Schema::hasColumn('trademark_applications', 'paid_amount')) {
                 $table->decimal('paid_amount', 10, 2)->default(0);
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'plan_price')) {
+            if (! Schema::hasColumn('trademark_applications', 'plan_price')) {
                 $table->decimal('plan_price', 10, 2)->default(0);
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'addons_price')) {
+            if (! Schema::hasColumn('trademark_applications', 'addons_price')) {
                 $table->decimal('addons_price', 10, 2)->default(0);
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'priority_price')) {
+            if (! Schema::hasColumn('trademark_applications', 'priority_price')) {
                 $table->decimal('priority_price', 10, 2)->default(0);
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'subtotal')) {
+            if (! Schema::hasColumn('trademark_applications', 'subtotal')) {
                 $table->decimal('subtotal', 10, 2)->default(0);
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'discount')) {
+            if (! Schema::hasColumn('trademark_applications', 'discount')) {
                 $table->decimal('discount', 10, 2)->default(0);
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'promo_code')) {
+            if (! Schema::hasColumn('trademark_applications', 'promo_code')) {
                 $table->string('promo_code')->nullable();
             }
 
-            if (!Schema::hasColumn('trademark_applications', 'total')) {
+            if (! Schema::hasColumn('trademark_applications', 'total')) {
                 $table->decimal('total', 10, 2)->default(0);
             }
 

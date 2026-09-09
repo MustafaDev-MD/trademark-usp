@@ -1,23 +1,22 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ModalFormController;
-use App\Http\Controllers\StripeWebhookController;
-use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\AddonController;
-use App\Http\Controllers\UserApplicationController;
-use App\Http\Controllers\Admin\AuthController as AdminAuthController;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Models\TrademarkApplication;
-use Stripe\Stripe;
-use Stripe\Checkout\Session;
 use App\Http\Controllers\Admin\AdminApplicationController;
 use App\Http\Controllers\Admin\AdminUserController;
-use Stripe\Checkout\Session as StripeSession;
-// use App\Http\Controllers\Auth\VerifyEmailCodeController;
+use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ClientFormController;
+use App\Http\Controllers\ModalFormController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StripeWebhookController;
+use App\Http\Controllers\UserApplicationController;
+use App\Models\TrademarkApplication;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\Auth\VerifyEmailCodeController;
+use Stripe\Checkout\Session as StripeSession;
+use Stripe\Stripe;
 
 /*
 |--------------------------------------------------------------------------
@@ -243,8 +242,6 @@ Route::middleware(['auth', 'verified', 'admin'])
             ->name('client.applications.show');
     });
 
-
-
 /*
 |--------------------------------------------------------------------------
 | User Authenticated Routes
@@ -274,7 +271,7 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
         /** @var \App\Models\User $user */
         $user = Auth::user();
 
-        if (!$user->hasVerifiedEmail()) {
+        if (! $user->hasVerifiedEmail()) {
             return redirect()->route('verify.code');
         }
 
@@ -287,6 +284,7 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
             ->paginate(10);
 
         $application = null;
+
         return view('user.dashboard', compact('applications', 'application'));
     })->name('dashboard');
 
@@ -326,8 +324,6 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
         //     ],
         // ]);
 
-
-
         $session = StripeSession::create([
             'payment_method_types' => ['card'],
             'mode' => 'payment',
@@ -336,7 +332,7 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
                 'price_data' => [
                     'currency' => 'usd',
                     'product_data' => [
-                        'name' => 'Trademark Registration – ' . ucfirst($application->plan),
+                        'name' => 'Trademark Registration – '.ucfirst($application->plan),
                         'description' => 'Trademark filing services',
                     ],
                     'unit_amount' => intval($remaining * 100), // cents
@@ -346,8 +342,8 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
 
             'customer_email' => $application->email,
 
-            'success_url' => route('stripe.success') . '?session_id={CHECKOUT_SESSION_ID}',
-            'cancel_url'  => route('stripe.cancel'),
+            'success_url' => route('stripe.success').'?session_id={CHECKOUT_SESSION_ID}',
+            'cancel_url' => route('stripe.cancel'),
 
             'metadata' => [
                 'application_id' => $application->id,
@@ -358,13 +354,11 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
         return redirect($session->url);
     })->name('user.payment.pay');
 
-
-
     Route::get('/checkout/{application}', function ($applicationId) {
         $application = \App\Models\TrademarkApplication::findOrFail($applicationId);
+
         return view('payment.checkout', compact('application'));
     })->name('stripe.checkout');
-
 
     Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/dashboard/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -396,7 +390,6 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
         ->name('resend.otp');
 });
 
-
 Route::middleware('auth')->group(function () {
 
     // // OTP page
@@ -416,8 +409,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/payment/success', function () {
     return view('payment.success');
 })->name('stripe.success');
-
-
 
 Route::get('/payment/cancel', function () {
     return view('payment.cancel');
@@ -439,5 +430,4 @@ Route::middleware(['auth', 'otp.verified'])->group(function () {
 //         return view('trademark.apply');
 //     })->name('trademark.apply');
 
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
