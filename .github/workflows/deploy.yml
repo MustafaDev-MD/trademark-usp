@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd ~/domains/sugarpawscreations.com/public_html/demo
+            cd ~/domains/trademarkusp.com/public_html/demo
 
             git fetch origin
             git reset --hard origin/main
