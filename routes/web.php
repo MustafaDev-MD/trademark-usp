@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminApplicationController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ClientFormController;
 use App\Http\Controllers\ModalFormController;
@@ -12,7 +13,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserApplicationController;
 use App\Models\TrademarkApplication;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -365,7 +365,7 @@ Route::middleware([
 
                         'product_data' => [
                             'name' => 'Trademark Registration – '
-                                . ucfirst($application->plan),
+                                .ucfirst($application->plan),
 
                             'description' => 'Trademark filing services',
                         ],
@@ -378,9 +378,8 @@ Route::middleware([
 
                 'customer_email' => $application->email,
 
-                'success_url' =>
-                route('stripe.success')
-                    . '?session_id={CHECKOUT_SESSION_ID}',
+                'success_url' => route('stripe.success')
+                    .'?session_id={CHECKOUT_SESSION_ID}',
 
                 'cancel_url' => route('stripe.cancel'),
 
@@ -472,7 +471,7 @@ Route::middleware([
             $request->fulfill();
 
             return redirect(
-                route('dashboard', absolute: false) . '?verified=1'
+                route('dashboard', absolute: false).'?verified=1'
             );
         }
     )
@@ -537,4 +536,4 @@ Route::middleware([
 |--------------------------------------------------------------------------
 */
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
