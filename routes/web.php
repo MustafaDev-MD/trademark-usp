@@ -9,14 +9,14 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ClientFormController;
 use App\Http\Controllers\ModalFormController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\StripeWebhookController;
 use App\Http\Controllers\UserApplicationController;
 use App\Models\TrademarkApplication;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\Auth\EmailVerificationNotificationController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\Auth\VerifyEmailCodeController;
 use Stripe\Checkout\Session as StripeSession;
-use Stripe\Stripe;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,17 +104,16 @@ Route::get('/client-form', function () {
     return view('client-form');
 })->name('client-form');
 
-Route::post('/client-form-submit', [ClientFormController::class, 'submitForm'])->name('client.form.submit');
+Route::post('/client-form-submit', [ClientFormController::class, 'submitForm'])
+    ->name('client.form.submit');
 
 Route::get('/term-of-service', function () {
     return view('term-of-service');
 })->name('term-of-service');
 
-// Route::post('/modal.form.submit', [ModalFormController::class, 'submit'])->name('modal.form.submit');
-
 Route::post('/modal.form.submit', [ModalFormController::class, 'submit'])
     ->name('modal.form.submit')
-    ->middleware('throttle:20,1'); // 1 submission per 1 minute
+    ->middleware('throttle:20,1');
 
 Route::get('/thank-you', function () {
     return view('thank-you');
@@ -180,12 +179,10 @@ Route::get('/blog-page10', function () {
 
 Route::prefix('admin')->group(function () {
 
-    // Admin Login Page
     Route::get('/login', function () {
         return view('admin.auth.login');
     })->name('admin.login');
 
-    // Admin Login Submit
     Route::post('/login', [AdminAuthController::class, 'login'])
         ->name('admin.login.submit');
 });
@@ -201,45 +198,62 @@ Route::middleware(['auth', 'verified', 'admin'])
     ->name('admin.')
     ->group(function () {
 
-        // Route::get('/dashboard', function () {
-        //     return view('admin.dashboard');
-        // })->name('dashboard');
+        Route::get('/dashboard', [AdminApplicationController::class, 'index'])
+            ->name('dashboard');
 
-        Route::get('/dashboard', [AdminApplicationController::class, 'index'])->name('dashboard');
-        // Show single user with applications
-        Route::get('/user/{id}/applications', [AdminUserController::class, 'showApplications'])->name('user.applications');
+        Route::get(
+            '/user/{id}/applications',
+            [AdminUserController::class, 'showApplications']
+        )->name('user.applications');
 
-        Route::get('/applications/{application}', [AdminApplicationController::class, 'show'])
-            ->name('applications.show');
+        Route::get(
+            '/applications/{application}',
+            [AdminApplicationController::class, 'show']
+        )->name('applications.show');
 
-        // routes/web.php
         Route::get(
             '/admin/user/{user}/applications/{application}',
             [AdminApplicationController::class, 'show']
         )->name('user.applications.show');
 
-        if (Auth::check() && Auth::user()->role === 'admin') {
-            return redirect()->route('admin.profile.edit');
-        }
+        Route::get(
+            '/dashboard/profile',
+            [ProfileController::class, 'edit']
+        )->name('profile.edit');
 
-        Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::patch('/dashboard/profile', [ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        Route::patch(
+            '/dashboard/profile',
+            [ProfileController::class, 'update']
+        )->name('profile.update');
 
-        // Update project status
-        Route::patch('/application/{id}/update-status', [AdminUserController::class, 'updateProjectStatus'])->name('application.update-status');
+        Route::delete(
+            '/profile',
+            [ProfileController::class, 'destroy']
+        )->name('profile.destroy');
+
+        Route::patch(
+            '/application/{id}/update-status',
+            [AdminUserController::class, 'updateProjectStatus']
+        )->name('application.update-status');
 
         Route::resource('packages', PackageController::class);
+
         Route::resource('addons', AddonController::class);
 
-        Route::get('/dashboard/leads', [ModalFormController::class, 'index'])
-            ->name('leads.index');
+        Route::get(
+            '/dashboard/leads',
+            [ModalFormController::class, 'index']
+        )->name('leads.index');
 
-        Route::get('/client-applications', [ClientFormController::class, 'adminIndex'])
-            ->name('client.applications.index');
+        Route::get(
+            '/client-applications',
+            [ClientFormController::class, 'adminIndex']
+        )->name('client.applications.index');
 
-        Route::get('/client-applications/{id}', [ClientFormController::class, 'adminShow'])
-            ->name('client.applications.show');
+        Route::get(
+            '/client-applications/{id}',
+            [ClientFormController::class, 'adminShow']
+        )->name('client.applications.show');
     });
 
 /*
@@ -248,24 +262,17 @@ Route::middleware(['auth', 'verified', 'admin'])
 |--------------------------------------------------------------------------
 */
 
-// Route::middleware(['auth', 'verified', 'redirectIfAdmin', 'form.submitted'])->group(function () {
-Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function () {
+Route::middleware([
+    'auth',
+    'redirectIfAdmin',
+    'form.submitted',
+])->group(function () {
 
-    // Route::get('/dashboard', function () {
-    //     $user = Auth::user();
-
-    //     // Admin users go to admin dashboard
-    //     if ($user->role === 'admin') {
-    //         return redirect()->route('admin.dashboard');
-    //     }
-
-    //     $applications = TrademarkApplication::where('user_id', Auth::id())
-    //         ->orderBy('created_at', 'desc')
-    //         ->paginate(10);
-
-    //     $application = null; // <-- fix: define it
-    //     return view('user.dashboard', compact('applications', 'application'));
-    // })->name('dashboard');
+    /*
+    |--------------------------------------------------------------------------
+    | Dashboard
+    |--------------------------------------------------------------------------
+    */
 
     Route::get('/dashboard', function () {
         /** @var \App\Models\User $user */
@@ -285,126 +292,220 @@ Route::middleware(['auth', 'redirectIfAdmin', 'form.submitted'])->group(function
 
         $application = null;
 
-        return view('user.dashboard', compact('applications', 'application'));
+        return view(
+            'user.dashboard',
+            compact('applications', 'application')
+        );
     })->name('dashboard');
 
-    Route::get('/payment/{application}/pay', function (\App\Models\TrademarkApplication $application) {
-        if ($application->user_id !== Auth::id()) {
-            abort(403);
-        }
+    /*
+    |--------------------------------------------------------------------------
+    | Profile
+    |--------------------------------------------------------------------------
+    */
 
-        // $finalTotal = ($application->total ?? 0) - ($application->discount ?? 0);
-        // $remaining = max($finalTotal - ($application->paid_amount ?? 0), 0);
-        $remaining = max(($application->total ?? 0) - ($application->paid_amount ?? 0), 0);
+    Route::get(
+        '/profile',
+        [ProfileController::class, 'edit']
+    )->name('profile.edit');
 
-        if ($remaining <= 0) {
-            return redirect()->route('user.applications.show', $application->id)
-                ->with('success', 'No payment required.');
-        }
+    Route::patch(
+        '/profile',
+        [ProfileController::class, 'update']
+    )->name('profile.update');
 
-        \Stripe\Stripe::setApiKey(config('services.stripe.secret'));
+    Route::delete(
+        '/profile',
+        [ProfileController::class, 'destroy']
+    )->name('profile.destroy');
 
-        // $session = \Stripe\Checkout\Session::create([
-        //     'payment_method_types' => ['card'],
-        //     'line_items' => [[
-        //         'price_data' => [
-        //             'currency' => 'usd',
-        //             'product_data' => [
-        //                 'name' => 'Payment for Application #' . $application->id,
-        //             ],
-        //             'unit_amount' => intval($remaining * 100),
-        //         ],
-        //         'quantity' => 1,
-        //     ]],
-        //     'mode' => 'payment',
-        //     'success_url' => route('user.applications.show', ['id' => $application->id, 'status' => 'success']),
-        //     'cancel_url' => route('user.applications.show', ['id' => $application->id, 'status' => 'cancel']),
-        //     'metadata' => [
-        //         'application_id' => $application->id,
-        //     ],
-        // ]);
+    /*
+    |--------------------------------------------------------------------------
+    | Payment
+    |--------------------------------------------------------------------------
+    */
 
-        $session = StripeSession::create([
-            'payment_method_types' => ['card'],
-            'mode' => 'payment',
+    Route::get(
+        '/payment/{application}/pay',
+        function (\App\Models\TrademarkApplication $application) {
 
-            'line_items' => [[
-                'price_data' => [
-                    'currency' => 'usd',
-                    'product_data' => [
-                        'name' => 'Trademark Registration – '.ucfirst($application->plan),
-                        'description' => 'Trademark filing services',
+            if ($application->user_id !== Auth::id()) {
+                abort(403);
+            }
+
+            $remaining = max(
+                ($application->total ?? 0) -
+                    ($application->paid_amount ?? 0),
+                0
+            );
+
+            if ($remaining <= 0) {
+                return redirect()
+                    ->route(
+                        'user.applications.show',
+                        $application->id
+                    )
+                    ->with(
+                        'success',
+                        'No payment required.'
+                    );
+            }
+
+            \Stripe\Stripe::setApiKey(
+                config('services.stripe.secret')
+            );
+
+            $session = StripeSession::create([
+                'payment_method_types' => ['card'],
+                'mode' => 'payment',
+
+                'line_items' => [[
+                    'price_data' => [
+                        'currency' => 'usd',
+
+                        'product_data' => [
+                            'name' => 'Trademark Registration – '
+                                . ucfirst($application->plan),
+
+                            'description' => 'Trademark filing services',
+                        ],
+
+                        'unit_amount' => intval($remaining * 100),
                     ],
-                    'unit_amount' => intval($remaining * 100), // cents
+
+                    'quantity' => 1,
+                ]],
+
+                'customer_email' => $application->email,
+
+                'success_url' =>
+                route('stripe.success')
+                    . '?session_id={CHECKOUT_SESSION_ID}',
+
+                'cancel_url' => route('stripe.cancel'),
+
+                'metadata' => [
+                    'application_id' => $application->id,
+                    'user_id' => Auth::id(),
                 ],
-                'quantity' => 1,
-            ]],
+            ]);
 
-            'customer_email' => $application->email,
+            return redirect($session->url);
+        }
+    )->name('user.payment.pay');
 
-            'success_url' => route('stripe.success').'?session_id={CHECKOUT_SESSION_ID}',
-            'cancel_url' => route('stripe.cancel'),
+    Route::get(
+        '/checkout/{application}',
+        function ($applicationId) {
 
-            'metadata' => [
-                'application_id' => $application->id,
-                'user_id' => Auth::id(),
-            ],
-        ]);
+            $application = \App\Models\TrademarkApplication::findOrFail(
+                $applicationId
+            );
 
-        return redirect($session->url);
-    })->name('user.payment.pay');
+            return view(
+                'payment.checkout',
+                compact('application')
+            );
+        }
+    )->name('stripe.checkout');
 
-    Route::get('/checkout/{application}', function ($applicationId) {
-        $application = \App\Models\TrademarkApplication::findOrFail($applicationId);
+    /*
+    |--------------------------------------------------------------------------
+    | Applications
+    |--------------------------------------------------------------------------
+    */
 
-        return view('payment.checkout', compact('application'));
-    })->name('stripe.checkout');
+    Route::get(
+        '/my-applications',
+        [UserApplicationController::class, 'index']
+    )->name('user.applications');
 
-    Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/dashboard/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get(
+        '/my-applications/{id}',
+        [UserApplicationController::class, 'show']
+    )->name('user.applications.show');
 
-    Route::get('/my-applications', [UserApplicationController::class, 'index'])
-        ->name('user.applications');
+    /*
+    |--------------------------------------------------------------------------
+    | OTP Verification
+    |--------------------------------------------------------------------------
+    */
 
-    Route::get('/my-applications/{id}', [UserApplicationController::class, 'show'])
-        ->name('user.applications.show');
-
-    // Route::get('/verify-code', function () {
-    //     return view('auth.verify-code');
-    // })->name('verify.code');
-
-    // Route::post('/verify-code', VerifyEmailController::class)
-    // ->name('verify.code.submit');
-    // OTP page
     Route::get('/verify-code', function () {
         return view('auth.verify-code');
     })->name('verify.code');
 
-    // OTP submit
-    Route::post('/verify-code', VerifyEmailController::class)
-        ->name('verify.code.submit');
+    Route::post(
+        '/verify-code',
+        VerifyEmailController::class
+    )->name('verify.code.submit');
 
-    // Resend OTP
-    Route::get('/resend-otp', [VerifyEmailController::class, 'resend'])
-        ->name('resend.otp');
+    Route::get(
+        '/resend-otp',
+        [VerifyEmailController::class, 'resend']
+    )->name('resend.otp');
+
+    /*
+    |--------------------------------------------------------------------------
+    | Standard Laravel Email Verification
+    |--------------------------------------------------------------------------
+    */
+
+    Route::get('/verify-email', function () {
+        return view('auth.verify-email');
+    })->name('verification.notice');
+
+    // Route::get(
+    //     '/verify-email/{id}/{hash}',
+    //     function (EmailVerificationRequest $request) {
+    //         $request->fulfill();
+
+    //         return redirect('/dashboard');
+    //     }
+    // )
+    //     ->middleware(['signed', 'throttle:6,1'])
+    //     ->name('verification.verify');
+
+    Route::get(
+        '/verify-email/{id}/{hash}',
+        function (EmailVerificationRequest $request) {
+            $request->fulfill();
+
+            return redirect(
+                route('dashboard', absolute: false) . '?verified=1'
+            );
+        }
+    )
+        ->middleware(['signed', 'throttle:6,1'])
+        ->name('verification.verify');
+
+    // Route::post(
+    //     '/email/verification-notification',
+    //     function (Request $request) {
+    //         $request->user()->sendEmailVerificationNotification();
+
+    //         return back()->with(
+    //             'status',
+    //             'verification-link-sent'
+    //         );
+    //     }
+    // )
+    //     ->middleware('throttle:6,1')
+    //     ->name('verification.send');
+
+    Route::post(
+        '/email/verification-notification',
+        [EmailVerificationNotificationController::class, 'store']
+    )
+        ->middleware('throttle:6,1')
+        ->name('verification.send');
 });
 
-Route::middleware('auth')->group(function () {
-
-    // // OTP page
-    // Route::get('/verify-code', function () {
-    //     return view('auth.verify-code');
-    // })->name('verify.code');
-
-    // // OTP submit
-    // Route::post('/verify-code', VerifyEmailController::class)
-    //     ->name('verify.code.submit');
-
-    // // Resend OTP
-    // Route::get('/resend-otp', [VerifyEmailController::class, 'resend'])
-    //     ->name('resend.otp');
-});
+/*
+|--------------------------------------------------------------------------
+| Payment Success / Cancel
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/payment/success', function () {
     return view('payment.success');
@@ -414,20 +515,26 @@ Route::get('/payment/cancel', function () {
     return view('payment.cancel');
 })->name('stripe.cancel');
 
-// Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle']);
+/*
+|--------------------------------------------------------------------------
+| Trademark Application
+|--------------------------------------------------------------------------
+*/
 
-// Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])
-//     ->name('stripe.webhook')
-//     ->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
+Route::middleware([
+    'auth',
+    'otp.verified',
+])->group(function () {
 
-Route::middleware(['auth', 'otp.verified'])->group(function () {
     Route::get('/trademark/apply', function () {
         return view('trademark.apply');
     })->name('trademark.apply');
 });
 
-// Route::get('/trademark/apply', function () {
-//         return view('trademark.apply');
-//     })->name('trademark.apply');
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+*/
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

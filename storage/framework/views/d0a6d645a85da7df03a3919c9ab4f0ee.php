@@ -1,13 +1,13 @@
-@extends('layouts.dashboard')
 
-@section('title', 'User Profile')
 
-@section('content')
+<?php $__env->startSection('title', 'User Profile'); ?>
 
-<!--{{-- TOP ALERTS --}}-->
-<!--@if(session('success'))-->
+<?php $__env->startSection('content'); ?>
+
+<!---->
+<!--<?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(session('success')): ?>-->
 <!--<div id="success-alert" class="alert alert-success mb-3">-->
-<!--    {{ session('success') }}-->
+<!--    <?php echo e(session('success')); ?>-->
 <!--</div>-->
 <!--<script>-->
 <!--    setTimeout(() => {-->
@@ -15,11 +15,11 @@
 <!--        if (alert) alert.style.display = 'none';-->
 <!--    }, 5000);-->
 <!--</script>-->
-<!--@endif-->
+<!--<?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>-->
 
-<!--@if(session('error'))-->
+<!--<?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(session('error')): ?>-->
 <!--<div id="error-alert" class="alert alert-danger mb-3">-->
-<!--    {{ session('error') }}-->
+<!--    <?php echo e(session('error')); ?>-->
 <!--</div>-->
 <!--<script>-->
 <!--    setTimeout(() => {-->
@@ -27,22 +27,24 @@
 <!--        if (alert) alert.style.display = 'none';-->
 <!--    }, 5000);-->
 <!--</script>-->
-<!--@endif-->
+<!--<?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>-->
 
-{{-- TOP ALERTS --}}
-@if(session('success'))
+
+<?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(session('success')): ?>
 <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
-    {{ session('success') }}
-    <button type="button" class="btn-close m-0" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-@endif
+    <?php echo e(session('success')); ?>
 
-@if(session('error'))
-<div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
-    {{ session('error') }}
     <button type="button" class="btn-close m-0" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
-@endif
+<?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+
+<?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(session('error')): ?>
+<div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+    <?php echo e(session('error')); ?>
+
+    <button type="button" class="btn-close m-0" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
 
 <script>
@@ -63,9 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
-<form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data" autocomplete="on">
-    @csrf
-    @method('PATCH')
+<form method="POST" action="<?php echo e(route('profile.update')); ?>" enctype="multipart/form-data" autocomplete="on">
+    <?php echo csrf_field(); ?>
+    <?php echo method_field('PATCH'); ?>
 
     <div class="page-header">
         <div class="page-title">
@@ -82,21 +84,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="profile-top">
                     <div class="profile-content">
 
-                        {{-- AVATAR --}}
+                        
                         <div class="profile-contentimg">
-                            <img src="{{ $user->avatar_url }}" alt="User Avatar" id="blah">
+                            <img src="<?php echo e($user->avatar_url); ?>" alt="User Avatar" id="blah">
                             <div class="profileupload">
                                 <label for="imgInp" class="sr-only">Upload Avatar</label>
                                 <input type="file" name="avatar" id="imgInp" accept="image/*">
                                 <a href="javascript:void(0);">
-                                    <img src="{{ asset('assets/img/icons/edit-set.svg') }}" alt="Edit Avatar">
+                                    <img src="<?php echo e(asset('assets/img/icons/edit-set.svg')); ?>" alt="Edit Avatar">
                                 </a>
                             </div>
                         </div>
 
-                        {{-- USERNAME DISPLAY --}}
+                        
                         <div class="profile-contentname">
-                            <h2>{{ $user->name }}</h2>
+                            <h2><?php echo e($user->name); ?></h2>
                             <h4>Update your photo and personal details</h4>
                         </div>
 
@@ -105,65 +107,65 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="ms-auto d-flex">
                         <!--<button type="submit" class="btn btn-submit me-2 m-0">Submit</button>-->
                         <button type="submit" class="main-nav-button me-2 m-0">Save</button>
-                        <a href="{{ route('dashboard') }}" class="second-nav-button">Cancel</a>
-                        <!--<a href="{{ route('dashboard') }}" class="btn btn-cancel">Cancel</a>-->
+                        <a href="<?php echo e(route('dashboard')); ?>" class="second-nav-button">Cancel</a>
+                        <!--<a href="<?php echo e(route('dashboard')); ?>" class="btn btn-cancel">Cancel</a>-->
                     </div>
                 </div>
             </div>
 
             <div class="row">
 
-                {{-- FIRST NAME --}}
+                
                 <div class="col-lg-6 col-sm-12">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
                         <input type="text" id="first_name" name="first_name" class="form-control"
-                            value="{{ old('first_name', $user->first_name) }}" autocomplete="given-name">
+                            value="<?php echo e(old('first_name', $user->first_name)); ?>" autocomplete="given-name">
                     </div>
                 </div>
 
-                {{-- LAST NAME --}}
+                
                 <div class="col-lg-6 col-sm-12">
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
                         <input type="text" id="last_name" name="last_name" class="form-control"
-                            value="{{ old('last_name', $user->last_name) }}" autocomplete="family-name">
+                            value="<?php echo e(old('last_name', $user->last_name)); ?>" autocomplete="family-name">
                     </div>
                 </div>
 
-                {{-- EMAIL --}}
+                
                 <div class="col-lg-6 col-sm-12">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" class="form-control"
-                            value="{{ $user->email }}" autocomplete="email" readonly>
+                            value="<?php echo e($user->email); ?>" autocomplete="email" readonly>
                     </div>
                 </div>
 
-                {{-- USERNAME (READ ONLY) --}}
+                
                 <div class="col-lg-6 col-sm-12">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" id="username" class="form-control" value="{{ $user->name }}" readonly>
+                        <input type="text" id="username" class="form-control" value="<?php echo e($user->name); ?>" readonly>
                     </div>
                 </div>
                 
-                {{-- Phone --}}
+                
                 <div class="col-lg-6 col-sm-12">
                     <div class="form-group">
                         <label for="phone">Phone</label>
                         <input type="text" id="phone" name="phone" class="form-control"
-                            value="{{ $user->phone }}" autocomplete="phone" readonly>
+                            value="<?php echo e($user->phone); ?>" autocomplete="phone" readonly>
                     </div>
                 </div>
 
-                {{-- DOB (READ ONLY) --}}
+                
                 <div class="col-lg-6 col-sm-12">
                     <div class="form-group">
                         <label for="dob">DOB</label>
-                        <input type="text" id="dob" class="form-control" value="{{ $user->dob ? $user->dob->format('d-m-Y') . ' (' . $user->dob->age . ' years)' : 'Not provided' }}" readonly>
+                        <input type="text" id="dob" class="form-control" value="<?php echo e($user->dob ? $user->dob->format('d-m-Y') . ' (' . $user->dob->age . ' years)' : 'Not provided'); ?>" readonly>
                         <!--<input type="text" id="dob" class="form-control" -->
-                        <!--   value="{{ \Carbon\Carbon::parse($user->dob)->format('d-m-Y') }}" -->
+                        <!--   value="<?php echo e(\Carbon\Carbon::parse($user->dob)->format('d-m-Y')); ?>" -->
                         <!--   readonly>-->
                     </div>
                 </div>
@@ -184,8 +186,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-12 d-flex">
                     <!--<button type="submit" class="btn btn-submit me-2 m-0">Submit</button>-->
                     <button type="submit" class="main-nav-button me-2 m-0">Submit</button>
-                    <a href="{{ route('dashboard') }}" class="second-nav-button">Cancel</a>
-                    <!--<a href="{{ route('dashboard') }}" class="btn btn-cancel">Cancel</a>-->
+                    <a href="<?php echo e(route('dashboard')); ?>" class="second-nav-button">Cancel</a>
+                    <!--<a href="<?php echo e(route('dashboard')); ?>" class="btn btn-cancel">Cancel</a>-->
                 </div>
 
             </div>
@@ -194,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </form>
 
-{{-- AVATAR LIVE PREVIEW --}}
+
 <script>
     document.getElementById('imgInp').addEventListener('change', function(e) {
         const [file] = e.target.files;
@@ -243,4 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
     confirmPassword.addEventListener('keyup', validatePasswords);
 </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.dashboard', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/user/profile.blade.php ENDPATH**/ ?>

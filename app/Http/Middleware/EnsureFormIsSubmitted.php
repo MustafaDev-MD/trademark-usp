@@ -5,27 +5,70 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class EnsureFormIsSubmitted
 {
     /**
      * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = auth()->user();
+        $user = Auth::user();
 
+        // Guest users
         if (! $user) {
             return $next($request);
         }
 
+        // Admin users
         if ($user->role === 'admin') {
             return $next($request);
         }
 
-        if (! $user->is_applied && ! $request->routeIs('trademark.apply')) {
+        /*
+        |--------------------------------------------------------------------------
+        | Routes that must always be accessible
+        |--------------------------------------------------------------------------
+        |
+        | These routes should NOT require is_applied = true.
+        |
+        */
+
+        if (
+            $request->routeIs([
+                'profile.edit',
+                'profile.update',
+                'profile.destroy',
+
+                'verification.notice',
+                'verification.verify',
+                'verification.send',
+
+                'verify.code',
+                'verify.code.submit',
+                'resend.otp',
+
+                'logout',
+                'password.confirm',
+                'password.update',
+                'password.request',
+                'password.email',
+                'password.reset',
+
+                'trademark.apply',
+            ])
+        ) {
+            return $next($request);
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Require application submission
+        |--------------------------------------------------------------------------
+        */
+
+        if (! $user->is_applied) {
             return redirect()->route('trademark.apply');
         }
 

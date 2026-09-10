@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\TrademarkApplication;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,10 +18,6 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        // return view('user.profile', [
-        //     'user' => $request->user(),
-        // ]);
-
         $user = $request->user();
 
         if ($user->role === 'admin') {
@@ -34,87 +30,108 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    // public function update(ProfileUpdateRequest $request): RedirectResponse
-    // {
-    //     $request->user()->fill($request->validated());
-
-    //     if ($request->user()->isDirty('email')) {
-    //         $request->user()->email_verified_at = null;
-    //     }
-
-    //     $request->user()->save();
-
-    //     return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    // }
-
-    // public function update(ProfileUpdateRequest $request)
-    // {
-    //     $user = $request->user();
-
-    //     // First / Last Name
-    //     $user->first_name = $request->first_name;
-    //     $user->last_name  = $request->last_name;
-
-    //     // Avatar Upload
-    //     if ($request->hasFile('avatar')) {
-    //         // Delete old avatar if exists
-    //         if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
-    //             Storage::disk('public')->delete($user->avatar);
-    //         }
-
-    //         $user->avatar = $request->file('avatar')->store('avatars', 'public');
-    //     }
-
-    //     // Password update
-    //     if ($request->filled('password')) {
-    //         $user->password = Hash::make($request->password);
-    //     }
-
-    //     $user->save();
-
-    //     // Sync first_name & last_name to all user's trademark applications
-    //     \App\Models\TrademarkApplication::where('user_id', $user->id)
-    //         ->update([
-    //             'first_name' => $user->first_name,
-    //             'last_name'  => $user->last_name,
-    //         ]);
-
-    //     return redirect()->route('profile.edit')->with('success', 'Profile updated successfully');
-    // }
-
-    public function update(ProfileUpdateRequest $request)
+    public function update(Request $request): RedirectResponse
     {
         $user = $request->user();
 
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
+        $validated = $request->validate([
+            'name' => ['nullable', 'string', 'max:255'],
+            'first_name' => ['nullable', 'string', 'max:255'],
+            'last_name' => ['nullable', 'string', 'max:255'],
+            'email' => ['nullable', 'string', 'email', 'max:255'],
+            'avatar' => ['nullable', 'image', 'max:5120'],
+            'password' => ['nullable', 'confirmed', 'min:8'],
+        ]);
 
-        // Avatar
+        /*
+        |--------------------------------------------------------------------------
+        | Name
+        |--------------------------------------------------------------------------
+        */
+
+        if ($request->filled('name')) {
+            $user->name = $request->name;
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | First / Last Name
+        |--------------------------------------------------------------------------
+        */
+
+        if ($request->has('first_name')) {
+            $user->first_name = $request->first_name;
+        }
+
+        if ($request->has('last_name')) {
+            $user->last_name = $request->last_name;
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Email
+        |--------------------------------------------------------------------------
+        */
+
+        if (
+            $request->filled('email') &&
+            $request->email !== $user->email
+        ) {
+            $user->email = $request->email;
+            $user->email_verified_at = null;
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Avatar
+        |--------------------------------------------------------------------------
+        */
+
         if ($request->hasFile('avatar')) {
-            if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+            if (
+                $user->avatar &&
+                Storage::disk('public')->exists($user->avatar)
+            ) {
                 Storage::disk('public')->delete($user->avatar);
             }
 
-            $user->avatar = $request->file('avatar')->store('avatars', 'public');
+            $user->avatar = $request
+                ->file('avatar')
+                ->store('avatars', 'public');
         }
 
-        // Password
+        /*
+        |--------------------------------------------------------------------------
+        | Password
+        |--------------------------------------------------------------------------
+        */
+
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);
         }
 
         $user->save();
 
-        // Only for NORMAL USERS
+        /*
+        |--------------------------------------------------------------------------
+        | Sync normal user's name data with applications
+        |--------------------------------------------------------------------------
+        */
+
         if ($user->role !== 'admin') {
-            \App\Models\TrademarkApplication::where('user_id', $user->id)
+            TrademarkApplication::where('user_id', $user->id)
                 ->update([
                     'first_name' => $user->first_name,
                     'last_name' => $user->last_name,
                 ]);
         }
 
-        // 🔁 Redirect based on role
+        /*
+        |--------------------------------------------------------------------------
+        | Redirect based on role
+        |--------------------------------------------------------------------------
+        */
+
         if ($user->role === 'admin') {
             return redirect()
                 ->route('admin.profile.edit')

@@ -242,7 +242,7 @@
                         <span>Popup Form</span>
                     </a>
                 </li>
-                <li class="<?php echo e(request()->routeIs('admin.client.applications.index') ? 'active' : ''); ?>">
+                <li class="<?php echo e(request()->routeIs('admin.client.applications.index', 'admin.client.applications.show') ? 'active' : ''); ?>">
                     <a href="<?php echo e(route('admin.client.applications.index')); ?>">
                     <!--<img src="<?php echo e(asset('assets/img/icons/settings.svg')); ?>" alt="img">-->
                     <i data-feather="file-text"></i>
