@@ -146,7 +146,7 @@
                 <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-content" id="content-2" hidden="">
-                <p>Your first day at Trademark Engine will include an introduction to the company, our policies, and our culture. Over the next few weeks, you’ll have the chance to meet with your coworkers, attend training sessions and meetings for your position, and receive tons of support from the Trademark Engine team.</p>
+                <p>Your first day at Trademark USP will include an introduction to the company, our policies, and our culture. Over the next few weeks, you’ll have the chance to meet with your coworkers, attend training sessions and meetings for your position, and receive tons of support from the Trademark USP team.</p>
             </div>
         </div>
 
@@ -156,7 +156,7 @@
                 <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-content" id="content-3" hidden="">
-                <p>Many roles at Trademark Engine allow for remote or hybrid flexibility. Some positions may require new employees to attend in-office training.</p>
+                <p>Many roles at Trademark USP allow for remote or hybrid flexibility. Some positions may require new employees to attend in-office training.</p>
             </div>
         </div>
         

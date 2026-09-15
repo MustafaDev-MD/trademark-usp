@@ -195,7 +195,7 @@
                 <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-content" id="content-41" hidden>
-                <p>In addition to Trademark Engine’s service fee, the USPTO charges $100 per class, which is the USPTO filing fee.</p>
+                <p>In addition to Trademark USP’s service fee, the USPTO charges $100 per class, which is the USPTO filing fee.</p>
             </div>
         </div>
 
@@ -271,7 +271,7 @@
             <div class="accordion-content" id="content-44" hidden>
                 <p>Applicants who are not using the mark in commerce within six months after receiving the Notice of Allowance from their Intent to Use application may need to file an extension request and the required fee(s) to avoid abandonment.</p>
 
-                <p>The USPTO generally allows applicants to file up to five six-month extensions. <a href="#">Click here</a> to read more about Trademark Engine’s extension services.</p>
+                <p>The USPTO generally allows applicants to file up to five six-month extensions. <a href="{{ route('privacy-policy') }}">Click here</a> to read more about Trademark USP’s extension services.</p>
             </div>
         </div>
 
@@ -281,7 +281,7 @@
                 <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-content" id="content-45" hidden>
-                <p>In addition to Trademark Engine’s service fee, the USPTO charges $150 per class, which is the USPTO filing fee for filing an extension.</p>
+                <p>In addition to Trademark USP’s service fee, the USPTO charges $150 per class, which is the USPTO filing fee for filing an extension.</p>
             </div>
         </div>
 
@@ -293,7 +293,7 @@
             <div class="accordion-content" id="content-46" hidden>
                 <p>Under such circumstances, an applicant can do what is referred to as “dividing an application.”</p>
 
-                <p>There are additional UPSTO fees to do this because it creates what the USPTO calls a “child” and “parent” application. There is also a slightly increased Trademark Engine service fee because of the extra processing.</p>
+                <p>There are additional UPSTO fees to do this because it creates what the USPTO calls a “child” and “parent” application. There is also a slightly increased Trademark USP service fee because of the extra processing.</p>
 
                 <p>But, dividing an application is an option that some companies choose in order to register a mark as one class of goods while preserving rights on another. This can allow extension of the six-month deadline for the class of goods not yet in use, but register for the class of goods or service that are already in use.</p>
             </div>
@@ -337,7 +337,7 @@
         <h2 class="cta-headline">File your Statement of Use today.</h2>
 
         <p class="cta-subtext">
-            Thousands have relied on Trademark Engine to handle trademark filings needs.
+            Thousands have relied on Trademark USP to handle trademark filings needs.
         </p>
 
         <a href="javascript:void(0)" class="cta-button-primary fcmp-trigger-button">Start My Statement of Use</a>

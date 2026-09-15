@@ -9,9 +9,9 @@
     <div class="blog-hero-wrapper">
 
         <nav class="blog-hero-breadcrumbs">
-            <a href="/" class="blog-hero-breadcrumb-link">Home</a>
+            <a href="{{ route('home') }}" class="blog-hero-breadcrumb-link">Home</a>
             <span class="blog-hero-separator">/</span>
-            <a href="/blog" class="blog-hero-breadcrumb-link">Blog</a>
+            <a href="{{ route('blog') }}" class="blog-hero-breadcrumb-link">Blog</a>
             <span class="blog-hero-separator">/</span>
             <span class="blog-hero-current">Can I Trademark the Logo I Made with AI?</span>
         </nav>
@@ -60,7 +60,7 @@
 
                 <p class="blog-content-updated-date">Updated November 06, 2025</p>
 
-                <a href="#" class="blog-content-share-guide">Share this guide</a>
+                <a href="javascript:void(0)" class="blog-content-share-guide">Share this guide</a>
             </div>
         </aside>
 

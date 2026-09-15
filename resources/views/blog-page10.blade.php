@@ -76,7 +76,7 @@
 
                 <p class="blog-content-updated-date">Updated October 30, 2025</p>
 
-                <a href="#" class="blog-content-share-guide">Share this guide</a>
+                <a href="javascript:void(0)" class="blog-content-share-guide">Share this guide</a>
             </div>
         </aside>
 
@@ -143,12 +143,12 @@
                 tools to own and defend their identity.”
             </blockquote>
 
-            <p class="press-release-body-text">
+            <!-- <p class="press-release-body-text">
                 The Trademark USP Headless API is now available to all strategic partners, and publicly available
                 documentation can be found at <a href="#"
                     target="_blank">https://www.trademarkusp.com/api-docs/</a>. Businesses that want to include
                 trademark services can apply through Trademark USP’s partner program.
-            </p>
+            </p> -->
 
             <hr>
 
@@ -159,11 +159,10 @@
                 thousands of clients protect their brands by offering accessible, affordable, and easy-to-use
                 trademark filing, copyrights, and monitoring services. From trademark searches and application
                 filings to ongoing brand protection, Trademark USP combines technology with attorney support to make
-                intellectual property protection more approachable and efficient. Learn more at <a href=""
-                    target="_blank">www.trademarkusp.com</a>.
+                intellectual property protection more approachable and efficient. Learn more at <a href="{{ route('home') }}">www.trademarkusp.com</a>.
             </p>
 
-            <h2 class="press-release-about-section-heading">About 360 Legal:</h2>
+            <!-- <h2 class="press-release-about-section-heading">About 360 Legal:</h2>
             <p class="press-release-body-text">
                 360 Legal is a leading provider of online legal and business solutions, offering a suite of
                 innovative, easy-to-use platforms designed to empower individuals, entrepreneurs, nonprofits, and
@@ -172,7 +171,7 @@
                 trademark registration to estate planning, legal documents, virtual address and mail management, and
                 nonprofit compliance. 360 Legal’s portfolio includes Swyft Filings, Trademark USP, Snap Mailbox, 360
                 Legal Forms, and Complete Wills. Learn more at <a href="" target="_blank">https://360legal.com/</a>.
-            </p>
+            </p> -->
 
         </main>
     </div>

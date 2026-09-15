@@ -75,7 +75,7 @@
 
                 <p class="blog-content-updated-date">Updated October 30, 2025</p>
 
-                <a href="#" class="blog-content-share-guide">Share this guide</a>
+                <a href="javascript:void(0)" class="blog-content-share-guide">Share this guide</a>
             </div>
         </aside>
 

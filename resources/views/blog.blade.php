@@ -9,10 +9,10 @@
     <div class="blog-hero-wrapper">
         
         <nav class="blog-hero-breadcrumbs">
-            <a href="/" class="blog-hero-breadcrumb-link">Home</a>
+            <a href="{{ route('home') }}" class="blog-hero-breadcrumb-link">Home</a>
             <span class="blog-hero-separator">/</span>
-            <a href="/blog" class="blog-hero-breadcrumb-link">Blog</a>
-            <span class="blog-hero-separator">/</span>
+            <!-- <a href="{{ route('blog') }}" class="blog-hero-breadcrumb-link">Blog</a>
+            <span class="blog-hero-separator">/</span> -->
             <!-- <span class="blog-hero-current">Can I Trademark the Logo I Made with AI?</span> -->
         </nav>
 
@@ -118,7 +118,7 @@
                         <p class="blog-card-summary">
                            Trademark USP, a leader in trademark registration, trademark searches, and trademark monitoring technology, today announced the launch of its Headless API Platform, a breakthrough solution that allows partners to embed Trademark USP’s full range of trademark tools directly within their own products and digital ecosystems.
                         </p>
-                        <a href="{{ route('blog-page10') }}" class="blog-card-read-more">Read More →</a>
+                        <a href="{{ route('blog-page7') }}" class="blog-card-read-more">Read More →</a>
                     </div>
                 </div>
 

@@ -107,7 +107,7 @@
                 <p class="report-description">
                     Search for your name, slogan or logo with the USPTO and all 50 States and receive a full detailed report based on similar trademarks across multiple classes and subclasses.
                 </p>
-                <a href="#" class="learn-more-link">Learn more <span class="arrow-right">›</span></a>
+                <a href="javascript:void(0)" class="learn-more-link fcmp-trigger-button">Contact Now <span class="arrow-right">›</span></a>
             </div>
 
             <div class="report-card">
@@ -119,7 +119,7 @@
                 <p class="report-description">
                     You need to know if someone is already using your mark even if they have not registered. Our Federal, State & Common Law search scours numerous sources to help you find it.
                 </p>
-                <a href="#" class="learn-more-link">Learn more <span class="arrow-right">›</span></a>
+                <a href="javascript:void(0)" class="learn-more-link fcmp-trigger-button">Contact Now  <span class="arrow-right">›</span></a>
             </div>
 
             <div class="report-card">
@@ -131,7 +131,7 @@
                 <p class="report-description">
                     Includes everything from the Federal, State and Common Law Search, but also searches international databases including Canada, the U.K., the E.U. and WIPO.
                 </p>
-                <a href="#" class="learn-more-link">Learn more <span class="arrow-right">›</span></a>
+                <a href="javascript:void(0)" class="learn-more-link fcmp-trigger-button">Contact Now  <span class="arrow-right">›</span></a>
             </div>
         </div>
     </div>

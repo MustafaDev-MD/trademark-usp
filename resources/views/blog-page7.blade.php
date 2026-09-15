@@ -52,7 +52,7 @@
         <aside class="blog-content-sidebar">
             <div class="blog-content-author-fixed">
 
-                <!-- <div class="blog-content-author-info">
+                <div class="blog-content-author-info">
                 <div class="blog-content-avatar-placeholder"></div>
                 <p class="blog-content-written-by">
                     <span class="label">Written by</span>
@@ -65,11 +65,11 @@
                     <span class="label">Written by</span>
                     <span class="name">Alexis Konovodoff</span>
                 </p>
-            </div> -->
+            </div>
 
                 <p class="blog-content-updated-date">Updated November 11, 2025</p>
 
-                <a href="#" class="blog-content-share-guide">Share this guide</a>
+                <a href="javascript:void(0)" class="blog-content-share-guide">Share this guide</a>
             </div>
         </aside>
 

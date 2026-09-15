@@ -145,8 +145,8 @@
                         <span class="price-value">$149</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="javascript:void(0) fcmp-trigger-button">
-                        <button class="cta-button basic-btn">Get Started</button>
+                    <a href="javascript:void(0)">
+                        <button class="cta-button basic-btn fcmp-trigger-button">Get Started</button>
                     </a>
                 </div>
 
@@ -185,8 +185,8 @@
                         <span class="price-value">$299</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="javascript:void(0) fcmp-trigger-button">
-                        <button class="cta-button standard-btn">Get Started</button>
+                    <a href="javascript:void(0)">
+                        <button class="cta-button standard-btn fcmp-trigger-button">Get Started</button>
                     </a>
                 </div>
                 <p>Includes the information from the Federal and State Search, and also includes:</p>
@@ -237,8 +237,8 @@
                         <span class="price-value">$499</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="javascript:void(0) fcmp-trigger-button">
-                        <button class="cta-button premium-btn">Get Started</button>
+                    <a href="javascript:void(0)">
+                        <button class="cta-button premium-btn fcmp-trigger-button">Get Started</button>
                     </a>
                 </div>
                 <p>Includes the information from the Federal, State and Common Law Search, and also includes:</p>
@@ -370,7 +370,7 @@
                     <li>the mark is simply functional as opposed to identifying the source of the goods or services.</li>
                 </ul>
 
-                <p>Please also read <a href="#">WHAT YOU MUST KNOW BEFORE USING THIS WEBSITE.</a></p>
+                <p>Please also read WHAT YOU MUST KNOW BEFORE USING THIS WEBSITE.</p>
             </div>
         </div>
 

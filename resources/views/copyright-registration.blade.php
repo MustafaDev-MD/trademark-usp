@@ -97,7 +97,7 @@
                 <h3 class="copy-package-name">Basic Package</h3>
                 <div class="copy-package-price">$99</div>
                 <p class="copy-package-fees">+ federal filing fees</p>
-                <a href="#" class="copy-package-details-link">View more details ></a>
+                <!-- <a href="#" class="copy-package-details-link">View more details ></a> -->
 
                 <a href="javascript:void(0)" class="copy-package-button copy-package-button-dark fcmp-trigger-button">Get Started</a>
 
@@ -123,7 +123,7 @@
                 <h3 class="copy-package-name">Deluxe Package</h3>
                 <div class="copy-package-price copy-package-price-deluxe">$199</div>
                 <p class="copy-package-fees">+ federal filing fees</p>
-                <a href="#" class="copy-package-details-link">View more details ></a>
+                <!-- <a href="#" class="copy-package-details-link">View more details ></a> -->
 
                 <a href="javascript:void(0)" class="copy-package-button copy-package-button-dark fcmp-trigger-button">Get Started</a>
 
@@ -259,7 +259,14 @@
                     <li>Determine whether you are selling a good or service.</li>
                     <li>Try to be as accurate as possible because filing in the wrong class can be the basis of a rejection by the USPTO.</li>
                     <li>Pick the most accurate category from the USPTO list. These are all included on the drop-down menu on the Trademark USP website.</li>
-                    <li>Review the published information about categories, you can read here: <a _blank href="https://nclpub.wipo.int/en/nfr/?basic_numbers=show&class_number=1&explanatory_notes=show&gors=&lang=en&menulang=en&mode=flat&notion=&pagination=no&version=20240101">WIPO's Nice Classifications</a></li>
+                    <li>Review the published information about categories, you can read here: 
+                        <a
+                            href="https://nclpub.wipo.int/en/nfr/?basic_numbers=show&class_number=1&explanatory_notes=show&gors=&lang=en&menulang=en&mode=flat&notion=&pagination=no&version=20240101"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            WIPO's Nice Classifications
+                        </a>
+                    </li>
                     <li>Focus on the finished product to the consumer and not on the ingredients that go into the goods or service.</li>
                     <li>Focus on what is actually sold to consumers and not extra things like the fact that employees may have shirts or hats with the company logo.</li>
                     <li>Don’t think about the packaging. A fruit seller probably doesn’t sell paper goods just because its logo appears on the packaging that comes with the fruit.</li>

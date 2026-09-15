@@ -8,10 +8,11 @@
     <div class="blog-hero-wrapper">
         
         <nav class="blog-hero-breadcrumbs">
-            <a href="/" class="blog-hero-breadcrumb-link">Home</a>
+            <a href="{{ route('home') }}" class="blog-hero-breadcrumb-link">Home</a>
             <span class="blog-hero-separator">/</span>
-            <a href="/blog" class="blog-hero-breadcrumb-link">Blog</a>
-            <span class="blog-hero-separator">/</span>
+            <!-- <a href="{{ route('blog') }}" class="blog-hero-breadcrumb-link">Blog</a>
+            <span class="blog-hero-separator">/</span> -->
+            <!-- <span class="blog-hero-current">Can I Trademark the Logo I Made with AI?</span> -->
             <!-- <span class="blog-hero-current">Can I Trademark the Logo I Made with AI?</span> -->
         </nav>
 

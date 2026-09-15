@@ -181,7 +181,7 @@
                 <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-content" id="content-3" hidden>
-                <p>In addition to Trademark Engine’s service fee, the USPTO charges $150 per class, which is the USPTO filing fee.</p>
+                <p>In addition to Trademark USP’s service fee, the USPTO charges $150 per class, which is the USPTO filing fee.</p>
             </div>
         </div>
 
@@ -191,7 +191,7 @@
                 <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-content" id="content-4" hidden>
-                <p>Under such circumstances, an applicant can do what is referred to as “dividing an application.” There are additional UPSTO fees to do this because it creates what the USPTO calls a “child” and “parent” application. There is also a slightly increased Trademark Engine service fee because of the extra processing. But, dividing an application is an option that some companies choose in order to register a mark as one class of goods while preserving rights on another. This can allow extension of the six-month deadline for the class of goods not yet in use, but register for the class of goods or service that are already in use.</p>
+                <p>Under such circumstances, an applicant can do what is referred to as “dividing an application.” There are additional UPSTO fees to do this because it creates what the USPTO calls a “child” and “parent” application. There is also a slightly increased Trademark USP service fee because of the extra processing. But, dividing an application is an option that some companies choose in order to register a mark as one class of goods while preserving rights on another. This can allow extension of the six-month deadline for the class of goods not yet in use, but register for the class of goods or service that are already in use.</p>
             </div>
         </div>
         <div class="accordion-item">
@@ -200,7 +200,7 @@
                 <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-content" id="content-4" hidden>
-                <p>Under such circumstances, an applicant can do what is referred to as “dividing an application.” There are additional UPSTO fees to do this because it creates what the USPTO calls a “child” and “parent” application. There is also a slightly increased Trademark Engine service fee because of the extra processing. But, dividing an application is an option that some companies choose in order to register a mark as one class of goods while preserving rights on another. This can allow extension of the six-month deadline for the class of goods not yet in use, but register for the class of goods or service that are already in use.</p>
+                <p>Under such circumstances, an applicant can do what is referred to as “dividing an application.” There are additional UPSTO fees to do this because it creates what the USPTO calls a “child” and “parent” application. There is also a slightly increased Trademark USP service fee because of the extra processing. But, dividing an application is an option that some companies choose in order to register a mark as one class of goods while preserving rights on another. This can allow extension of the six-month deadline for the class of goods not yet in use, but register for the class of goods or service that are already in use.</p>
             </div>
         </div>
         <div class="accordion-item">
@@ -327,7 +327,7 @@
         <h2 class="cta-headline">File your Extension today..</h2>
 
         <p class="cta-subtext">
-            Thousands have relied on Trademark Engine to handle trademark filings needs.Thousands have relied on Trademark Engine to handle trademark filings needs.
+            Thousands have relied on Trademark USP to handle trademark filings needs.Thousands have relied on Trademark USP to handle trademark filings needs.
         </p>
 
         <a href="javascript:void(0)" class="cta-button-primary fcmp-trigger-button">Start My Statement of Use Extension</a>
