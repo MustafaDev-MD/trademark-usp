@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,24 +25,24 @@
 
 <body>
 
-<!--<div id="global-loader">-->
-<!--    <div class="whirly-loader">-->
-<!--        <img src="<?php echo e(asset('imagees/logo-new-BIG.png')); ?>" alt="Trademark USP Logo" class="main-nav-logo-image loader-logo">-->
-<!--    </div>-->
-<!--</div>-->
-<div id="global-loader">
-    <!-- Spinner ring -->
-    <div class="whirly-loader"></div>
+    <!--<div id="global-loader">-->
+    <!--    <div class="whirly-loader">-->
+    <!--        <img src="<?php echo e(asset('imagees/logo-new-BIG.png')); ?>" alt="Trademark USP Logo" class="main-nav-logo-image loader-logo">-->
+    <!--    </div>-->
+    <!--</div>-->
+    <div id="global-loader">
+        <!-- Spinner ring -->
+        <div class="whirly-loader"></div>
 
-    <!-- Center image (static) -->
-    <img src="<?php echo e(asset('imagees/Icon-new-BIG.webp')); ?>" alt="Trademark USP Logo" class="loader-logo">
-</div>
+        <!-- Center image (static) -->
+        <img src="<?php echo e(asset('imagees/Icon-new-BIG.webp')); ?>" alt="Trademark USP Logo" class="loader-logo">
+    </div>
 
 
-<div class="main-wrapper">
+    <div class="main-wrapper">
 
-    
-    <?php if (isset($component)) { $__componentOriginald3b387f4f5efe74d7afe13be62871c47 = $component; } ?>
+        
+        <?php if (isset($component)) { $__componentOriginald3b387f4f5efe74d7afe13be62871c47 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald3b387f4f5efe74d7afe13be62871c47 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.dashboard.header','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('dashboard.header'); ?>
@@ -64,8 +65,8 @@
 <?php unset($__componentOriginald3b387f4f5efe74d7afe13be62871c47); ?>
 <?php endif; ?>
 
-    
-    <?php if (isset($component)) { $__componentOriginal060abe2a9b4511e378911474e77b046d = $component; } ?>
+        
+        <?php if (isset($component)) { $__componentOriginal060abe2a9b4511e378911474e77b046d = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal060abe2a9b4511e378911474e77b046d = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.dashboard.sidebar','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('dashboard.sidebar'); ?>
@@ -88,26 +89,30 @@
 <?php unset($__componentOriginal060abe2a9b4511e378911474e77b046d); ?>
 <?php endif; ?>
 
-    
-    <div class="page-wrapper">
-        <div class="content">
-            <?php echo $__env->yieldContent('content'); ?>
+        
+        <div class="page-wrapper">
+            <div class="content">
+                <?php echo $__env->yieldContent('content'); ?>
+            </div>
         </div>
+
     </div>
 
-</div>
-
-<!--  -->
-<script>
+    
+    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(auth()->check() && auth()->user()->role === 'user'): ?>
+    <script>
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
+
         (function() {
             var s1 = document.createElement("script"),
                 s0 = document.getElementsByTagName("script")[0];
+
             s1.async = true;
             s1.src = 'https://embed.tawk.to/65380268f2439e1631e7f736/1hdhciqtf';
             s1.charset = 'UTF-8';
             s1.setAttribute('crossorigin', '*');
+
             s0.parentNode.insertBefore(s1, s0);
         })();
 
@@ -117,31 +122,32 @@
             }
         }
     </script>
+    <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+
+    
+    <script src="<?php echo e(asset('assets/js/jquery-3.6.0.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/feather.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/jquery.slimscroll.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/jquery.dataTables.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/dataTables.bootstrap4.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/bootstrap.bundle.min.js')); ?>"></script>
+
+    <script src="<?php echo e(asset('assets/plugins/apexchart/apexcharts.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/plugins/apexchart/chart-data.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/plugins/select2/js/select2.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/plugins/sweetalert/sweetalert2.all.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/plugins/sweetalert/sweetalerts.min.js')); ?>"></script>
 
 
-<script src="<?php echo e(asset('assets/js/jquery-3.6.0.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/feather.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/jquery.slimscroll.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/jquery.dataTables.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/dataTables.bootstrap4.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/bootstrap.bundle.min.js')); ?>"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
 
-<script src="<?php echo e(asset('assets/plugins/apexchart/apexcharts.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/plugins/apexchart/chart-data.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/plugins/select2/js/select2.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/plugins/sweetalert/sweetalert2.all.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/plugins/sweetalert/sweetalerts.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/moment.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/bootstrap-datetimepicker.min.js')); ?>"></script>
 
-
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
-
-<script src="<?php echo e(asset('assets/js/moment.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/bootstrap-datetimepicker.min.js')); ?>"></script>
-
-<!--<script src="<?php echo e(asset('assets/js/script.js')); ?>"></script>-->
-<script src="<?php echo e(asset('assets/js/script.js')); ?>?v=<?php echo e(time()); ?>"></script>
+    <!--<script src="<?php echo e(asset('assets/js/script.js')); ?>"></script>-->
+    <script src="<?php echo e(asset('assets/js/script.js')); ?>?v=<?php echo e(time()); ?>"></script>
 
 </body>
-</html>
-<?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>
+
+</html><?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>

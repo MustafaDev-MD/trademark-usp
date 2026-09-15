@@ -1,4 +1,6 @@
-<?php $__env->startSection('title', 'User Profile'); ?>
+
+
+<?php $__env->startSection('title', 'Admin Profile'); ?>
 
 <?php $__env->startSection('content'); ?>
 
@@ -29,48 +31,57 @@
 
 
 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(session('success')): ?>
-<div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
+<div id="success-alert" 
+     class="alert alert-success alert-dismissible fade show mb-3 p-3 rounded shadow-sm" 
+     role="alert">
     <?php echo e(session('success')); ?>
 
-    <button type="button" class="btn-close m-0" data-bs-dismiss="alert" aria-label="Close"></button>
+    <!-- Close button -->
+    <button type="button" class="btn-close m-0" aria-label="Close"></button>
 </div>
 <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(session('error')): ?>
-<div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+<div id="error-alert" 
+     class="alert alert-danger alert-dismissible fade show mb-3 p-3 rounded shadow-sm" 
+     role="alert">
     <?php echo e(session('error')); ?>
 
-    <button type="button" class="btn-close m-0" data-bs-dismiss="alert" aria-label="Close"></button>
+    <!-- Close button -->
+    <button type="button" class="btn-close m-0" aria-label="Close"></button>
 </div>
 <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const closeButtons = document.querySelectorAll('.close-alert');
+    // Select all dismissible alerts
+    const alerts = document.querySelectorAll('.alert-dismissible');
 
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const alert = btn.parentElement;
-            if (alert) {
-                alert.style.transition = "opacity 0.5s ease";
-                alert.style.opacity = 0;
-                setTimeout(() => alert.remove(), 500); // smooth fade-out
-            }
+    alerts.forEach(alert => {
+        const closeBtn = alert.querySelector('.btn-close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', () => {
+            // Smooth fade out
+            alert.style.transition = 'opacity 0.5s ease';
+            alert.style.opacity = 0;
+
+            // Remove alert from DOM after fade
+            setTimeout(() => alert.remove(), 500);
         });
     });
 });
 </script>
 
 
-<form method="POST" action="<?php echo e(route('profile.update')); ?>" enctype="multipart/form-data" autocomplete="on">
+<form method="POST" action="<?php echo e(route('admin.profile.update')); ?>" enctype="multipart/form-data" autocomplete="on">
     <?php echo csrf_field(); ?>
     <?php echo method_field('PATCH'); ?>
 
     <div class="page-header">
         <div class="page-title">
             <h4>Profile</h4>
-            <h6>User Profile</h6>
+            <h6>Admin Profile</h6>
         </div>
     </div>
 
@@ -79,12 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <div class="profile-set">
                 <div class="profile-head"></div>
+
                 <div class="profile-top">
                     <div class="profile-content">
 
                         
                         <div class="profile-contentimg">
-                            <img src="<?php echo e($user->avatar_url); ?>" alt="User Avatar" id="blah">
+                            <img src="<?php echo e($user->avatar_url); ?>" alt="Admin Avatar" id="blah">
                             <div class="profileupload">
                                 <label for="imgInp" class="sr-only">Upload Avatar</label>
                                 <input type="file" name="avatar" id="imgInp" accept="image/*">
@@ -103,10 +115,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
 
                     <div class="ms-auto d-flex">
-                        <!--<button type="submit" class="btn btn-submit me-2 m-0">Submit</button>-->
+                        <!--<button type="submit" class="btn btn-submit me-2 m-0">Save</button>-->
                         <button type="submit" class="main-nav-button me-2 m-0">Save</button>
-                        <a href="<?php echo e(route('dashboard')); ?>" class="second-nav-button">Cancel</a>
                         <!--<a href="<?php echo e(route('dashboard')); ?>" class="btn btn-cancel">Cancel</a>-->
+                        <a href="<?php echo e(route('dashboard')); ?>" class="second-nav-button">Cancel</a>
                     </div>
                 </div>
             </div>
@@ -118,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="form-group">
                         <label for="first_name">First Name</label>
                         <input type="text" id="first_name" name="first_name" class="form-control"
-                            value="<?php echo e(old('first_name', $user->first_name)); ?>" autocomplete="given-name">
+                               value="<?php echo e(old('first_name', $user->first_name)); ?>" autocomplete="given-name">
                     </div>
                 </div>
 
@@ -127,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
                         <input type="text" id="last_name" name="last_name" class="form-control"
-                            value="<?php echo e(old('last_name', $user->last_name)); ?>" autocomplete="family-name">
+                               value="<?php echo e(old('last_name', $user->last_name)); ?>" autocomplete="family-name">
                     </div>
                 </div>
 
@@ -136,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" class="form-control"
-                            value="<?php echo e($user->email); ?>" autocomplete="email" readonly>
+                               value="<?php echo e($user->email); ?>" readonly autocomplete="email">
                     </div>
                 </div>
 
@@ -145,26 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" class="form-control" value="<?php echo e($user->name); ?>" readonly>
-                    </div>
-                </div>
-                
-                
-                <div class="col-lg-6 col-sm-12">
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="text" id="phone" name="phone" class="form-control"
-                            value="<?php echo e($user->phone); ?>" autocomplete="phone" readonly>
-                    </div>
-                </div>
-
-                
-                <div class="col-lg-6 col-sm-12">
-                    <div class="form-group">
-                        <label for="dob">DOB</label>
-                        <input type="text" id="dob" class="form-control" value="<?php echo e($user->dob ? $user->dob->format('d-m-Y') . ' (' . $user->dob->age . ' years)' : 'Not provided'); ?>" readonly>
-                        <!--<input type="text" id="dob" class="form-control" -->
-                        <!--   value="<?php echo e(\Carbon\Carbon::parse($user->dob)->format('d-m-Y')); ?>" -->
-                        <!--   readonly>-->
                     </div>
                 </div>
 
@@ -196,53 +188,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <script>
-    document.getElementById('imgInp').addEventListener('change', function(e) {
-        const [file] = e.target.files;
-        if (file) {
-            document.getElementById('blah').src = URL.createObjectURL(file);
-        }
-    });
-
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('password_confirmation');
-    const errorText = document.getElementById('password-error');
-    const submitButtons = document.querySelectorAll('button[type="submit"]');
-
-    function validatePasswords() {
-        if (!password.value && !confirmPassword.value) {
-            errorText.classList.add('d-none');
-            password.classList.remove('is-invalid', 'is-valid');
-            confirmPassword.classList.remove('is-invalid', 'is-valid');
-            submitButtons.forEach(btn => btn.disabled = false);
-            return;
-        }
-        if (password.value !== confirmPassword.value) {
-            errorText.classList.remove('d-none');
-            errorText.innerText = "Passwords do not match";
-            errorText.classList.add('text-danger');
-            errorText.classList.remove('text-success');
-            password.classList.add('is-invalid');
-            confirmPassword.classList.add('is-invalid');
-            password.classList.remove('is-valid');
-            confirmPassword.classList.remove('is-valid');
-            submitButtons.forEach(btn => btn.disabled = true);
-        } else {
-            errorText.classList.remove('d-none');
-            errorText.innerText = "Passwords match";
-            errorText.classList.remove('text-danger');
-            errorText.classList.add('text-success');
-            password.classList.remove('is-invalid');
-            confirmPassword.classList.remove('is-invalid');
-            password.classList.add('is-valid');
-            confirmPassword.classList.add('is-valid');
-            submitButtons.forEach(btn => btn.disabled = false);
-        }
+document.getElementById('imgInp').addEventListener('change', function(e) {
+    const [file] = e.target.files;
+    if (file) {
+        document.getElementById('blah').src = URL.createObjectURL(file);
     }
+});
 
-    password.addEventListener('keyup', validatePasswords);
-    confirmPassword.addEventListener('keyup', validatePasswords);
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('password_confirmation');
+const errorText = document.getElementById('password-error');
+const submitButtons = document.querySelectorAll('button[type="submit"]');
+
+function validatePasswords() {
+    if (!password.value && !confirmPassword.value) {
+        errorText.classList.add('d-none');
+        password.classList.remove('is-invalid', 'is-valid');
+        confirmPassword.classList.remove('is-invalid', 'is-valid');
+        submitButtons.forEach(btn => btn.disabled = false);
+        return;
+    }
+    if (password.value !== confirmPassword.value) {
+        errorText.classList.remove('d-none');
+        errorText.innerText = "Passwords do not match";
+        errorText.classList.add('text-danger');
+        errorText.classList.remove('text-success');
+        password.classList.add('is-invalid');
+        confirmPassword.classList.add('is-invalid');
+        password.classList.remove('is-valid');
+        confirmPassword.classList.remove('is-valid');
+        submitButtons.forEach(btn => btn.disabled = true);
+    } else {
+        errorText.classList.remove('d-none');
+        errorText.innerText = "Passwords match";
+        errorText.classList.remove('text-danger');
+        errorText.classList.add('text-success');
+        password.classList.remove('is-invalid');
+        confirmPassword.classList.remove('is-invalid');
+        password.classList.add('is-valid');
+        confirmPassword.classList.add('is-valid');
+        submitButtons.forEach(btn => btn.disabled = false);
+    }
+}
+
+password.addEventListener('keyup', validatePasswords);
+confirmPassword.addEventListener('keyup', validatePasswords);
 </script>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.dashboard', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/user/profile.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.dashboard', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/admin/profile.blade.php ENDPATH**/ ?>
