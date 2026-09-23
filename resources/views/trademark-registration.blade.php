@@ -87,7 +87,7 @@
                         <span class="price-value">$199</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua"  target="_blank" rel="noopener noreferrer"><button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button></a>
+                    <a href="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua"  target="_blank" rel="noopener noreferrer"><button class="cta-button standard-btn">Choose Standard</button></a>
                     <!-- <button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button> -->
                 </div>
 
@@ -113,7 +113,7 @@
                         <span class="price-value">$349</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy" target="_blank" rel="noopener noreferrer"><button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button></a>
+                    <a href="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy" target="_blank" rel="noopener noreferrer"><button class="cta-button premium-btn">Choose Premium</button></a>
                     <!-- <button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button> -->
                 </div>
 
