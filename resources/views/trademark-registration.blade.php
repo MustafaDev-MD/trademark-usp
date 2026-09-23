@@ -62,9 +62,8 @@
                         <span class="price-value">$49</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="javascript:void(0)">
-                        <button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button>
-                    </a>
+                    <a href="https://collectcheckout.com/r/qrdxw9ibr3rismkx5snxuyuxxlpwt3" target="_blank" rel="noopener noreferrer"><button class="cta-button basic-btn">Choose Basic</button></a>
+                    <!-- <button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button> -->
                 </div>
 
                 <div class="card-body">
@@ -83,14 +82,13 @@
             <div class="pricing-card standard-package two">
                 <div class="card-header">
                     <h3>Standard Package</h3>
-                    <p class="tagline">I want legal care to protect my trademark</p>
+                    <p class="tagline">I want an enhanced and thorough process</p>
                     <div class="price-block">
-                        <span class="price-value">$299</span>
+                        <span class="price-value">$199</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="javascript:void(0)">
-                        <button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button>
-                    </a>
+                    <a href="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua"  target="_blank" rel="noopener noreferrer"><button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button></a>
+                    <!-- <button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button> -->
                 </div>
 
                 <div class="card-body">
@@ -112,12 +110,11 @@
                     <h3>Premium Package</h3>
                     <p class="tagline">I want premium legal support for best success</p>
                     <div class="price-block">
-                        <span class="price-value">$539</span>
+                        <span class="price-value">$349</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="javascript:void(0)">
-                        <button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button>
-                    </a>
+                    <a href="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy" target="_blank" rel="noopener noreferrer"><button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button></a>
+                    <!-- <button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button> -->
                 </div>
 
                 <div class="card-body">
