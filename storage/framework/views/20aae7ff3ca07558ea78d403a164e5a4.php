@@ -25,9 +25,9 @@
             <!-- <a href="#" class="main-nav-button primary-cta fcmp-trigger-button">Register my trademark</a>
             <a href="tel:(650) 384-0370" class="second-nav-button primary-cta">(650) 384-0370</a> -->
             <div class="main-nav-cta-group desktop-only-ctas">
-            <a href="tel:(650) 384-0370" class="second-nav-button primary-cta">(650) 384-0370</a>
-            <a href="javascript:void(0)" class="main-nav-button primary-cta fcmp-trigger-button">Register My Trademark Now</a>
-        </div>
+                <a href="tel:(650) 384-0370" class="second-nav-button primary-cta">(650) 384-0370</a>
+                <a href="javascript:void(0)" class="main-nav-button primary-cta fcmp-trigger-button">Register My Trademark Now</a>
+            </div>
 
             <div class="trust-badges">
                 <!-- <div class="badge forbes-badge">
@@ -133,7 +133,13 @@
                         <span class="price-value">$49</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="https://collectcheckout.com/r/qrdxw9ibr3rismkx5snxuyuxxlpwt3" target="_blank" rel="noopener noreferrer"><button class="cta-button basic-btn">Choose Basic</button></a>
+                    <!-- <a href="javascript:void(0)"><button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button></a> -->
+                    <button
+                        type="button"
+                        class="cta-button basic-btn fcmp-trigger-button"
+                        data-payment-url="https://collectcheckout.com/r/qrdxw9ibr3rismkx5snxuyuxxlpwt3">
+                        Choose Basic
+                    </button>
                     <!-- <button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button> -->
                 </div>
 
@@ -158,7 +164,13 @@
                         <span class="price-value">$199</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua"  target="_blank" rel="noopener noreferrer"><button class="cta-button standard-btn">Choose Standard</button></a>
+                    <!-- <a href="javascript:void(0)"><button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button></a> -->
+                    <button
+                        type="button"
+                        class="cta-button standard-btn fcmp-trigger-button"
+                        data-payment-url="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua">
+                        Choose Standard
+                    </button>
                     <!-- <button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button> -->
                 </div>
 
@@ -184,7 +196,13 @@
                         <span class="price-value">$349</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
-                    <a href="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy" target="_blank" rel="noopener noreferrer"><button class="cta-button premium-btn">Choose Premium</button></a>
+                    <!-- <a href="javascript:void(0)"><button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button></a> -->
+                    <button
+                        type="button"
+                        class="cta-button premium-btn fcmp-trigger-button"
+                        data-payment-url="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy">
+                        Choose Premium
+                    </button>
                     <!-- <button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button> -->
                 </div>
 
@@ -282,10 +300,10 @@
 <!-- testimonials section  -->
 
 <section class="r9k3-section">
-        <h2 class="main-rating-title">Customer Reviews &amp; Testimonials</h2>
-        <p>See why others are choosing Trademark USP!</p>
+    <h2 class="main-rating-title">Customer Reviews &amp; Testimonials</h2>
+    <p>See why others are choosing Trademark USP!</p>
 
-        <?php echo $__env->make('sections.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+    <?php echo $__env->make('sections.testimonials', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 </section>
 

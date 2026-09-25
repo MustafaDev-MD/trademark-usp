@@ -56,7 +56,17 @@
                     </a>
 
                     <div class="fld-btn packageformsubmit mt-5">
-                        <button type="submit" id="modalSubmitBtn" disabled>Get Started Now</button>
+                        <button type="submit" id="modalSubmitBtn" disabled>
+                            Get Started Now
+                        </button>
+
+                        <a href="javascript:void(0);"
+                            id="modalPayNowBtn"
+                            class="modal-pay-now second-nav-button primary-cta"
+                            target="_blank"
+                            style="display: none;">
+                            Pay Now
+                        </a>
                     </div>
                 </form>
             </div>
@@ -70,247 +80,274 @@
 <script src="https://www.google.com/recaptcha/api.js?render=<?php echo e(env('NOCAPTCHA_SITEKEY')); ?>"></script>
 
 <script>
-// document.addEventListener("DOMContentLoaded", function() {
-//     const modal = document.getElementById("fcmp-modal-wrapper");
-//     const closeBtn = document.getElementById("fcmp-close");
-//     const form = document.getElementById("modalForm");
-//     const submitBtn = document.getElementById("modalSubmitBtn");
-//     const inputs = form.querySelectorAll("input[required], textarea[required]");
-//     const touched = new Set();
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     const modal = document.getElementById("fcmp-modal-wrapper");
+    //     const closeBtn = document.getElementById("fcmp-close");
+    //     const form = document.getElementById("modalForm");
+    //     const submitBtn = document.getElementById("modalSubmitBtn");
+    //     const inputs = form.querySelectorAll("input[required], textarea[required]");
+    //     const touched = new Set();
 
-//     if (!form || !submitBtn) return;
+    //     if (!form || !submitBtn) return;
 
-//     // Show modal after 5 seconds
-//     if (!sessionStorage.getItem("fcmpModalShown")) {
-//         setTimeout(() => {
-//             modal.style.display = "flex";
-//             sessionStorage.setItem("fcmpModalShown", "true");
-//         }, 5000);
-//     }
+    //     // Show modal after 5 seconds
+    //     if (!sessionStorage.getItem("fcmpModalShown")) {
+    //         setTimeout(() => {
+    //             modal.style.display = "flex";
+    //             sessionStorage.setItem("fcmpModalShown", "true");
+    //         }, 5000);
+    //     }
 
-//     closeBtn.onclick = () => modal.style.display = "none";
-//     modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+    //     closeBtn.onclick = () => modal.style.display = "none";
+    //     modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
 
-//     // Validation
-//     function validateField(input) {
-//         const value = input.value.trim();
-//         const errorEl = input.nextElementSibling;
-//         let valid = true;
-//         errorEl.textContent = "";
-//         input.classList.remove("input-error");
+    //     // Validation
+    //     function validateField(input) {
+    //         const value = input.value.trim();
+    //         const errorEl = input.nextElementSibling;
+    //         let valid = true;
+    //         errorEl.textContent = "";
+    //         input.classList.remove("input-error");
 
-//         if (!touched.has(input)) return true;
+    //         if (!touched.has(input)) return true;
 
-//         if (!value) {
-//             valid = false;
-//             errorEl.textContent = "This field is required";
-//             input.classList.add("input-error");
-//         } else if (input.type === "email") {
-//             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//             if (!emailPattern.test(value)) {
-//                 valid = false;
-//                 errorEl.textContent = "Enter a valid email address";
-//                 input.classList.add("input-error");
-//             }
-//         } else if (input.name === "customer_phone") {
-//             const phonePattern = /^\+?[0-9\s\-]{10,15}$/;
-//             if (!phonePattern.test(value)) {
-//                 valid = false;
-//                 errorEl.textContent = "Phone must be 10–15 digits and numbers only";
-//                 input.classList.add("input-error");
-//             }
-//         }
+    //         if (!value) {
+    //             valid = false;
+    //             errorEl.textContent = "This field is required";
+    //             input.classList.add("input-error");
+    //         } else if (input.type === "email") {
+    //             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //             if (!emailPattern.test(value)) {
+    //                 valid = false;
+    //                 errorEl.textContent = "Enter a valid email address";
+    //                 input.classList.add("input-error");
+    //             }
+    //         } else if (input.name === "customer_phone") {
+    //             const phonePattern = /^\+?[0-9\s\-]{10,15}$/;
+    //             if (!phonePattern.test(value)) {
+    //                 valid = false;
+    //                 errorEl.textContent = "Phone must be 10–15 digits and numbers only";
+    //                 input.classList.add("input-error");
+    //             }
+    //         }
 
-//         return valid;
-//     }
+    //         return valid;
+    //     }
 
-//     function checkSubmitButton() {
-//         let allValid = true;
-//         inputs.forEach(input => {
-//             if (!input.value.trim() || input.classList.contains("input-error")) allValid = false;
-//         });
-//         submitBtn.disabled = !allValid;
-//     }
+    //     function checkSubmitButton() {
+    //         let allValid = true;
+    //         inputs.forEach(input => {
+    //             if (!input.value.trim() || input.classList.contains("input-error")) allValid = false;
+    //         });
+    //         submitBtn.disabled = !allValid;
+    //     }
 
-//     inputs.forEach(input => {
-//         input.addEventListener("focus", () => touched.add(input));
-//         input.addEventListener("input", () => { validateField(input); checkSubmitButton(); });
-//         input.addEventListener("blur", () => { validateField(input); checkSubmitButton(); });
-//     });
+    //     inputs.forEach(input => {
+    //         input.addEventListener("focus", () => touched.add(input));
+    //         input.addEventListener("input", () => { validateField(input); checkSubmitButton(); });
+    //         input.addEventListener("blur", () => { validateField(input); checkSubmitButton(); });
+    //     });
 
-//     submitBtn.disabled = true;
+    //     submitBtn.disabled = true;
 
-//     // Form submit with reCAPTCHA v3
-//     form.addEventListener("submit", function(e) {
-//         e.preventDefault();
+    //     // Form submit with reCAPTCHA v3
+    //     form.addEventListener("submit", function(e) {
+    //         e.preventDefault();
 
-//         // Validate fields first
-//         let formValid = true;
-//         inputs.forEach(input => { if (!validateField(input)) formValid = false; });
-//         if (!formValid) return;
+    //         // Validate fields first
+    //         let formValid = true;
+    //         inputs.forEach(input => { if (!validateField(input)) formValid = false; });
+    //         if (!formValid) return;
 
-//         // reCAPTCHA v3 token
-//         grecaptcha.ready(function() {
-//             grecaptcha.execute('<?php echo e(env("NOCAPTCHA_SITEKEY")); ?>', {action: 'modal_form'}).then(function(token) {
-//                 document.getElementById('g-recaptcha-response').value = token;
-//                 form.submit();
-//             });
-//         });
-//     });
-// });
+    //         // reCAPTCHA v3 token
+    //         grecaptcha.ready(function() {
+    //             grecaptcha.execute('<?php echo e(env("NOCAPTCHA_SITEKEY")); ?>', {action: 'modal_form'}).then(function(token) {
+    //                 document.getElementById('g-recaptcha-response').value = token;
+    //                 form.submit();
+    //             });
+    //         });
+    //     });
+    // });
 
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
 
-    const loader = document.getElementById("global-loader");
-    const form = document.getElementById("modalForm");
-    const submitBtn = document.getElementById("modalSubmitBtn");
-    const inputs = form.querySelectorAll("input[required], textarea[required]");
-    const touched = new Set();
+        const loader = document.getElementById("global-loader");
+        const form = document.getElementById("modalForm");
+        const submitBtn = document.getElementById("modalSubmitBtn");
+        const inputs = form.querySelectorAll("input[required], textarea[required]");
+        const touched = new Set();
 
-    const phoneInput = document.getElementById("phoneNum2");
+        const phoneInput = document.getElementById("phoneNum2");
 
-    // Remove loader initially
-    if(loader) loader.style.display = "none";
+        const modalPayNowBtn = document.getElementById("modalPayNowBtn");
+        const packageButtons = document.querySelectorAll(".fcmp-trigger-button");
 
-    // ===== Custom Phone Formatting (650 384 0370) =====
-    phoneInput.addEventListener("input", function () {
-        let value = this.value.replace(/\D/g, ""); // remove non-digits
-        if (value.length > 10) value = value.slice(0, 10); // max 10 digits
+        packageButtons.forEach(button => {
+            button.addEventListener("click", function() {
 
-        let formatted = "";
-        if (value.length > 0) formatted += value.slice(0, 3);
-        if (value.length >= 4) formatted += " " + value.slice(3, 6);
-        if (value.length >= 7) formatted += " " + value.slice(6, 10);
+                const paymentUrl = this.dataset.paymentUrl;
 
-        this.value = formatted;
-    });
-
-    // ===== Field Validation =====
-    function validateField(input) {
-        const value = input.value.trim();
-        const errorEl = input.nextElementSibling;
-        let valid = true;
-
-        errorEl.textContent = "";
-        input.classList.remove("input-error");
-
-        if (!touched.has(input)) return true;
-
-        if (!value) {
-            valid = false;
-            errorEl.textContent = "This field is required";
-            input.classList.add("input-error");
-        } else if (input.type === "email") {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(value)) {
-                valid = false;
-                errorEl.textContent = "Enter a valid email address";
-                input.classList.add("input-error");
-            }
-        } else if (input.name === "customer_phone") {
-            const digits = value.replace(/\s/g, ""); // remove spaces
-            if (!/^[0-9]{10}$/.test(digits)) {
-                valid = false;
-                errorEl.textContent = "Phone must be exactly 10 digits";
-                input.classList.add("input-error");
-            }
-        }
-
-        return valid;
-    }
-
-    function checkSubmitButton() {
-        let allValid = true;
-        inputs.forEach(input => {
-            if (!input.value.trim() || input.classList.contains("input-error")) {
-                allValid = false;
-            }
-        });
-        submitBtn.disabled = !allValid;
-    }
-
-    inputs.forEach(input => {
-        input.addEventListener("focus", () => touched.add(input));
-        input.addEventListener("input", () => { validateField(input); checkSubmitButton(); });
-        input.addEventListener("blur", () => { validateField(input); checkSubmitButton(); });
-    });
-
-    submitBtn.disabled = true;
-
-    // ===== Form Submission =====
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Remove spaces from phone input before validation
-        phoneInput.value = phoneInput.value.replace(/\s/g, "");
-
-        let formValid = true;
-        inputs.forEach(input => { if (!validateField(input)) formValid = false; });
-        if (!formValid) return;
-
-        submitBtn.disabled = true;
-        if(loader) loader.style.display = "flex";
-
-        grecaptcha.ready(function () {
-            grecaptcha.execute('<?php echo e(env("NOCAPTCHA_SITEKEY")); ?>', { action: 'modal_form' })
-            .then(function (token) {
-                document.getElementById("g-recaptcha-response").value = token;
-
-                fetch(form.action, {
-                    method: "POST",
-                    headers: {
-                        "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
-                        "Accept": "application/json"
-                    },
-                    body: new FormData(form)
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if(loader) loader.style.display = "none";
-
-                    if (data.success) {
-                        window.location.href = data.redirect;
-                    } else {
-                        Toastify({
-                            text: data.message || "Server error. Please try again.",
-                            duration: 5000,
-                            gravity: "top",
-                            position: "center",
-                            close: true,
-                            style: {
-                                background: "#F97555",
-                                color: "#FFF4E7",
-                                border: "2px solid #475676",
-                                borderRadius: "10px"
-                            }
-                        }).showToast();
-                        submitBtn.disabled = false;
-                    }
-                })
-                .catch(error => {
-                    if(loader) loader.style.display = "none";
-                    Toastify({
-                        text: "Server error. Please try again.",
-                        duration: 5000,
-                        gravity: "top",
-                        position: "center",
-                        close: true,
-                        style: {
-                            background: "#F97555",
-                            color: "#FFF4E7",
-                            border: "2px solid #475676",
-                            borderRadius: "10px"
-                        }
-                    }).showToast();
-                    submitBtn.disabled = false;
-                });
-
+                if (paymentUrl) {
+                    modalPayNowBtn.href = paymentUrl;
+                    modalPayNowBtn.style.display = "inline-flex";
+                } else {
+                    modalPayNowBtn.style.display = "none";
+                }
             });
         });
 
-    });
+        // Remove loader initially
+        if (loader) loader.style.display = "none";
 
-});
+        // ===== Custom Phone Formatting (650 384 0370) =====
+        phoneInput.addEventListener("input", function() {
+            let value = this.value.replace(/\D/g, ""); // remove non-digits
+            if (value.length > 10) value = value.slice(0, 10); // max 10 digits
+
+            let formatted = "";
+            if (value.length > 0) formatted += value.slice(0, 3);
+            if (value.length >= 4) formatted += " " + value.slice(3, 6);
+            if (value.length >= 7) formatted += " " + value.slice(6, 10);
+
+            this.value = formatted;
+        });
+
+        // ===== Field Validation =====
+        function validateField(input) {
+            const value = input.value.trim();
+            const errorEl = input.nextElementSibling;
+            let valid = true;
+
+            errorEl.textContent = "";
+            input.classList.remove("input-error");
+
+            if (!touched.has(input)) return true;
+
+            if (!value) {
+                valid = false;
+                errorEl.textContent = "This field is required";
+                input.classList.add("input-error");
+            } else if (input.type === "email") {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(value)) {
+                    valid = false;
+                    errorEl.textContent = "Enter a valid email address";
+                    input.classList.add("input-error");
+                }
+            } else if (input.name === "customer_phone") {
+                const digits = value.replace(/\s/g, ""); // remove spaces
+                if (!/^[0-9]{10}$/.test(digits)) {
+                    valid = false;
+                    errorEl.textContent = "Phone must be exactly 10 digits";
+                    input.classList.add("input-error");
+                }
+            }
+
+            return valid;
+        }
+
+        function checkSubmitButton() {
+            let allValid = true;
+            inputs.forEach(input => {
+                if (!input.value.trim() || input.classList.contains("input-error")) {
+                    allValid = false;
+                }
+            });
+            submitBtn.disabled = !allValid;
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener("focus", () => touched.add(input));
+            input.addEventListener("input", () => {
+                validateField(input);
+                checkSubmitButton();
+            });
+            input.addEventListener("blur", () => {
+                validateField(input);
+                checkSubmitButton();
+            });
+        });
+
+        submitBtn.disabled = true;
+
+        // ===== Form Submission =====
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Remove spaces from phone input before validation
+            phoneInput.value = phoneInput.value.replace(/\s/g, "");
+
+            let formValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) formValid = false;
+            });
+            if (!formValid) return;
+
+            submitBtn.disabled = true;
+            if (loader) loader.style.display = "flex";
+
+            grecaptcha.ready(function() {
+                grecaptcha.execute('<?php echo e(env("NOCAPTCHA_SITEKEY")); ?>', {
+                        action: 'modal_form'
+                    })
+                    .then(function(token) {
+                        document.getElementById("g-recaptcha-response").value = token;
+
+                        fetch(form.action, {
+                                method: "POST",
+                                headers: {
+                                    "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
+                                    "Accept": "application/json"
+                                },
+                                body: new FormData(form)
+                            })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (loader) loader.style.display = "none";
+
+                                if (data.success) {
+                                    window.location.href = data.redirect;
+                                } else {
+                                    Toastify({
+                                        text: data.message || "Server error. Please try again.",
+                                        duration: 5000,
+                                        gravity: "top",
+                                        position: "center",
+                                        close: true,
+                                        style: {
+                                            background: "#F97555",
+                                            color: "#FFF4E7",
+                                            border: "2px solid #475676",
+                                            borderRadius: "10px"
+                                        }
+                                    }).showToast();
+                                    submitBtn.disabled = false;
+                                }
+                            })
+                            .catch(error => {
+                                if (loader) loader.style.display = "none";
+                                Toastify({
+                                    text: "Server error. Please try again.",
+                                    duration: 5000,
+                                    gravity: "top",
+                                    position: "center",
+                                    close: true,
+                                    style: {
+                                        background: "#F97555",
+                                        color: "#FFF4E7",
+                                        border: "2px solid #475676",
+                                        borderRadius: "10px"
+                                    }
+                                }).showToast();
+                                submitBtn.disabled = false;
+                            });
+
+                    });
+            });
+
+        });
+
+    });
 </script>
 <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
@@ -336,17 +373,17 @@ document.addEventListener("DOMContentLoaded", function () {
         opacity: 0.5;
         cursor: not-allowed;
     }
-    
+
     .toast-close {
         padding: 0 5px 0px 20px;
         color: #302240 !important;
     }
-    
-    .packageformsubmit{
+
+    .packageformsubmit {
         margin-top: 20px;
     }
-    
-    #global-loader{
+
+    #global-loader {
         z-index: 999999;
     }
 </style>
