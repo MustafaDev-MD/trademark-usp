@@ -160,7 +160,7 @@
     <div class="container">
         <div class="section-header">
             <p class="subtitle">Don't just take our word for it</p>
-            <h2>Explore Trademark USP filing support</h2>
+            <h2>Trademark USP is rated 4.5 out of 5 based on 31,500 reviews.</h2>
         </div>
 
         <!-- <div class="steps-container">

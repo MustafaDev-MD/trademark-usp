@@ -136,7 +136,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <?php echo $__env->make('partials.privacy-settings', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-    <script>window.trackingConfig = {gtmIds: <?php echo json_encode(config('tracking.gtm_ids'), 15, 512) ?>};</script>
+    <script type="application/json" id="tracking-config"><?php echo json_encode(['gtmIds' => config('tracking.gtm_ids')], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?></script>
     <script src="<?php echo e(asset('js/audit-ui.js')); ?>?v=<?php echo e(filemtime(public_path('js/audit-ui.js'))); ?>"></script>
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?>
 

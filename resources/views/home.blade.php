@@ -229,7 +229,7 @@
 </section>
 
 <!-- pricing section end -->
-@include('partials.service-disclosure')
+{{-- @include('partials.service-disclosure') --}}
 
 @include('sections.services-section')
 
@@ -240,7 +240,7 @@
         <p class="section-tagline">Don't just take our word for it</p>
 
         <h2 class="main-rating-title">
-            Explore Trademark USP filing support
+            Trademark USP is rated 4.5 out of 5 based on 31,500 reviews.
         </h2>
 
         <div class="review-card-wrapper">

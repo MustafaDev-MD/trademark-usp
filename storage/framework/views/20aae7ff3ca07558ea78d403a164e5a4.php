@@ -227,7 +227,7 @@
 </section>
 
 <!-- pricing section end -->
-<?php echo $__env->make('partials.service-disclosure', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
 
 <?php echo $__env->make('sections.services-section', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
@@ -238,7 +238,7 @@
         <p class="section-tagline">Don't just take our word for it</p>
 
         <h2 class="main-rating-title">
-            Explore Trademark USP filing support
+            Trademark USP is rated 4.5 out of 5 based on 31,500 reviews.
         </h2>
 
         <div class="review-card-wrapper">
@@ -313,4 +313,5 @@
 <?php echo $__env->make('sections.blog-cards', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/home.blade.php ENDPATH**/ ?>
