@@ -135,7 +135,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     @include('partials.privacy-settings')
-    <script>window.trackingConfig = {gtmIds: @json(config('tracking.gtm_ids'))};</script>
+    <script type="application/json" id="tracking-config">{!! json_encode(['gtmIds' => config('tracking.gtm_ids')], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
     <script src="{{ asset('js/audit-ui.js') }}?v={{ filemtime(public_path('js/audit-ui.js')) }}"></script>
     @livewireScripts
     @stack('scripts')

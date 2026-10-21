@@ -19,7 +19,7 @@
                         <div>
                             <p class="call-number">Call Us</p>
                             <p class="phone-number"> +1 (650) 384-0370</p>
-                            <p class="hours">Mon-Fri 9AM-5PM CST</p>
+                            <p class="hours">{{ config('business.support_hours') }}</p>
                         </div>
                     </a>
                 </div>
@@ -88,7 +88,7 @@
                             <p class="call-number">Call Us</p>
                             <p class="phone-number"> +1 (650) 384-0370
                             </p>
-                            <p class="hours">Mon-Fri 9AM-5PM CST</p>
+                            <p class="hours">{{ config('business.support_hours') }}</p>
                         </div>
                     </a>
                 </div>
@@ -114,7 +114,7 @@
         <div class="container footer-legal">
             <div class="legal-info">
                 <p class="privacy-policy-title">Disclaimer</p>
-                <p class="legal-text"> The goal of Trademark USP is to offer companies the most dependable, efficient, and reasonably priced trademark protection services possible. Our first priority is quality. Copyright {{ date('Y') }} USP of Trademarks, LLC. Only software and information are offered by Trademark USP. Trademark USP does not offer legal advice or take involved in any kind of legal representation; it is not a "lawyer referral service". Please refer to our <a href="{{ route('term-of-service') }}">Terms of Service</a> and <a href="{{ route('privacy-policy') }}">Privacy Policy</a> before using Trademark USP. </p>
+                <p class="legal-text"> The goal of Trademark USP is to offer companies the most dependable, efficient, and reasonably priced trademark protection services possible. Our first priority is quality. Copyright {{ date('Y') }} {{ config('business.legal_name') }}. Only software and information are offered by Trademark USP. Trademark USP does not offer legal advice or take involved in any kind of legal representation; it is not a "lawyer referral service". Please refer to our <a href="{{ route('term-of-service') }}">Terms of Service</a> and <a href="{{ route('privacy-policy') }}">Privacy Policy</a> before using Trademark USP. </p>
             </div>
 
             <div class="payment-copyright">
@@ -124,7 +124,7 @@
                     <img src="{{ asset('imagees/AE_Logo_0f30048c26.svg') }}" alt="American Express">
                     <img src="{{ asset('imagees/Discover_Card_Logo_e5a28a3aeb.svg') }}" alt="Discover">
                 </div>
-                <p class="copyright-text">© Copyright {{ date('Y') }} Trademark USP, LLC</p>
+                <p class="copyright-text">© Copyright {{ date('Y') }} {{ config('business.legal_name') }}</p>
             </div>
         </div>
     </div>

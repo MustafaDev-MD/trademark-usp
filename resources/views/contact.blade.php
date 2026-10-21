@@ -30,7 +30,7 @@
                 </div>
                 <h3 class="card-title">Phone</h3>
                 <p class="card-description">
-                    Call us Mon-Fri 9AM-6PM CST <a href="tel:+1 (650) 384-0370" class="contact-link">
+                    Call us {{ config('business.support_hours') }} <a href="tel:+1 (650) 384-0370" class="contact-link">
                         <span class="phone-number-text"> +1 (650) 384-0370</span></a>
                 </p>
             </div>

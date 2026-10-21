@@ -94,3 +94,20 @@ it('rejects failed captcha without saving a lead', function () {
     $this->postJson(route('modal.form.submit'), ['customer_full_name' => 'Test', 'customer_email' => 'test@example.test', 'customer_phone' => '6503840370', 'comment' => 'Test', 'g-recaptcha-response' => 'bad'])->assertStatus(422);
     $this->assertDatabaseCount('leads', 0);
 });
+
+
+it('renders valid schema JSON without compiled Blade text on public pages', function () {
+    foreach (array_keys(config('seo')) as $path) {
+        $html = $this->get('/'.$path)->assertOk()->getContent();
+        preg_match('~<script type="application/ld\+json">(.*?)</script>~s', $html, $match);
+        $schema = json_decode($match[1], true, 512, JSON_THROW_ON_ERROR);
+        expect($schema['@context'])->toBe('https://schema.org');
+        expect($schema['@type'])->toBe('WebPage');
+        expect($match[1])->not->toContain('<?php', '$__contextArgs');
+    }
+});
+
+it('uses the same business hours and legal name on contact and footer', function () {
+    $this->get('/contact')->assertOk()->assertSee(config('business.support_hours'))
+        ->assertSee(config('business.legal_name'))->assertDontSee('9AM-6PM CST')->assertDontSee('USP of Trademarks, LLC');
+});

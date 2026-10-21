@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   // Load existing tracking containers only when analytics is allowed.
   function loadAnalytics() {
-    const ids=window.trackingConfig?.gtmIds || [];
+    const ids=JSON.parse(document.getElementById('tracking-config')?.textContent || '{}').gtmIds || [];
     ids.forEach(id => {
     if(!/^GTM-[A-Z0-9]+$/.test(id || '') || window.uspAnalyticsLoaded?.includes(id)) return;
     window.uspAnalyticsLoaded=window.uspAnalyticsLoaded || [];
