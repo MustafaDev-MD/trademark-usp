@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Privacy Policy - Trademark USP'); ?>
 
 <?php $__env->startSection('content'); ?>

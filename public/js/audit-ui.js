@@ -1,53 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('fcmp-modal-wrapper');
-  const form = document.getElementById('modalForm');
+  const closeButton = document.getElementById('fcmp-close');
   let opener;
-  function close() { modal.style.display = 'none'; document.body.style.overflow = ''; opener?.focus(); }
+  function closeModal() { if (modal) modal.style.display = 'none'; opener?.focus(); }
   document.querySelectorAll('.fcmp-trigger-button').forEach(button => {
     button.onclick = event => {
-      event.preventDefault(); opener = button;
-      const plan = button.dataset.plan || '';
-      document.getElementById('inquiry-plan').value = plan;
-      const applicationLink=document.getElementById('application-start');
-      applicationLink.href=plan ? window.inquiryConfig.startUrl+'/'+encodeURIComponent(plan) : window.inquiryConfig.registerUrl;
-      document.getElementById('selected-package').textContent = plan ? `${plan.charAt(0).toUpperCase()+plan.slice(1)} package: starting service fee $${button.dataset.price}. Due now for this inquiry: $0. ${window.inquiryConfig.packages[plan]?.includes || ''}. Any legal service requires provider acceptance and a separate agreement.` : 'General service inquiry. Due now: $0.';
-      modal.style.display = 'flex'; document.body.style.overflow = 'hidden';
-      document.getElementById('inquiry-customer_full_name').focus();
+      event.preventDefault();
+      if (!modal) return;
+      opener = button;
+      const payButton = document.getElementById('modalPayNowBtn');
+      if (payButton) {
+        payButton.style.display = button.dataset.paymentUrl ? 'inline-flex' : 'none';
+        payButton.href = button.dataset.paymentUrl || 'javascript:void(0);';
+      }
+      modal.style.display = 'flex';
     };
   });
-  document.getElementById('fcmp-close')?.addEventListener('click', close);
-  modal?.addEventListener('click', event => { if(event.target === modal) close(); });
-  modal?.addEventListener('keydown', event => {
-    if(event.key === 'Escape') close();
-    if(event.key !== 'Tab') return;
-    const items = [...modal.querySelectorAll('button, a[href], input:not([type="hidden"]), textarea')].filter(el => el.offsetParent !== null && !el.disabled);
-    const first = items[0], last = items[items.length-1];
-    if(event.shiftKey && document.activeElement === first) {event.preventDefault();last.focus();}
-    else if(!event.shiftKey && document.activeElement === last) {event.preventDefault();first.focus();}
+  closeButton?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal?.style.display === 'flex') closeModal();
   });
-  form?.addEventListener('submit', async event => {
-    event.preventDefault(); if(!form.reportValidity()) return;
-    const status = document.getElementById('inquiry-status');
-    const submit = document.getElementById('modalSubmitBtn');
-    form.querySelectorAll('.text-danger').forEach(el=>el.textContent='');
-    submit.disabled=true;status.textContent='Sending inquiry...';
-    try {
-      if(!window.grecaptcha || !window.inquiryConfig.sitekey) throw new Error('Verification is unavailable. Please try again or contact support.');
-      await new Promise(resolve => grecaptcha.ready(resolve));
-      const token = await grecaptcha.execute(window.inquiryConfig.sitekey,{action:'modal_form'});
-      form.elements['g-recaptcha-response'].value=token;
-      const response=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
-      const data=await response.json();
-      if(!response.ok || !data.success) {
-        Object.entries(data.errors || {}).forEach(([field,messages])=>{
-          const error=document.getElementById('error-'+field); if(error) error.textContent=messages[0];
-        });
-        throw new Error(data.message || 'Please check your details and try again.');
-      }
-      window.location.assign(data.redirect);
-    } catch(error) {status.textContent=error.message || 'Unable to send. Please try again.';submit.disabled=false;}
-  });
-  // Keep the existing tracking containers without the removed preference dialog.
+  // Load existing tracking containers only when analytics is allowed.
   function loadAnalytics() {
     const ids=window.trackingConfig?.gtmIds || [];
     ids.forEach(id => {
@@ -63,13 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const banner = document.getElementById('privacy-settings');
   const checkbox = document.getElementById('analytics-consent');
   const key = 'trademarkusp-privacy-v1';
+  const seenKey = 'trademarkusp-privacy-seen-v1';
   let saved = null;
-  try { saved = JSON.parse(localStorage.getItem(key)); } catch (error) {}
+  let alreadyShown = false;
+  try {
+    saved = JSON.parse(localStorage.getItem(key));
+    alreadyShown = localStorage.getItem(seenKey) === '1';
+  } catch (error) {}
+  alreadyShown = alreadyShown || document.cookie.split('; ').includes(seenKey + '=1');
   let privacyOpener;
   function openPreferences() {
     if (!banner) return;
     checkbox.checked = saved?.analytics === true;
     banner.hidden = false;
+    try { localStorage.setItem(seenKey, '1'); } catch (error) {}
+    document.cookie = seenKey + '=1; Max-Age=31536000; Path=/; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
   }
   function closePreferences() { banner.hidden = true; privacyOpener?.focus(); }
   document.querySelectorAll('[data-privacy-settings]').forEach(button => button.addEventListener('click', () => {
@@ -95,5 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('privacy-save')?.addEventListener('click', () => savePreferences(checkbox.checked));
   document.getElementById('privacy-reject')?.addEventListener('click', () => savePreferences(false));
   if (saved?.analytics === true) loadAnalytics();
-  if (!saved) openPreferences();
+  if (!saved && !alreadyShown) openPreferences();
 });

@@ -13,7 +13,7 @@ it('renders every public canonical page with SEO, headings and hardening', funct
         expect($html)->toContain('name="description"', 'rel="canonical"', 'property="og:title"', 'application/ld+json');
         expect(preg_match('/<h1[\s>]/', $html))->toBe(1);
         $response->assertHeader('X-Content-Type-Options', 'nosniff')->assertHeader('X-Frame-Options', 'SAMEORIGIN');
-        expect($html)->not->toContain('trademarkengine.com', 'FULL DETAILED PRIVACY POLICY TEXT GOES HERE', '31,500 reviews', 'collectcheckout.com');
+        expect($html)->not->toContain('trademarkengine.com', 'FULL DETAILED PRIVACY POLICY TEXT GOES HERE', '31,500 reviews');
     }
 });
 
@@ -25,11 +25,12 @@ it('lists only canonical public pages in valid sitemap XML', function () {
     expect($response->getContent())->not->toContain('/login', '/dashboard', '/payment/');
 });
 
-it('shows a labeled inquiry and bottom privacy banner', function () {
-    $this->get('/')->assertOk()->assertSee('role="dialog"', false)->assertSee('Send inquiry - no payment')
-        ->assertSee('data-plan="premium"', false)->assertSee('data-price="349"', false)
-        ->assertSee('for="inquiry-customer_email"', false)->assertSee('id="privacy-settings"', false)->assertSee('Privacy Policy')->assertSee('privacy-banner', false);
-    $this->get('/login')->assertOk()->assertSee('noindex, follow')->assertSee('<h1', false);
+it('restores the original package popup and keeps the privacy box separate', function () {
+    $this->get('/')->assertOk()->assertSee('Start Your Trademark Application')
+        ->assertSee('Get Started Now')->assertSee('Pay Now')
+        ->assertSee('data-payment-url="https://collectcheckout.com/', false)
+        ->assertDontSee('Continue to application and review pricing')
+        ->assertSee('id="privacy-settings"', false);
 });
 
 it('saves the selected package only after valid captcha', function () {

@@ -9159,30 +9159,18 @@ p.step-description {
     font-size: 14px;
     font-weight: 300;
     color: #5b5d65;
-}/* Accessible inquiry dialog: keep it above sticky controls on small screens. */
-#fcmp-modal-wrapper { z-index: 1000000; padding: 16px; box-sizing: border-box; }
-#fcmp-modal { background: #fff; color: #182e55; width: min(520px, 100%); max-width: 520px; max-height: calc(100dvh - 32px); box-sizing: border-box; }
-#fcmp-modal h2 { padding-right: 24px; font-size: 24px; line-height: 1.3; margin: 10px 0; }
-#fcmp-modal p { font-size: 14px; line-height: 1.5; margin: 12px 0; }
-#fcmp-close { border: 0; background: #fff; line-height: 1; top: 12px; right: 12px; }
-#fcmp-modal label { display: block; font-weight: 600; margin-bottom: 5px; }
-#fcmp-modal input, #fcmp-modal textarea { box-sizing: border-box; width: 100%; font: inherit; padding: 10px; border: 1px solid #687189; border-radius: 6px; }
-#fcmp-modal textarea { min-height: 90px; }
-#fcmp-modal .fld-btn button { width: 100%; margin-top: 16px; }
-#fcmp-modal .text-danger { display: block; color: #ad1717; font-size: 13px; }
-
-/* Theme-matched, non-modal privacy banner. */
+}/* Theme-matched, non-modal privacy banner. */
 .privacy-banner[hidden] { display: none !important; }
-.privacy-banner { position: fixed; inset: auto 0 0; z-index: 99990; background: #fff; color: #1b3055; border-top: 3px solid #ff542d; box-shadow: 0 -6px 30px rgba(27,48,85,.14); font-family: Inter, Arial, sans-serif; }
-.privacy-banner-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 22px 52px 22px 24px; display: flex; align-items: center; gap: 32px; }
+.privacy-banner { position: fixed; inset: auto 20px 20px auto; width: min(380px, calc(100% - 32px)); box-sizing: border-box; border-radius: 12px; overflow: hidden; z-index: 99990; background: #fff; color: #1b3055; border-top: 3px solid #ff542d; box-shadow: 0 -6px 30px rgba(27,48,85,.14); font-family: Inter, Arial, sans-serif; }
+.privacy-banner-inner { position: relative; padding: 20px; display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
 .privacy-banner-copy { flex: 1; }
-.privacy-banner h2 { font-size: 19px; font-weight: 700; line-height: 1.3; margin: 0 0 7px; color: #1b3055; }
+.privacy-banner h2 { padding-right: 25px; font-size: 19px; font-weight: 700; line-height: 1.3; margin: 0 0 7px; color: #1b3055; }
 .privacy-banner p { font-size: 13px; line-height: 1.65; margin: 0 0 10px; color: #52617a; }
 .privacy-banner a { color: #1b3055; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
 .privacy-choice { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; cursor: pointer; }
 .privacy-choice input { width: 16px; height: 16px; accent-color: #ff542d; margin: 0; }
-.privacy-banner-actions { display: flex; flex-shrink: 0; gap: 10px; }
-.privacy-button { border-radius: 6px; padding: 12px 18px; font: 600 13px Inter, Arial, sans-serif; cursor: pointer; transition: background .15s; }
+.privacy-banner-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.privacy-button { border-radius: 6px; padding: 11px 8px; font: 600 13px Inter, Arial, sans-serif; cursor: pointer; transition: background .15s; }
 .privacy-button-primary { background: #ff542d; border: 1px solid #ff542d; color: #fff; }
 .privacy-button-primary:hover { background: #e54320; }
 .privacy-button-secondary { background: #fff; border: 1px solid #1b3055; color: #1b3055; }
@@ -9195,5 +9183,5 @@ p.step-description {
  .privacy-banner h2 { padding-right: 25px; font-size: 18px; }
  .privacy-banner-actions { display: grid; grid-template-columns: 1fr 1fr; }
  .privacy-button { padding: 11px 9px; }
- .privacy-banner { max-height: 65dvh; overflow-y: auto; }
+ .privacy-banner { right: 16px; bottom: 16px; max-height: 65dvh; overflow-y: auto; }
 }

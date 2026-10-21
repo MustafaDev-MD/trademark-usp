@@ -48,3 +48,7 @@ Rollback requires restoring the previous release and clearing compiled views. Pr
 ## Follow-up change
 
 The user requested removal of the custom Privacy Settings feature. The dialog, footer control and preference storage code were removed. Existing GTM containers now load without that custom consent gate, preserving the earlier tracking behavior. The previous U13 implementation and consent verification above are historical and no longer describe the current build.
+
+## Pricing flow restored at user request
+
+Restored the pre-audit application popup from commit 1275585: Get Started Now submits the lead; Pay Now appears only when a package button supplies its original external payment link. Removed the inquiry-only wording and registration detour from that popup. Unrelated SEO, page fixes and the compact privacy preferences box remain. The U05 replacement journey above is historical and no longer applies to the public popup.
