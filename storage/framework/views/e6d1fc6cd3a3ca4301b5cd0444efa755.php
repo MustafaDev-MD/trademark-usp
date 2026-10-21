@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Blogs - Trademark USP'); ?>
 
 <?php $__env->startSection('content'); ?>

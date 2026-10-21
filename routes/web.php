@@ -16,13 +16,30 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Stripe\Checkout\Session as StripeSession;
 
 /*
 |--------------------------------------------------------------------------
 | Public Website Routes
 |--------------------------------------------------------------------------
 */
+
+Route::get('/start-application/{plan}', function (string $plan) {
+    abort_unless(array_key_exists($plan, config('packages')), 404);
+    session(['selected_package' => $plan]);
+
+    return redirect()->route(Auth::check() ? 'trademark.apply' : 'register');
+})->name('application.start');
+
+Route::get('/sitemap.xml', function () {
+    $urls = array_keys(config('seo'));
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>'.'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    foreach ($urls as $path) {
+        $url = rtrim(config('app.url'), '/').($path ? '/'.$path : '/');
+        $xml .= '<url><loc>'.htmlspecialchars($url, ENT_XML1, 'UTF-8').'</loc></url>';
+    }
+
+    return response($xml.'</urlset>', 200, ['Content-Type' => 'application/xml; charset=UTF-8']);
+})->name('sitemap');
 
 Route::get('/', function () {
     return view('home');
@@ -325,73 +342,7 @@ Route::middleware([
     |--------------------------------------------------------------------------
     */
 
-    Route::get(
-        '/payment/{application}/pay',
-        function (\App\Models\TrademarkApplication $application) {
-
-            if ($application->user_id !== Auth::id()) {
-                abort(403);
-            }
-
-            $remaining = max(
-                ($application->total ?? 0) -
-                    ($application->paid_amount ?? 0),
-                0
-            );
-
-            if ($remaining <= 0) {
-                return redirect()
-                    ->route(
-                        'user.applications.show',
-                        $application->id
-                    )
-                    ->with(
-                        'success',
-                        'No payment required.'
-                    );
-            }
-
-            \Stripe\Stripe::setApiKey(
-                config('services.stripe.secret')
-            );
-
-            $session = StripeSession::create([
-                'payment_method_types' => ['card'],
-                'mode' => 'payment',
-
-                'line_items' => [[
-                    'price_data' => [
-                        'currency' => 'usd',
-
-                        'product_data' => [
-                            'name' => 'Trademark Registration – '
-                                .ucfirst($application->plan),
-
-                            'description' => 'Trademark filing services',
-                        ],
-
-                        'unit_amount' => intval($remaining * 100),
-                    ],
-
-                    'quantity' => 1,
-                ]],
-
-                'customer_email' => $application->email,
-
-                'success_url' => route('stripe.success')
-                    .'?session_id={CHECKOUT_SESSION_ID}',
-
-                'cancel_url' => route('stripe.cancel'),
-
-                'metadata' => [
-                    'application_id' => $application->id,
-                    'user_id' => Auth::id(),
-                ],
-            ]);
-
-            return redirect($session->url);
-        }
-    )->name('user.payment.pay');
+    Route::get('/payment/{application}/pay', [\App\Http\Controllers\PaymentController::class, 'pay'])->name('user.payment.pay');
 
     Route::get(
         '/checkout/{application}',
@@ -400,6 +351,8 @@ Route::middleware([
             $application = \App\Models\TrademarkApplication::findOrFail(
                 $applicationId
             );
+
+            abort_unless((int) $application->user_id === (int) Auth::id(), 403);
 
             return view(
                 'payment.checkout',
@@ -506,9 +459,7 @@ Route::middleware([
 |--------------------------------------------------------------------------
 */
 
-Route::get('/payment/success', function () {
-    return view('payment.success');
-})->name('stripe.success');
+Route::get('/payment/success', [\App\Http\Controllers\PaymentController::class, 'success'])->middleware('auth')->name('stripe.success');
 
 Route::get('/payment/cancel', function () {
     return view('payment.cancel');

@@ -8,7 +8,7 @@
     <div class="container search-wrapper">
 
         <header class="search-header">
-            <h2>Search millions of <br>Trademarks for Free</h2>
+            <h1>Search millions of <br>Trademarks for Free</h1>
             <p class="search-subtitle">Search millions of trademarks that are live or pending with the USPTO</p>
         </header>
 

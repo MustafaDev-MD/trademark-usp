@@ -25,8 +25,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Travis Crabtree</span>
-                            <span class="blog-slider-card-date-read">Nov 06, 2025 · Read time 3 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page.date')); ?> · <?php echo e(config('articles.blog-page.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -45,8 +45,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Jeff Mosler</span>
-                            <span class="blog-slider-card-date-read">Oct 30, 2025 · Read time 5 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page2.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page2.date')); ?> · <?php echo e(config('articles.blog-page2.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -65,8 +65,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Zac Aiuppa</span>
-                            <span class="blog-slider-card-date-read">November 16, 2025· Read time 2 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page5.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page5.date')); ?> · <?php echo e(config('articles.blog-page5.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -85,8 +85,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Zac Aiuppa</span>
-                            <span class="blog-slider-card-date-read">November 06, 2025 · Read time 4 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page.date')); ?> · <?php echo e(config('articles.blog-page.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -105,8 +105,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Travis Crabtree</span>
-                            <span class="blog-slider-card-date-read">Nov 06, 2025 · Read time 3 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page.date')); ?> · <?php echo e(config('articles.blog-page.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -125,8 +125,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Jeff Mosler</span>
-                            <span class="blog-slider-card-date-read">Oct 30, 2025 · Read time 5 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page2.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page2.date')); ?> · <?php echo e(config('articles.blog-page2.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -145,8 +145,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Zac Aiuppa</span>
-                            <span class="blog-slider-card-date-read">November 16, 2025· Read time 2 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page5.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page5.date')); ?> · <?php echo e(config('articles.blog-page5.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -165,8 +165,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Zac Aiuppa</span>
-                            <span class="blog-slider-card-date-read">November 06, 2025 · Read time 4 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page.date')); ?> · <?php echo e(config('articles.blog-page.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -185,8 +185,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Travis Crabtree</span>
-                            <span class="blog-slider-card-date-read">Nov 06, 2025 · Read time 3 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page.date')); ?> · <?php echo e(config('articles.blog-page.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -205,8 +205,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Jeff Mosler</span>
-                            <span class="blog-slider-card-date-read">Oct 30, 2025 · Read time 5 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page2.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page2.date')); ?> · <?php echo e(config('articles.blog-page2.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -225,8 +225,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Zac Aiuppa</span>
-                            <span class="blog-slider-card-date-read">November 16, 2025· Read time 2 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page5.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page5.date')); ?> · <?php echo e(config('articles.blog-page5.read')); ?></span>
                         </div>
                     </div>
                 </div>
@@ -245,8 +245,8 @@
                     <div class="blog-slider-card-meta">
                         <div class="blog-slider-card-author-avatar"></div>
                         <div class="blog-slider-card-meta-text">
-                            <span class="blog-slider-card-author">Zac Aiuppa</span>
-                            <span class="blog-slider-card-date-read">November 06, 2025 · Read time 4 min</span>
+                            <span class="blog-slider-card-author"><?php echo e(config('articles.blog-page.author')); ?></span>
+                            <span class="blog-slider-card-date-read"><?php echo e(config('articles.blog-page.date')); ?> · <?php echo e(config('articles.blog-page.read')); ?></span>
                         </div>
                     </div>
                 </div>

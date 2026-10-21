@@ -18,8 +18,8 @@
         </p>
         
         <ul class="oa-stats-list">
-            <li><span class="bullet-red"></span> 35,000+ five-star reviews</li>
-            <li><span class="bullet-red"></span> Rated 4.8 by Forbes Advisor</li>
+            <li><span class="bullet-red"></span> Explore our trademark support packages</li>
+            <li><span class="bullet-red"></span> Compare services and starting fees</li>
             <li><span class="bullet-red"></span> Rated 4.5 on Trust Pilot</li>
         </ul>
         

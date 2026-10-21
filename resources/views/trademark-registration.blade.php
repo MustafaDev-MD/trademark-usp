@@ -8,7 +8,7 @@
 
 <section class="cta-section">
     <div class="cta-card">
-        <h2 class="cta-headline">Register your name, slogan, or logo today.</h2>
+        <h1 class="cta-headline">Register your name, slogan, or logo today.</h1>
 
         <p class="cta-protection-text">
             Protect your brand online in just minutes with Trademark USP. Starting at $49 + applicable fees.
@@ -16,16 +16,16 @@
 
         <ul class="cta-stats">
             <li><span class="bullet-red"></span> 120,000+ trademarks filed since 2016</li>
-            <li><span class="bullet-red"></span> 35,000+ five-star reviews</li>
-            <li><span class="bullet-red"></span> Rated 4.8 by Forbes Advisor</li>
+            <li><span class="bullet-red"></span> Explore our trademark support packages</li>
+            <li><span class="bullet-red"></span> Compare services and starting fees</li>
         </ul>
 
         <a href="javascript:void(0)" class="cta-button-orange fcmp-trigger-button">Register my trademark</a>
 
         <div class="cta-proof-row">
             <div class="proof-item reviews">
-                <p class="score">4.8</p>
-                <div class="advisor-logo">Forbes Advisor</div>
+
+                <div class="advisor-logo">Trademark filing support</div>
                 <div class="stars">★★★★★</div>
             </div>
 
@@ -49,7 +49,7 @@
     <div class="container">
         <div class="section-header white-text">
             <h2>Start protecting your business today</h2>
-            <p class="subtitle">Choose the package that best suits your needs and let our experienced legal team guide you through the trademark registration process with professionalism and care.</p>
+            <p class="subtitle">Choose the package that best suits your needs and let our filing support team guide you through the trademark registration process with professionalism and care.</p>
         </div>
 
         <div class="pricing-container">
@@ -59,14 +59,14 @@
                     <h3>Basic Package</h3>
                     <p class="tagline">I only need what it takes to file</p>
                     <div class="price-block">
-                        <span class="price-value">$49</span>
+                        <span class="price-value">${{ config('packages.basic.price') }}</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
                     <!-- <a href="javascript:void(0)"><button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button></a> -->
                     <button
                         type="button"
                         class="cta-button basic-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/qrdxw9ibr3rismkx5snxuyuxxlpwt3">
+                        data-plan="basic" data-price="{{ config('packages.basic.price') }}">
                         Choose Basic
                     </button>
                     <!-- <button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button> -->
@@ -79,7 +79,7 @@
                             <span class="check-icon">✓</span> Direct-Hit Search of the Federal USPTO Database: Ensure your trademark is unique and available.
                         </li>
                         <li>
-                            <span class="check-icon">✓</span> Customer Trademark Classification: Using the USPTO’s ID manual, our attorneys will devise a class and description of goods and services that best matches what you seek to protect with your trademark registration.
+                            <span class="check-icon">✓</span> Customer Trademark Classification: Using the USPTO’s ID manual, the filing support team will help identify a class and description of goods and services that best matches what you seek to protect with your trademark registration.
                         </li>
                     </ul>
                 </div>
@@ -90,14 +90,14 @@
                     <h3>Standard Package</h3>
                     <p class="tagline">I want an enhanced and thorough process</p>
                     <div class="price-block">
-                        <span class="price-value">$199</span>
+                        <span class="price-value">${{ config('packages.standard.price') }}</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
                     <!-- <a href="javascript:void(0)"><button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button></a> -->
                     <button
                         type="button"
                         class="cta-button standard-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua">
+                        data-plan="standard" data-price="{{ config('packages.standard.price') }}">
                         Choose Standard
                     </button>
                     <!-- <button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button> -->
@@ -122,14 +122,14 @@
                     <h3>Premium Package</h3>
                     <p class="tagline">I want premium legal support for best success</p>
                     <div class="price-block">
-                        <span class="price-value">$349</span>
+                        <span class="price-value">${{ config('packages.premium.price') }}</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
                     <!-- <a href="javascript:void(0)"><button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button></a> -->
                     <button
                         type="button"
                         class="cta-button premium-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy">
+                        data-plan="premium" data-price="{{ config('packages.premium.price') }}">
                         Choose Premium
                     </button>
                     <!-- <button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button> -->
@@ -160,7 +160,7 @@
     <div class="container">
         <div class="section-header">
             <p class="subtitle">Don't just take our word for it</p>
-            <h2>Trademark USP is rated 4.5 out of 5 based on 31,500 reviews.</h2>
+            <h2>Explore Trademark USP filing support</h2>
         </div>
 
         <!-- <div class="steps-container">
@@ -364,4 +364,5 @@
 
 @include('sections.cta-section-2')
 
+@include('partials.service-disclosure')
 @endsection

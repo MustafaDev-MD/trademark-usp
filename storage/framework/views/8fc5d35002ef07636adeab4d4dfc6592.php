@@ -60,8 +60,9 @@
             <ul>
                 <li><a href="<?php echo e(route('about-us')); ?>">About Us</a></li>
                 <li><a href="<?php echo e(route('careers')); ?>">Careers</a></li>
+                <li><a href="<?php echo e(route('privacy-policy')); ?>">Privacy Policy</a></li>
+                <li><button type="button" class="privacy-footer-button" data-privacy-settings>Privacy Settings</button></li>
                 <!-- <li><a href="<?php echo e(route('guarantee')); ?>">Our Guarantee</a></li> -->
-                <li><a href="<?php echo e(route('privacy-policy')); ?>">Privacy Settings</a></li>
             </ul>
         </div>
 
@@ -114,7 +115,7 @@
         <div class="container footer-legal">
             <div class="legal-info">
                 <p class="privacy-policy-title">Disclaimer</p>
-                <p class="legal-text"> The goal of Trademark USP is to offer companies the most dependable, efficient, and reasonably priced trademark protection services possible. Our first priority is quality. Copyright 2025 USP of Trademarks, LLC. Only software and information are offered by Trademark USP. Trademark USP does not offer legal advice or take involved in any kind of legal representation; it is not a "lawyer referral service". Please refer to our <a href="<?php echo e(route('term-of-service')); ?>">Terms of Service</a> and <a href="<?php echo e(route('privacy-policy')); ?>">Privacy Policy</a> before using Trademark USP. </p>
+                <p class="legal-text"> The goal of Trademark USP is to offer companies the most dependable, efficient, and reasonably priced trademark protection services possible. Our first priority is quality. Copyright <?php echo e(date('Y')); ?> USP of Trademarks, LLC. Only software and information are offered by Trademark USP. Trademark USP does not offer legal advice or take involved in any kind of legal representation; it is not a "lawyer referral service". Please refer to our <a href="<?php echo e(route('term-of-service')); ?>">Terms of Service</a> and <a href="<?php echo e(route('privacy-policy')); ?>">Privacy Policy</a> before using Trademark USP. </p>
             </div>
 
             <div class="payment-copyright">
@@ -124,7 +125,7 @@
                     <img src="<?php echo e(asset('imagees/AE_Logo_0f30048c26.svg')); ?>" alt="American Express">
                     <img src="<?php echo e(asset('imagees/Discover_Card_Logo_e5a28a3aeb.svg')); ?>" alt="Discover">
                 </div>
-                <p class="copyright-text">© Copyright 2025 Trademark USP, LLC</p>
+                <p class="copyright-text">© Copyright <?php echo e(date('Y')); ?> Trademark USP, LLC</p>
             </div>
         </div>
     </div>

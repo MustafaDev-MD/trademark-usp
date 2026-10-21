@@ -5,24 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $__env->yieldContent('title', 'Trademark USP'); ?></title>
+    <?php echo $__env->make('partials.seo', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
     <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TSBJ4J7T');
-    </script>
+
     <!-- End Google Tag Manager -->
 
 
@@ -38,8 +24,8 @@
 
 
     <!--  -->
-    <link rel="stylesheet" href="<?php echo e(asset('css/styless.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('css/styles.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/styless.css')); ?>?v=<?php echo e(filemtime(public_path('css/styles.css'))); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/styles.css')); ?>?v=<?php echo e(filemtime(public_path('css/styles.css'))); ?>">
 
     <!--  -->
     <link rel="icon" type="image/png" href="<?php echo e(asset('imagees/fav.png')); ?>">
@@ -54,14 +40,8 @@
 <body>
 
     <!--  -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QQV3FW6"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSH7VPQM"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+
+
 
     <!--  -->
     <?php echo $__env->make('partials.header', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
@@ -141,49 +121,23 @@
     </script> -->
 
     <!--  -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5QQV3FW6');
-    </script>
 
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WSH7VPQM');
-    </script>
+
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!--  -->
-    <script src="<?php echo e(asset('js/scriptt.js')); ?>?v=<?php echo e(time()); ?>"></script>
-    <script src="<?php echo e(asset('js/script.js')); ?>?v=<?php echo e(time()); ?>"></script>
+    <script src="<?php echo e(asset('js/scriptt.js')); ?>?v=<?php echo e(filemtime(public_path('css/styles.css'))); ?>"></script>
+    <script src="<?php echo e(asset('js/script.js')); ?>?v=<?php echo e(filemtime(public_path('css/styles.css'))); ?>"></script>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSBJ4J7T"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <!-- End Google Tag Manager (noscript) -->
 
+    <?php echo $__env->make('partials.privacy-settings', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+    <script>window.trackingConfig = {gtmIds: <?php echo json_encode(config('tracking.gtm_ids'), 15, 512) ?>};</script>
+    <script src="<?php echo e(asset('js/audit-ui.js')); ?>?v=<?php echo e(filemtime(public_path('js/audit-ui.js'))); ?>"></script>
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?>
 
     <?php echo $__env->yieldPushContent('scripts'); ?>

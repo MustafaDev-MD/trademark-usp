@@ -216,7 +216,7 @@
                 You can opt-in to receive SMS messages from Trademark USP via a one-click confirmation through email or the customer web portal.
             </p>
             <p>
-                If you’d like to stop receiving SMS messages from Trademark USP, you can let us know by replying STOP to any SMS message you receive from us. You can also opt out by emailing info@trademarkengine.com.com
+                If you’d like to stop receiving SMS messages from Trademark USP, you can let us know by replying STOP to any SMS message you receive from us. You can also opt out by emailing legal@trademarkusp.com
             </p>
             <p>
                 Disclosure of Personal Information to Third-Parties. We do not sell your personal information. We disclose the personal information we collect (or otherwise generate or obtain) as follows:
@@ -296,7 +296,7 @@
                 <li>v. Right to Opt-Out of the Sale or Sharing of my Personal Information. We do not sell your personal information for monetary consideration. We may share your personal information for the purpose of cross-contextual behavioral advertising. If you would like to opt-out of this sharing of information for cross-contextual behavioral advertising, you may do so by clicking on the “Privacy Settings” link located on the footer of our website.</li>
             </ul>
             <p>
-                B. Exercising Legal Rights. Any resident of California may exercise their rights by submitting a request through our Privacy Center. You may also email a request to privacy@trademarkengine.com. Your request will not be processed until your identity has been verified and your California residency has been confirmed.
+                B. Exercising Legal Rights. Any resident of California may exercise their rights by submitting a request through our Privacy Center. You may also email a request to legal@trademarkusp.com. Your request will not be processed until your identity has been verified and your California residency has been confirmed.
             </p>
             <p>
                 C. Limitations and Denials of Requests. Please note that your rights are not absolute, and in certain circumstances, we may deny your request in accordance with applicable law. For example, we may be unable to fulfill your request if:
@@ -328,13 +328,13 @@
                 B. Sharing with Business Affiliates. We do not automatically share your personal information with third-party business affiliates without your consent, except for the disclosures we make necessary to provide the services of our Website. Disclosures to third-party business affiliates are only made through your affirmative actions by indicating on the Website that you are interested in third-party services. To prevent the disclosure of your personal information to these third-party business affiliates, do not opt in for the service.
             </p>
             <p>
-                C. Exercising Legal Rights. Any resident of the EEA or UK may exercise their rights by submitting a request through our Privacy Center. You may also email a request to privacy@trademarkengine.com. So that we can better process your request, please provide the email you use to log into your account and the country where you reside in your request.
+                C. Exercising Legal Rights. Any resident of the EEA or UK may exercise their rights by submitting a request through our Privacy Center. You may also email a request to legal@trademarkusp.com. So that we can better process your request, please provide the email you use to log into your account and the country where you reside in your request.
             </p>
             <p>
-                D. EU Representative. Trademark USP’s representative in the EU is: activeMind.legal Rechtsanwaltsgesellschaft m. b. H Potsdamer Straße 3 80802 Munich, Germany Phone: +49 (0) 89 / 919 29 49 00 E-mail: EU-privacy@trademarkengine.com
+                D. EU Representative. Trademark USP’s representative in the EU is: activeMind.legal Rechtsanwaltsgesellschaft m. b. H Potsdamer Straße 3 80802 Munich, Germany Phone: +49 (0) 89 / 919 29 49 00 E-mail: legal@trademarkusp.com
             </p>
             <p>
-                E. UK Representative. Trademark USP’s representative in the UK is: activeMind.legal UK Ltd. No 1 Royal Exchange London, EC3V 3DG, UK Phone: +44 20 89383608 E-mail: UK-privacy@trademarkengine.com
+                E. UK Representative. Trademark USP’s representative in the UK is: activeMind.legal UK Ltd. No 1 Royal Exchange London, EC3V 3DG, UK Phone: +44 20 89383608 E-mail: legal@trademarkusp.com
             </p>
 
             <h2 id="revisions" class="legal-content-heading">XIII. Revisions</h2>
@@ -349,7 +349,7 @@
 
             <h2 id="contact" class="legal-content-heading">XV. Contact</h2>
             <p>
-                If you have any questions or concerns about this Policy or the way in which your personal information is used, please contact us at privacy@trademarkengine.com.
+                If you have any questions or concerns about this Policy or the way in which your personal information is used, please contact us at legal@trademarkusp.com.
             </p>
 
         </main>

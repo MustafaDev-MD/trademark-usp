@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blogs - Trademark USP')
+@section('title', "The Top 5 Reasons to Copyright Your Work | Trademark USP")
 
 @section('content')
 
@@ -13,7 +13,7 @@
             <span class="blog-hero-separator">/</span>
             <a href="{{ route('blog') }}" class="blog-hero-breadcrumb-link">Blog</a>
             <span class="blog-hero-separator">/</span>
-            <span class="blog-hero-current">Can I Trademark the Logo I Made with AI?</span>
+            <span class="blog-hero-current">The Top 5 Reasons to Copyright Your Work</span>
         </nav>
 
         <span class="blog-hero-category-tag">Copyrights</span>
@@ -32,16 +32,16 @@
         <div class="blog-hero-meta">
             <span class="blog-hero-meta-item">
                 <span class="icon">🗓️</span>
-                <span class="text">November 06, 2025</span>
+                <span class="text">{{ config('articles.blog-page2.date') }}</span>
             </span>
             <span class="blog-hero-meta-separator">|</span>
             <span class="blog-hero-meta-item">
-                <span class="text">Travis Crabtree</span>
+                <span class="text">{{ config('articles.blog-page2.author') }}</span>
             </span>
             <span class="blog-hero-meta-separator">|</span>
             <span class="blog-hero-meta-item">
                 <span class="icon">⏱️</span>
-                <span class="text">3 minute read</span>
+                <span class="text">{{ config('articles.blog-page2.read') }}</span>
             </span>
         </div>
 

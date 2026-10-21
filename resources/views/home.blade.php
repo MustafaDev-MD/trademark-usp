@@ -14,13 +14,13 @@
             </h1>
 
             <p class="hero-description">
-                Trademark USP offers comprehensive brand protection with attorney-assisted services tailored to your needs. Let our experienced attorneys guide you through every step of filing your trademark.
+                Trademark USP offers comprehensive brand protection with attorney-assisted services tailored to your needs. Let the filing support team guide you through every step of filing your trademark.
             </p>
 
             <ul class="hero-list">
                 <li>250,000+ Trademark Customers Since 2016</li>
-                <li>35,000+ five-star reviews</li>
-                <li>Rated 4.8 by Forbes Advisor</li>
+                <li>Explore our trademark support packages</li>
+                <li>Compare services and starting fees</li>
             </ul>
 
             <!-- <button class="main-nav-button fcmp-trigger-button">Register My Trademark Now</button> -->
@@ -33,7 +33,7 @@
 
             <div class="trust-badges">
                 <!-- <div class="badge forbes-badge">
-                    <img src="./imagees/trustpilot-logo.png" alt="4.8 Rated by Forbes Advisor">
+
                 </div> -->
                 <!-- <div class="badge inc-badge">
                         <img src="inc5000-badge-placeholder.png" alt="Inc 5000 Private Companies">
@@ -122,7 +122,7 @@
     <div class="container">
         <div class="section-header white-text">
             <h2>Start protecting your business today</h2>
-            <p class="subtitle">Choose the package that best suits your needs and let our experienced legal team guide you through the trademark registration process with professionalism and care.</p>
+            <p class="subtitle">Choose the package that best suits your needs and let our filing support team guide you through the trademark registration process with professionalism and care.</p>
         </div>
 
         <div class="pricing-container">
@@ -132,14 +132,14 @@
                     <h3>Basic Package</h3>
                     <p class="tagline">I only need what it takes to file</p>
                     <div class="price-block">
-                        <span class="price-value">$49</span>
+                        <span class="price-value">${{ config('packages.basic.price') }}</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
                     <!-- <a href="javascript:void(0)"><button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button></a> -->
                     <button
                         type="button"
                         class="cta-button basic-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/qrdxw9ibr3rismkx5snxuyuxxlpwt3">
+                        data-plan="basic" data-price="{{ config('packages.basic.price') }}">
                         Choose Basic
                     </button>
                     <!-- <button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button> -->
@@ -152,7 +152,7 @@
                             <span class="check-icon">✓</span> Direct-Hit Search of the Federal USPTO Database: Ensure your trademark is unique and available.
                         </li>
                         <li>
-                            <span class="check-icon">✓</span> Customer Trademark Classification: Using the USPTO’s ID manual, our attorneys will devise a class and description of goods and services that best matches what you seek to protect with your trademark registration.
+                            <span class="check-icon">✓</span> Customer Trademark Classification: Using the USPTO’s ID manual, the filing support team will help identify a class and description of goods and services that best matches what you seek to protect with your trademark registration.
                         </li>
                     </ul>
                 </div>
@@ -163,14 +163,14 @@
                     <h3>Standard Package</h3>
                     <p class="tagline">I want an enhanced and thorough process</p>
                     <div class="price-block">
-                        <span class="price-value">$199</span>
+                        <span class="price-value">${{ config('packages.standard.price') }}</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
                     <!-- <a href="javascript:void(0)"><button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button></a> -->
                     <button
                         type="button"
                         class="cta-button standard-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua">
+                        data-plan="standard" data-price="{{ config('packages.standard.price') }}">
                         Choose Standard
                     </button>
                     <!-- <button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button> -->
@@ -195,14 +195,14 @@
                     <h3>Premium Package</h3>
                     <p class="tagline">I want premium legal support for best success</p>
                     <div class="price-block">
-                        <span class="price-value">$349</span>
+                        <span class="price-value">${{ config('packages.premium.price') }}</span>
                         <p class="fees">+ applicable fees</p>
                     </div>
                     <!-- <a href="javascript:void(0)"><button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button></a> -->
                     <button
                         type="button"
                         class="cta-button premium-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy">
+                        data-plan="premium" data-price="{{ config('packages.premium.price') }}">
                         Choose Premium
                     </button>
                     <!-- <button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button> -->
@@ -229,6 +229,7 @@
 </section>
 
 <!-- pricing section end -->
+@include('partials.service-disclosure')
 
 @include('sections.services-section')
 
@@ -239,7 +240,7 @@
         <p class="section-tagline">Don't just take our word for it</p>
 
         <h2 class="main-rating-title">
-            Trademark USP is rated 4.5 out of 5 based on 31,500 reviews.
+            Explore Trademark USP filing support
         </h2>
 
         <div class="review-card-wrapper">
@@ -263,7 +264,7 @@
                 <!-- <div class="review-footer">
                     <p class="review-status">Excellent</p>
                     <div class="trustpilot-rating">
-                        <img src="./imagees/trustpilot-logo.png" alt="5 out of 5 stars" class="star-images">
+
                         <span class="trustpilot-logo">Trustpilot</span>
                     </div>
                 </div> -->

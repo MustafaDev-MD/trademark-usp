@@ -9,7 +9,7 @@
     <div class="renewal-alive-wrapper">
 
         <div class="renewal-alive-text-content">
-            <h2 class="renewal-alive-headline">Keep your trademark alive with regular renewals</h2>
+            <h1 class="renewal-alive-headline">Keep your trademark alive with regular renewals</h1>
 
             <p class="renewal-alive-intro">
                 If you've had a registered trademark for five or more years, it may be time to file a renewal.
@@ -40,7 +40,7 @@
 
             <div class="renewal-alive-ratings">
                 <div class="renewal-alive-rating-item">
-                    <img src="./imagees/Trademark-Monitoring/side-img1.svg" alt="4.8 Forbes Advisor Rating" class="renewal-alive-rating-img">
+
                 </div>
                 <div class="renewal-alive-award-item">
                     <img src="./imagees/Trademark-Monitoring/side-img2.svg" alt="Inc 5000 America's Fastest Growing Private Companies" class="renewal-alive-award-img">
@@ -195,18 +195,18 @@
         <div class="renewal-stats-grid">
 
             <div class="renewal-stats-item">
-                <p class="renewal-stats-number">250,000+</p>
-                <p class="renewal-stats-label">trademark customers since 2016</p>
+                <p class="renewal-stats-number">Trademark support</p>
+                <p class="renewal-stats-label">Explore registration and renewal services</p>
             </div>
 
             <div class="renewal-stats-item">
-                <p class="renewal-stats-number">35,000+</p>
-                <p class="renewal-stats-label">five-star reviews</p>
+                <p class="renewal-stats-number">Filing support</p>
+                <p class="renewal-stats-label">Support for your brand</p>
             </div>
 
             <div class="renewal-stats-item">
-                <p class="renewal-stats-number">4.8/5</p>
-                <p class="renewal-stats-label">Rated by Forbes Advisor</p>
+                <p class="renewal-stats-number">Service options</p>
+                <p class="renewal-stats-label">Compare available packages</p>
             </div>
 
         </div>

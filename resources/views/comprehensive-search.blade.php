@@ -7,7 +7,7 @@
 <!-- hero section  -->
 <section style="background-image: url('./imagees/comprehensive-search/comprehensive-search-BG.jpg');" class="cta-section">
     <div class="cta-card">
-        <h2 class="cta-headline">Comprehensive Trademark Search</h2>
+        <h1 class="cta-headline">Comprehensive Trademark Search</h1>
 
         <p class="cta-protection-text">
             Get peace of mind and advanced strategy. Make sure your mark is available before you spend time and money applying.
@@ -23,8 +23,8 @@
 
         <div class="cta-proof-row">
             <div class="proof-item reviews">
-                <p class="score">4.8</p>
-                <div class="advisor-logo">Forbes Advisor</div>
+
+                <div class="advisor-logo">Trademark filing support</div>
                 <div class="stars">★★★★★</div>
             </div>
 
@@ -132,7 +132,7 @@
     <div class="container">
         <div class="section-header white-text">
             <h2>Choose the search option that works best for you.</h2>
-            <!--<p class="subtitle">Select the ideal trademark registration package tailored to your business goals. Allow our experienced legal team to deliver a seamless attorney-assisted USPTO filing experience, guiding you through the complex trademark process with professionalism and dedicated care.</p>-->
+            <!--<p class="subtitle">Select the ideal trademark registration package tailored to your business goals. Allow our filing support team to deliver a seamless attorney-assisted USPTO filing experience, guiding you through the complex trademark process with professionalism and dedicated care.</p>-->
         </div>
 
         <div class="pricing-container">

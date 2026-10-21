@@ -7,15 +7,15 @@
 <!-- hero section  -->
 <section style="background-image: url('./imagees/statement-of-use/statement-hero.png');" class="cta-section">
     <div class="cta-card">
-        <h2 class="cta-headline">Statement of Use</h2>
+        <h1 class="cta-headline">Statement of Use</h1>
 
         <p class="cta-protection-text">
             Did you file an Intent to Use application and now need to show the USPTO you are using your mark? We can help you file your Statement of Use, sometimes called an Allegation of Use.
         </p>
 
         <!-- <ul class="cta-stats">
-            <li><span class="bullet-red"></span>35,000+ five-star reviews</li>
-            <li><span class="bullet-red"></span>Rated 4.8 by Forbes Advisor</li>
+            <li><span class="bullet-red"></span>Explore our trademark support packages</li>
+            <li><span class="bullet-red"></span>Compare services and starting fees</li>
             <li><span class="bullet-red"></span>Rated 4.5+ on Trust Pilot</li>
         </ul> -->
 
@@ -23,8 +23,8 @@
 
         <div class="cta-proof-row">
             <div class="proof-item reviews">
-                <p class="score">4.8</p>
-                <div class="advisor-logo">Forbes Advisor</div>
+
+                <div class="advisor-logo">Trademark filing support</div>
                 <div class="stars">★★★★★</div>
             </div>
 

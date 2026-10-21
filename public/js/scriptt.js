@@ -130,25 +130,7 @@
   
 // // });
 
-  // Select ALL buttons using the class selector
-  const fcmpBtns = document.querySelectorAll(".fcmp-trigger-button");
-  
-  // Modal elements remain the same since they are unique IDs
-  const fcmpModal = document.getElementById("fcmp-modal-wrapper");
-  const fcmpClose = document.getElementById("fcmp-close");
 
-  // Loop through each button and attach the click event
-  fcmpBtns.forEach(button => {
-    button.onclick = () => fcmpModal.style.display = "flex";
-  });
-
-  // Close handlers remain the same
-  fcmpClose.onclick = () => fcmpModal.style.display = "none";
-  window.onclick = (e) => {
-    if (e.target === fcmpModal) {
-      fcmpModal.style.display = "none";
-    }
-  }
 // client form js 
 
 
@@ -170,9 +152,7 @@
 // // };
 
 // Optional: manual trigger buttons
-document.querySelectorAll(".fcmp-trigger-button").forEach(button => {
-  button.onclick = showModal;
-});
+
 
 // // // --- AUTO SHOW LOGIC ---
 

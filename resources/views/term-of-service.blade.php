@@ -118,12 +118,12 @@
             We value your privacy and are committed to protecting your personal information. Our privacy policy outlines how we collect, use, and share your data, and your rights regarding that information. Please review the full policy document for complete details.
         </p>
         <p>
-            [FULL DETAILED PRIVACY POLICY TEXT GOES HERE, including information collection, usage, sharing, and contact information, as provided in the initial context but not the chunks.]
+            <a href="{{ route('privacy-policy') }}">Read the complete Privacy Policy</a> for information collection, use, sharing, privacy choices and contact details.
         </p>
 
         <h2 id="refund-and-satisfaction-guarantee" class="legal-content-heading">3. Refund and Satisfaction Guarantee</h2>
         <p>
-            Trademark USP strives to meet the trademark needs of our customers in a professional, courteous, and efficient manner. We want every customer to be 100% satisfied, so we will work with any customer who has any questions or concerns about their filings. Our customer service team is made up of dedicated trademark representatives with one goal - to meet each client’s needs in a friendly, caring, and efficient manner. If you do not think we have met this goal, let us know, and we will be happy to make every effort to resolve the issues to your satisfaction. If we don’t, please request a refund of the fees you paid to Trademark USP. You can send us an email at <a href="mailto:legal@trademarkusp.com">legal@trademarkusp.com</a> or call us toll-free at 1 (877) 721-4579.
+            Trademark USP strives to meet the trademark needs of our customers in a professional, courteous, and efficient manner. We want every customer to be 100% satisfied, so we will work with any customer who has any questions or concerns about their filings. Our customer service team is made up of dedicated trademark representatives with one goal - to meet each client’s needs in a friendly, caring, and efficient manner. If you do not think we have met this goal, let us know, and we will be happy to make every effort to resolve the issues to your satisfaction. If we don’t, please request a refund of the fees you paid to Trademark USP. You can send us an email at <a href="mailto:legal@trademarkusp.com">legal@trademarkusp.com</a> or call us toll-free at 1 (650) 384-0370.
         </p>
         <p>
             If we make an error in your filing, we will do our best to admit it and make the changes needed to fix the correction as soon as we can at no additional cost to you.
@@ -385,7 +385,7 @@
 
         <h3 class="legal-content-subheading">Opt-In and Opt-Out Policy for SMS Communications</h3>
         <p>
-            Users can opt in to our SMS communications by consenting during checkout or texting YES to TRADE (87233). Message and data rates may apply, and message frequency will vary per user. Users can text “STOP” to cancel SMS communications. Service can be canceled at any time. Once we receive the message “STOP”, you’ll receive confirmation that you’ve been unsubscribed. After this, you will no longer receive SMS messages from Trademark USP. Users can also email <a href="mailto:legal@trademarkusp.com">legal@trademarkusp.com</a> or call our Support Center at (877) 721-4579 to opt out of receiving SMS communications. Consent to receive text messages from us is not a requirement for purchase of goods or services. We may send texts via an automatic telephone dialing system.
+            Users can opt in to our SMS communications by consenting during checkout or texting YES to TRADE (87233). Message and data rates may apply, and message frequency will vary per user. Users can text “STOP” to cancel SMS communications. Service can be canceled at any time. Once we receive the message “STOP”, you’ll receive confirmation that you’ve been unsubscribed. After this, you will no longer receive SMS messages from Trademark USP. Users can also email <a href="mailto:legal@trademarkusp.com">legal@trademarkusp.com</a> or call our Support Center at (650) 384-0370 to opt out of receiving SMS communications. Consent to receive text messages from us is not a requirement for purchase of goods or services. We may send texts via an automatic telephone dialing system.
         </p>
 
         <h3 class="legal-content-subheading">Compatible Carriers</h3>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blogs - Trademark USP')
+@section('title', "How Musicians and Artists Can Protect Their Work | Trademark USP")
 
 @section('content')
 
@@ -13,8 +13,7 @@
             <span class="blog-hero-separator">/</span>
             <a href="{{ route('blog') }}" class="blog-hero-breadcrumb-link">Blog</a>
             <span class="blog-hero-separator">/</span>
-            <span class="blog-hero-current">
-                How Musicians and Artists Can Protect Their Work</span>
+            <span class="blog-hero-current">How Musicians and Artists Can Protect Their Work</span>
         </nav>
 
         <span class="blog-hero-category-tag">Guides </span>
@@ -29,16 +28,16 @@
         <div class="blog-hero-meta">
             <span class="blog-hero-meta-item">
                 <span class="icon">🗓️</span>
-                <span class="text">November 16, 2025</span>
+                <span class="text">{{ config('articles.blog-page7.date') }}</span>
             </span>
             <span class="blog-hero-meta-separator">|</span>
             <span class="blog-hero-meta-item">
-                <span class="text">Zac Aiuppa</span>
+                <span class="text">{{ config('articles.blog-page7.author') }}</span>
             </span>
             <span class="blog-hero-meta-separator">|</span>
             <span class="blog-hero-meta-item">
                 <span class="icon">⏱️</span>
-                <span class="text">3 minute read</span>
+                <span class="text">{{ config('articles.blog-page7.read') }}</span>
             </span>
         </div>
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blogs - Trademark USP')
+@section('title', "3 Cautionary Tales of Copyright Infringement | Trademark USP")
 
 @section('content')
 
@@ -30,16 +30,16 @@
         <div class="blog-hero-meta">
             <span class="blog-hero-meta-item">
                 <span class="icon">🗓️</span>
-                <span class="text">November 16, 2025</span>
+                <span class="text">{{ config('articles.blog-page3.date') }}</span>
             </span>
             <span class="blog-hero-meta-separator">|</span>
             <span class="blog-hero-meta-item">
-                <span class="text">Zac Aiuppa</span>
+                <span class="text">{{ config('articles.blog-page3.author') }}</span>
             </span>
             <span class="blog-hero-meta-separator">|</span>
             <span class="blog-hero-meta-item">
                 <span class="icon">⏱️</span>
-                <span class="text">3 minute read</span>
+                <span class="text">{{ config('articles.blog-page3.read') }}</span>
             </span>
         </div>
 

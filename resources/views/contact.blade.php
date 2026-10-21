@@ -8,7 +8,7 @@
     <div class="container">
 
         <header class="contact-header">
-            <h2>Get in touch and let us know how we can help</h2>
+            <h1>Get in touch and let us know how we can help</h1>
         </header>
 
         <div class="contact-grid">

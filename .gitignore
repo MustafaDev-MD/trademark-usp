@@ -24,3 +24,7 @@ Homestead.yaml
 Thumbs.db
 
 /storage/framework/sessions/*
+
+/storage/framework/testing-views/
+/storage/framework/views/*.php
+/tmp/audit/

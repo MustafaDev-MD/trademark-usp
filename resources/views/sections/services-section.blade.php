@@ -59,7 +59,7 @@
                         </a>
                         <!-- <button class="second-nav-button primary-cta fcmp-trigger-button">Register my trademark</button> -->
                         <div class="services-link">
-                            <a href="{{ route('about-us') }}" class="learn-more-link">
+                            <a href="{{ route('trademark-registration') }}" class="learn-more-link">
                                 Learn More About Trademark Registration <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
@@ -86,8 +86,8 @@
                         </a>
                         <!-- <button class="second-nav-button primary-cta fcmp-trigger-button">Register my trademark</button> -->
                         <div class="services-link">
-                            <a href="{{ route('about-us') }}" class="learn-more-link">
-                                Learn More About Trademark Registration <i class="fa-solid fa-arrow-right"></i>
+                            <a href="{{ route('office-action') }}" class="learn-more-link">
+                                Learn More About Office Action Support <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                         <!-- <a href="#" class="main-nav-button primary-cta fcmp-trigger-button">Register my trademark</a> -->
@@ -108,15 +108,15 @@
                             Registering strengthens those rights legally.
                         </p>
                         <a href="javascript:void(0)">
-                            <button class="second-nav-button primary-cta fcmp-trigger-button">Register my trademark</button>
+                            <button class="second-nav-button primary-cta fcmp-trigger-button">Register my copyright</button>
                         </a>
-                        <!-- <button class="second-nav-button primary-cta fcmp-trigger-button">Register my trademark</button> -->
+                        <!-- <button class="second-nav-button primary-cta fcmp-trigger-button">Register my copyright</button> -->
                         <div class="services-link">
-                            <a href="{{ route('about-us') }}" class="learn-more-link">
-                                Learn More About Trademark Registration <i class="fa-solid fa-arrow-right"></i>
+                            <a href="{{ route('copyright-registration') }}" class="learn-more-link">
+                                Learn More About Copyright Registration <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
-                        <!-- <a href="#" class="main-nav-button primary-cta fcmp-trigger-button">Register my trademark</a> -->
+                        <!-- <a href="#" class="main-nav-button primary-cta fcmp-trigger-button">Register my copyright</a> -->
                     </div>
                     <img src="{{ asset('imagees/2.png') }}"
                         alt="Copyright Registration"
@@ -134,15 +134,15 @@
                             of USPTO filings.
                         </p>
                         <a href="javascript:void(0)">
-                            <button class="second-nav-button primary-cta fcmp-trigger-button">Register my trademark</button>
+                            <button class="second-nav-button primary-cta fcmp-trigger-button">Explore monitoring</button>
                         </a>
-                        <!-- <button class="second-nav-button primary-cta fcmp-trigger-button">Register my trademark</button> -->
+                        <!-- <button class="second-nav-button primary-cta fcmp-trigger-button">Explore monitoring</button> -->
                         <div class="services-link">
-                            <a href="{{ route('about-us') }}" class="learn-more-link">
-                                Learn More About Trademark Registration <i class="fa-solid fa-arrow-right"></i>
+                            <a href="{{ route('trademark-monitoring') }}" class="learn-more-link">
+                                Learn More About Trademark Monitoring <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
-                        <!-- <a href="#" class="main-nav-button primary-cta fcmp-trigger-button">Register my trademark</a> -->
+                        <!-- <a href="#" class="main-nav-button primary-cta fcmp-trigger-button">Explore monitoring</a> -->
                     </div>
 
                     <img src="{{ asset('imagees/2.png') }}"

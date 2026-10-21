@@ -1,0 +1,4 @@
+<aside class="service-disclosure" style="max-width:1100px;margin:20px auto;padding:16px;border:1px solid #ddd">
+<p>Trademark USP provides software and filing support and is not a law firm. Legal advice and representation require a separate agreement with the attorney service provider, acceptance of your request and confirmation of scope. Purchasing a support package alone does not create an attorney-client relationship. See our <a href="{{ route('term-of-service') }}#privacy-program-and-legal-services">third-party legal service terms</a>.</p>
+<p>Government filing fees and optional services are separate from the displayed starting service fee. Request a complete quote before purchase. Monitoring trial pricing and duration must be confirmed separately before enrollment.</p>
+</aside>

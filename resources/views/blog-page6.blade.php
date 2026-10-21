@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blogs - Trademark USP')
+@section('title', "Tips & Tricks for Using Your Logo on Instagram | Trademark USP")
 
 @section('content')
 
@@ -13,8 +13,7 @@
             <span class="blog-hero-separator">/</span>
             <a href="{{ route('blog') }}" class="blog-hero-breadcrumb-link">Blog</a>
             <span class="blog-hero-separator">/</span>
-            <span class="blog-hero-current">
-                Tips & Tricks for Using Your Logo on Instagram</span>
+            <span class="blog-hero-current">Tips &amp; Tricks for Using Your Logo on Instagram</span>
         </nav>
 
         <span class="blog-hero-category-tag">Guides </span>
@@ -30,16 +29,16 @@
         <div class="blog-hero-meta">
             <span class="blog-hero-meta-item">
                 <span class="icon">🗓️</span>
-                <span class="text">November 16, 2025</span>
+                <span class="text">{{ config('articles.blog-page6.date') }}</span>
             </span>
             <span class="blog-hero-meta-separator">|</span>
             <span class="blog-hero-meta-item">
-                <span class="text">Zac Aiuppa</span>
+                <span class="text">{{ config('articles.blog-page6.author') }}</span>
             </span>
             <span class="blog-hero-meta-separator">|</span>
             <span class="blog-hero-meta-item">
                 <span class="icon">⏱️</span>
-                <span class="text">3 minute read</span>
+                <span class="text">{{ config('articles.blog-page6.read') }}</span>
             </span>
         </div>
 

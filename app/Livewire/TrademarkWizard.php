@@ -50,9 +50,9 @@
 
 //     // CONFIG
 //     public $plans = [
-//         'basic' => 59,
-//         'standard' => 299,
-//         'premium' => 539,
+//         'basic' => 49,
+//         'standard' => 199,
+//         'premium' => 349,
 //     ];
 
 //     public $addonList = [
@@ -263,7 +263,7 @@
 //     // TOTAL
 //     protected function calculateTotal()
 //     {
-//         $this->plan_price = $this->plans[$this->plan] ?? 0;
+//         $this->plan_price = config('packages.'.$this->plan.'.price', 0);
 
 //         $this->addons_price = collect($this->addons)
 //             ->sum(fn($a) => $this->addonList[$a] ?? 0);
@@ -608,9 +608,9 @@ class TrademarkWizard extends Component
 
     // CONFIG
     public $plans = [
-        'basic' => 59,
-        'standard' => 299,
-        'premium' => 539,
+        'basic' => 49,
+        'standard' => 199,
+        'premium' => 349,
     ];
 
     public $addonList = [
@@ -738,7 +738,8 @@ class TrademarkWizard extends Component
         $this->logo_name = $this->application->logo_name;
         $this->logo_description = $this->application->logo_description;
 
-        $this->plan = $this->application->plan;
+        $selectedPackage = session()->pull('selected_package');
+        $this->plan = $this->application->plan ?? (array_key_exists($selectedPackage ?? '', config('packages')) ? $selectedPackage : null);
         $this->addons = is_array($this->application->addons) ? $this->application->addons : [];
         $this->priority = $this->application->priority;
 
@@ -980,7 +981,7 @@ class TrademarkWizard extends Component
     // TOTAL
     protected function calculateTotal()
     {
-        $this->plan_price = $this->plans[$this->plan] ?? 0;
+        $this->plan_price = config('packages.'.$this->plan.'.price', 0);
 
         $this->addons_price = collect($this->addons)
             ->sum(fn ($a) => $this->addonList[$a] ?? 0);

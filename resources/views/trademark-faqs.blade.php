@@ -6,7 +6,7 @@
 
 <section class="faqs-section">
     <div class="section-header-wrapper">
-        <h2> Trademark USP FAQs</h2>
+        <h1> Trademark USP FAQs</h1>
         <p class="faqs-subtext">
             Still have questions? Call +1 (650) 384-0370 or LIVE CHAT with us for real-time support.
         </p>

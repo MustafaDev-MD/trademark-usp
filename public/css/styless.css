@@ -106,7 +106,8 @@ input[type="file"] {
       font-family: 'Poppins', sans-serif;
     }
 
-    .r9k3-section h2 {
+    .r9k3-section h2,
+.r9k3-section h1 {
       color: #132c4e;
       font-size: 28px;
       margin-bottom: 10px;
@@ -219,7 +220,8 @@ input#phoneNum3 {
     padding: 90px 12px;
 }
 
-.logo-modal h2 {
+.logo-modal h2,
+.logo-modal h1 {
     font-size: 22px;
 }
 
@@ -1025,7 +1027,9 @@ h1, h2, h3, h4,
 .logo span, 
 .nav-links a, 
 .section-tagline, 
-.section-header h2 {
+.section-header h2,
+h1,
+.section-header h1 {
     font-family: var(--primary-font);
 }
 p, li {
@@ -1250,7 +1254,8 @@ body {
     margin-bottom: 50px;
 }
 
-.section-header h2 {
+.section-header h2,
+.section-header h1 {
     font-size: 30px;
     font-weight: 700;
     color: #192e5a; /* Dark blue/black text */
@@ -1324,7 +1329,8 @@ body {
 }
 
 .pricing-section .section-header h2,
-.pricing-section .section-header .subtitle {
+.pricing-section .section-header .subtitle,
+.pricing-section .section-header h1 {
     color: white;
 }
 

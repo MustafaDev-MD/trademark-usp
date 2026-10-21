@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign in | Trademark USP</title>
+    @include('partials.seo')
 
     <!-- {{-- Favicon --}} -->
     <link rel="icon" type="image/png" href="{{ asset('imagees/fav.png') }}">
@@ -34,7 +35,7 @@
 
                         <div class="login-inner-content">
                             <div class="login-userheading">
-                                <h3>Sign In</h3>
+                                <h1 style="font-size:24px">Sign In</h1>
                                 <h4>Please login to your account</h4>
                             </div>
 

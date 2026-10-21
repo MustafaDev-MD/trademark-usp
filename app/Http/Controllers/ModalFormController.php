@@ -43,7 +43,7 @@ class ModalFormController extends Controller
     //         'name' => $validated['customer_full_name'],
     //         'email' => $validated['customer_email'],
     //         'phone' => $validated['customer_phone'],
-    //         'message' => $validated['comment'] ?? null,
+    //         'message' => (!empty($validated['selected_plan']) ? 'Selected package: '.$validated['selected_plan']."\n" : '').($validated['comment'] ?? ''),
     //     ]);
 
     //     Mail::to(config('mail.from.address'))->send(new LeadMail($lead));
@@ -86,7 +86,7 @@ class ModalFormController extends Controller
     //         'name' => $validated['customer_full_name'],
     //         'email' => $validated['customer_email'],
     //         'phone' => $validated['customer_phone'],
-    //         'message' => $validated['comment'] ?? null,
+    //         'message' => (!empty($validated['selected_plan']) ? 'Selected package: '.$validated['selected_plan']."\n" : '').($validated['comment'] ?? ''),
     //     ]);
 
     //     // Send email
@@ -112,7 +112,7 @@ class ModalFormController extends Controller
             return response()->json(['success' => false, 'message' => 'Too fast. Please try again.'], 422);
         }
 
-        $phone = preg_replace('/\D/', '', $request->customer_phone);
+        $phone = preg_replace('/\D/', '', (string) $request->input('customer_phone', ''));
         $request->merge(['customer_phone' => $phone]);
 
         try {
@@ -121,8 +121,9 @@ class ModalFormController extends Controller
             $validated = $request->validate([
                 'customer_full_name' => 'required|string|max:255',
                 'customer_email' => 'required|email|max:255',
-                'customer_phone' => ['required', 'regex:/^[0-9]{10}$/'],
+                'customer_phone' => ['required', 'regex:/^[0-9]{10,15}$/'],
                 'comment' => 'required|string|max:1000',
+                'selected_plan' => 'nullable|in:basic,standard,premium',
                 'g-recaptcha-response' => 'required',
             ], [
                 'customer_phone.regex' => 'Phone must be 10–15 digits and numbers only',
@@ -137,15 +138,15 @@ class ModalFormController extends Controller
         }
 
         // RECAPTCHA
-        $verify = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-            'secret' => env('NOCAPTCHA_SECRET'),
+        $verify = Http::asForm()->timeout(10)->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => config('captcha.secret'),
             'response' => $validated['g-recaptcha-response'],
             'remoteip' => $request->ip(),
         ]);
 
         /** @var Response $verify */
         $captcha = $verify->json();
-        if (! ($captcha['success'] ?? false) || ($captcha['score'] ?? 0) < 0.5) {
+        if (! $verify->successful() || ! ($captcha['success'] ?? false) || ($captcha['score'] ?? 0) < 0.5 || ($captcha['action'] ?? '') !== 'modal_form') {
             return response()->json(['success' => false, 'message' => 'reCAPTCHA verification failed. Are you a robot?'], 422);
         }
 
@@ -163,7 +164,7 @@ class ModalFormController extends Controller
             'name' => $validated['customer_full_name'],
             'email' => $validated['customer_email'],
             'phone' => $validated['customer_phone'],
-            'message' => $validated['comment'] ?? null,
+            'message' => (! empty($validated['selected_plan']) ? 'Selected package: '.$validated['selected_plan']."\n" : '').($validated['comment'] ?? ''),
         ]);
 
         Mail::to(config('mail.from.address'))->send(new LeadMail($lead));

@@ -19,8 +19,8 @@
 
         <ul class="tm-monitor-stats-list">
             <li><span class="tm-monitor-bullet-red"></span>120,000+ trademarks and copyrights filed since 2016</li>
-            <li><span class="tm-monitor-bullet-red"></span> 35,000+ five-star reviews</li>
-            <li><span class="tm-monitor-bullet-red"></span> Rated 4.8 by Forbes Advisor</li>
+            <li><span class="tm-monitor-bullet-red"></span> Explore our trademark support packages</li>
+            <li><span class="tm-monitor-bullet-red"></span> Compare services and starting fees</li>
         </ul>
 
         <a href="javascript:void(0)" class="tm-monitor-button-orange fcmp-trigger-button">Start My Copyright Registration </a>
@@ -28,7 +28,7 @@
         <div class="tm-monitor-logos-wrapper">
             <div class="tm-monitor-rating-block">
                 <span class="tm-monitor-rating-value"></span>
-                <img src="./imagees/Trademark-Monitoring/side-img1.svg" alt="4.8 star rating">
+
                 <!-- <p>Forbes *ADVISOR*</p> -->
             </div>
             <div class="tm-monitor-inc-logo">

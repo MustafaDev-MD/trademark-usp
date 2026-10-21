@@ -5,24 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Trademark USP')</title>
+    @include('partials.seo')
 
     <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TSBJ4J7T');
-    </script>
+
     <!-- End Google Tag Manager -->
 
 
@@ -38,8 +24,8 @@
 
 
     <!-- {{-- CSS --}} -->
-    <link rel="stylesheet" href="{{ asset('css/styless.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/styless.css') }}?v={{ filemtime(public_path('css/styles.css')) }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}?v={{ filemtime(public_path('css/styles.css')) }}">
 
     <!-- {{-- Favicon --}} -->
     <link rel="icon" type="image/png" href="{{ asset('imagees/fav.png') }}">
@@ -53,14 +39,8 @@
 <body>
 
     <!-- {{-- GTM (noscript) --}} -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QQV3FW6"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSH7VPQM"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+
+
 
     <!-- {{-- HEADER --}} -->
     @include('partials.header')
@@ -140,49 +120,23 @@
     </script> -->
 
     <!-- {{-- GTM --}} -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5QQV3FW6');
-    </script>
 
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WSH7VPQM');
-    </script>
+
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- {{-- JS --}} -->
-    <script src="{{ asset('js/scriptt.js') }}?v={{ time() }}"></script>
-    <script src="{{ asset('js/script.js') }}?v={{ time() }}"></script>
+    <script src="{{ asset('js/scriptt.js') }}?v={{ filemtime(public_path('css/styles.css')) }}"></script>
+    <script src="{{ asset('js/script.js') }}?v={{ filemtime(public_path('css/styles.css')) }}"></script>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSBJ4J7T"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <!-- End Google Tag Manager (noscript) -->
 
+    @include('partials.privacy-settings')
+    <script>window.trackingConfig = {gtmIds: @json(config('tracking.gtm_ids'))};</script>
+    <script src="{{ asset('js/audit-ui.js') }}?v={{ filemtime(public_path('js/audit-ui.js')) }}"></script>
     @livewireScripts
     @stack('scripts')
 </body>
