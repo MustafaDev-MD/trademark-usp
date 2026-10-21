@@ -61,7 +61,6 @@
                 <li><a href="<?php echo e(route('about-us')); ?>">About Us</a></li>
                 <li><a href="<?php echo e(route('careers')); ?>">Careers</a></li>
                 <li><a href="<?php echo e(route('privacy-policy')); ?>">Privacy Policy</a></li>
-                <li><button type="button" class="privacy-footer-button" data-privacy-settings>Privacy Settings</button></li>
                 <!-- <li><a href="<?php echo e(route('guarantee')); ?>">Our Guarantee</a></li> -->
             </ul>
         </div>
@@ -132,4 +131,5 @@
 </footer>
 
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> --><?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/partials/footer.blade.php ENDPATH**/ ?>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
+<?php /**PATH C:\xampp\htdocs\trademark-usp\resources\views/partials/footer.blade.php ENDPATH**/ ?>

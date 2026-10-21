@@ -61,7 +61,6 @@
                 <li><a href="{{ route('about-us') }}">About Us</a></li>
                 <li><a href="{{ route('careers') }}">Careers</a></li>
                 <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
-                <li><button type="button" class="privacy-footer-button" data-privacy-settings>Privacy Settings</button></li>
                 <!-- <li><a href="{{ route('guarantee') }}">Our Guarantee</a></li> -->
             </ul>
         </div>
