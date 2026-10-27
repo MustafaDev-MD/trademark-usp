@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @include('partials.gtm-head')
     <meta charset="UTF-8">
     <title>403 | Unauthorized</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,6 +112,7 @@
     </style>
 </head>
 <body>
+    @include('partials.gtm-body')
 
 <div class="error-card">
     <span class="error-badge">Access Denied</span>

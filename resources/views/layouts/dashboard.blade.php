@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    @include('partials.gtm-head')
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,6 +25,7 @@
 </head>
 
 <body>
+    @include('partials.gtm-body')
 
     <!--<div id="global-loader">-->
     <!--    <div class="whirly-loader">-->

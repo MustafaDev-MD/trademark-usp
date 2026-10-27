@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    @include('partials.gtm-head')
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in | Trademark USP</title>
@@ -19,6 +20,7 @@
 </head>
 
 <body class="account-page">
+    @include('partials.gtm-body')
 
     <div class="main-wrapper">
         <div class="account-content">

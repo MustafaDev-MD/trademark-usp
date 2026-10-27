@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    @include('partials.gtm-head')
     <meta charset="UTF-8">
     <title>Admin Login</title>
 
@@ -10,6 +11,7 @@
 </head>
 
 <body class="account-page">
+    @include('partials.gtm-body')
 
     <div class="main-wrapper">
         <div class="account-content">

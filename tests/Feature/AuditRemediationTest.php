@@ -111,3 +111,14 @@ it('uses the same business hours and legal name on contact and footer', function
     $this->get('/contact')->assertOk()->assertSee(config('business.support_hours'))
         ->assertSee(config('business.legal_name'))->assertDontSee('9AM-6PM CST')->assertDontSee('USP of Trademarks, LLC');
 });
+
+
+it('loads the primary GTM container before consent on public and login pages exactly once', function () {
+    foreach (['/', '/contact', '/trademark-registration', '/login', '/register'] as $path) {
+        $html = $this->get($path)->assertOk()->getContent();
+        expect(substr_count($html, "})(window,document,'script','dataLayer','GTM-TSBJ4J7T');"))->toBe(1);
+        expect(substr_count($html, 'ns.html?id=GTM-TSBJ4J7T'))->toBe(1);
+        expect(strpos($html, '<!-- Google Tag Manager -->'))->toBeLessThan(strpos($html, '</head>'));
+        expect(preg_match('/<body[^>]*>\s*<!-- Google Tag Manager \(noscript\) -->/', $html))->toBe(1);
+    }
+});

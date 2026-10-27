@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && modal?.style.display === 'flex') closeModal();
   });
-  // Load existing tracking containers only when analytics is allowed.
+  // The primary GTM container loads in the head; optional containers load when analytics is allowed.
   function loadAnalytics() {
     const ids=JSON.parse(document.getElementById('tracking-config')?.textContent || '{}').gtmIds || [];
     ids.forEach(id => {
