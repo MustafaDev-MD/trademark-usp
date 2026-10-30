@@ -95,7 +95,6 @@ it('rejects failed captcha without saving a lead', function () {
     $this->assertDatabaseCount('leads', 0);
 });
 
-
 it('renders valid schema JSON without compiled Blade text on public pages', function () {
     foreach (array_keys(config('seo')) as $path) {
         $html = $this->get('/'.$path)->assertOk()->getContent();
@@ -111,7 +110,6 @@ it('uses the same business hours and legal name on contact and footer', function
     $this->get('/contact')->assertOk()->assertSee(config('business.support_hours'))
         ->assertSee(config('business.legal_name'))->assertDontSee('9AM-6PM CST')->assertDontSee('USP of Trademarks, LLC');
 });
-
 
 it('loads the primary GTM container before consent on public and login pages exactly once', function () {
     foreach (['/', '/contact', '/trademark-registration', '/login', '/register'] as $path) {
