@@ -257,6 +257,8 @@ Route::middleware(['auth', 'verified', 'admin'])
 
         Route::resource('addons', AddonController::class);
 
+        Route::get('/dashboard/leads/{lead}/logo', [ModalFormController::class, 'logo'])->name('leads.logo');
+
         Route::get(
             '/dashboard/leads',
             [ModalFormController::class, 'index']

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <?php echo $__env->make('partials.gtm-head', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $__env->yieldContent('title', 'Trademark USP'); ?></title>
@@ -38,6 +39,7 @@
 </head>
 
 <body>
+    <?php echo $__env->make('partials.gtm-body', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
     <!--  -->
 

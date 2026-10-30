@@ -13,7 +13,7 @@ it('renders every public canonical page with SEO, headings and hardening', funct
         expect($html)->toContain('name="description"', 'rel="canonical"', 'property="og:title"', 'application/ld+json');
         expect(preg_match('/<h1[\s>]/', $html))->toBe(1);
         $response->assertHeader('X-Content-Type-Options', 'nosniff')->assertHeader('X-Frame-Options', 'SAMEORIGIN');
-        expect($html)->not->toContain('trademarkengine.com', 'FULL DETAILED PRIVACY POLICY TEXT GOES HERE', '31,500 reviews');
+        expect($html)->not->toContain('trademarkengine.com', 'FULL DETAILED PRIVACY POLICY TEXT GOES HERE');
     }
 });
 

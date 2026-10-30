@@ -66,7 +66,7 @@
                     <button
                         type="button"
                         class="cta-button basic-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/qrdxw9ibr3rismkx5snxuyuxxlpwt3">
+                        data-payment-url="https://collectcheckout.com/r/qrdxw9ibr3rismkx5snxuyuxxlpwt3" data-plan="basic">
                         Choose Basic
                     </button>
                     <!-- <button class="cta-button basic-btn fcmp-trigger-button">Choose Basic</button> -->
@@ -97,7 +97,7 @@
                     <button
                         type="button"
                         class="cta-button standard-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua">
+                        data-payment-url="https://collectcheckout.com/r/wpaihvczym6tuiira35ir933nswjua" data-plan="standard">
                         Choose Standard
                     </button>
                     <!-- <button class="cta-button standard-btn fcmp-trigger-button">Choose Standard</button> -->
@@ -129,7 +129,7 @@
                     <button
                         type="button"
                         class="cta-button premium-btn fcmp-trigger-button"
-                        data-payment-url="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy">
+                        data-payment-url="https://collectcheckout.com/r/02ldu837unsefv8jyge2hzw8d9f2gy" data-plan="premium">
                         Choose Premium
                     </button>
                     <!-- <button class="cta-button premium-btn fcmp-trigger-button">Choose Premium</button> -->

@@ -9,7 +9,10 @@ class Lead extends Model
 {
     use HasFactory;
 
+    protected $casts = ['trademark_types' => 'array'];
+
     protected $fillable = [
+        'first_name', 'last_name', 'trademark_types', 'trademark_name', 'trademark_slogan', 'logo_path', 'selected_plan',
         'name',
         'email',
         'phone',

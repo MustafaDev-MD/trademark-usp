@@ -2,24 +2,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('fcmp-modal-wrapper');
   const closeButton = document.getElementById('fcmp-close');
   let opener;
-  function closeModal() { if (modal) modal.style.display = 'none'; opener?.focus(); }
+  let autoOpenTimer;
+  function closeModal() { clearTimeout(autoOpenTimer); if (modal) { modal.style.display = 'none'; modal.setAttribute('aria-hidden', 'true'); } document.body.style.overflow = ''; opener?.focus(); }
+  function openModal(button = null) {
+    clearTimeout(autoOpenTimer);
+    if (!modal) return;
+    opener = button || document.activeElement;
+    const payButton = document.getElementById('modalPayNowBtn');
+    if (payButton) {
+      payButton.style.display = button?.dataset.paymentUrl ? 'inline-flex' : 'none';
+      payButton.href = button?.dataset.paymentUrl || 'javascript:void(0);';
+    }
+    document.getElementById('modal-selected-plan').value = button?.dataset.plan || '';
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('fcmp-modal').scrollTop = 0;
+    document.getElementById('inquiry-first-name')?.focus({preventScroll: true});
+  }
   document.querySelectorAll('.fcmp-trigger-button').forEach(button => {
-    button.onclick = event => {
-      event.preventDefault();
-      if (!modal) return;
-      opener = button;
-      const payButton = document.getElementById('modalPayNowBtn');
-      if (payButton) {
-        payButton.style.display = button.dataset.paymentUrl ? 'inline-flex' : 'none';
-        payButton.href = button.dataset.paymentUrl || 'javascript:void(0);';
-      }
-      modal.style.display = 'flex';
-    };
+    button.onclick = event => { event.preventDefault(); openModal(button); };
   });
+  // Wait briefly on every page; manual opening or dismissal cancels this timer.
+  autoOpenTimer = setTimeout(() => openModal(), 3500);
   closeButton?.addEventListener('click', closeModal);
   modal?.addEventListener('click', event => { if (event.target === modal) closeModal(); });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && modal?.style.display === 'flex') closeModal();
+  });
+  modal?.addEventListener('keydown', event => {
+    if (event.key !== 'Tab') return;
+    const fields = [...modal.querySelectorAll('a[href], button, input:not([type="hidden"]), textarea, [tabindex="0"]')].filter(el => !el.disabled && el.offsetParent !== null);
+    const first = fields[0], last = fields[fields.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
   });
   // The primary GTM container loads in the head; optional containers load when analytics is allowed.
   function loadAnalytics() {

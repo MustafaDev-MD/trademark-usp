@@ -29,7 +29,8 @@ class LeadMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Trademark Lead Submission'
+            subject: $this->lead->selected_plan ? 'New '.ucfirst($this->lead->selected_plan).' Package Inquiry' : 'New Trademark Lead Submission',
+            replyTo: [new \Illuminate\Mail\Mailables\Address($this->lead->email, $this->lead->name)]
         );
     }
 
@@ -51,6 +52,6 @@ class LeadMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return $this->lead->logo_path ? [\Illuminate\Mail\Mailables\Attachment::fromStorageDisk('local', $this->lead->logo_path)->as('trademark-logo.'.pathinfo($this->lead->logo_path, PATHINFO_EXTENSION))] : [];
     }
 }

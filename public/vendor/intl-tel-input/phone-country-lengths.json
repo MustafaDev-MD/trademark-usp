@@ -1,0 +1,1227 @@
+{
+    "ac": {
+        "max": 5,
+        "prefix": "",
+        "dialCode": "247"
+    },
+    "ad": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "376"
+    },
+    "ae": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "971"
+    },
+    "af": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "93"
+    },
+    "ag": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "ai": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "al": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "355"
+    },
+    "am": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "374"
+    },
+    "ao": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "244"
+    },
+    "ar": {
+        "max": 11,
+        "prefix": "0",
+        "dialCode": "54"
+    },
+    "as": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "at": {
+        "max": 13,
+        "prefix": "0",
+        "dialCode": "43"
+    },
+    "au": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "61"
+    },
+    "aw": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "297"
+    },
+    "ax": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "358"
+    },
+    "az": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "994"
+    },
+    "ba": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "387"
+    },
+    "bb": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "bd": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "880"
+    },
+    "be": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "32"
+    },
+    "bf": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "226"
+    },
+    "bg": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "359"
+    },
+    "bh": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "973"
+    },
+    "bi": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "257"
+    },
+    "bj": {
+        "max": 10,
+        "prefix": "",
+        "dialCode": "229"
+    },
+    "bl": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "590"
+    },
+    "bm": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "bn": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "673"
+    },
+    "bo": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "591"
+    },
+    "bq": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "599"
+    },
+    "br": {
+        "max": 11,
+        "prefix": "0",
+        "dialCode": "55"
+    },
+    "bs": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "bt": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "975"
+    },
+    "bw": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "267"
+    },
+    "by": {
+        "max": 9,
+        "prefix": "8",
+        "dialCode": "375"
+    },
+    "bz": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "501"
+    },
+    "ca": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "cc": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "61"
+    },
+    "cd": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "243"
+    },
+    "cf": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "236"
+    },
+    "cg": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "242"
+    },
+    "ch": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "41"
+    },
+    "ci": {
+        "max": 10,
+        "prefix": "",
+        "dialCode": "225"
+    },
+    "ck": {
+        "max": 5,
+        "prefix": "",
+        "dialCode": "682"
+    },
+    "cl": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "56"
+    },
+    "cm": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "237"
+    },
+    "cn": {
+        "max": 11,
+        "prefix": "0",
+        "dialCode": "86"
+    },
+    "co": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "57"
+    },
+    "cr": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "506"
+    },
+    "cu": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "53"
+    },
+    "cv": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "238"
+    },
+    "cw": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "599"
+    },
+    "cx": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "61"
+    },
+    "cy": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "357"
+    },
+    "cz": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "420"
+    },
+    "de": {
+        "max": 15,
+        "prefix": "0",
+        "dialCode": "49"
+    },
+    "dj": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "253"
+    },
+    "dk": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "45"
+    },
+    "dm": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "do": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "dz": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "213"
+    },
+    "ec": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "593"
+    },
+    "ee": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "372"
+    },
+    "eg": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "20"
+    },
+    "eh": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "212"
+    },
+    "er": {
+        "max": 7,
+        "prefix": "0",
+        "dialCode": "291"
+    },
+    "es": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "34"
+    },
+    "et": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "251"
+    },
+    "fi": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "358"
+    },
+    "fj": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "679"
+    },
+    "fk": {
+        "max": 5,
+        "prefix": "",
+        "dialCode": "500"
+    },
+    "fm": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "691"
+    },
+    "fo": {
+        "max": 6,
+        "prefix": "",
+        "dialCode": "298"
+    },
+    "fr": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "33"
+    },
+    "ga": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "241"
+    },
+    "gb": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "44"
+    },
+    "gd": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "ge": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "995"
+    },
+    "gf": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "594"
+    },
+    "gg": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "44"
+    },
+    "gh": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "233"
+    },
+    "gi": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "350"
+    },
+    "gl": {
+        "max": 6,
+        "prefix": "",
+        "dialCode": "299"
+    },
+    "gm": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "220"
+    },
+    "gn": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "224"
+    },
+    "gp": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "590"
+    },
+    "gq": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "240"
+    },
+    "gr": {
+        "max": 10,
+        "prefix": "",
+        "dialCode": "30"
+    },
+    "gt": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "502"
+    },
+    "gu": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "gw": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "245"
+    },
+    "gy": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "592"
+    },
+    "hk": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "852"
+    },
+    "hn": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "504"
+    },
+    "hr": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "385"
+    },
+    "ht": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "509"
+    },
+    "hu": {
+        "max": 9,
+        "prefix": "06",
+        "dialCode": "36"
+    },
+    "id": {
+        "max": 12,
+        "prefix": "0",
+        "dialCode": "62"
+    },
+    "ie": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "353"
+    },
+    "il": {
+        "max": 12,
+        "prefix": "0",
+        "dialCode": "972"
+    },
+    "im": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "44"
+    },
+    "in": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "91"
+    },
+    "io": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "246"
+    },
+    "iq": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "964"
+    },
+    "ir": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "98"
+    },
+    "is": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "354"
+    },
+    "it": {
+        "max": 12,
+        "prefix": "",
+        "dialCode": "39"
+    },
+    "je": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "44"
+    },
+    "jm": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "jo": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "962"
+    },
+    "jp": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "81"
+    },
+    "ke": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "254"
+    },
+    "kg": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "996"
+    },
+    "kh": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "855"
+    },
+    "ki": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "686"
+    },
+    "km": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "269"
+    },
+    "kn": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "kp": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "850"
+    },
+    "kr": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "82"
+    },
+    "kw": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "965"
+    },
+    "ky": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "kz": {
+        "max": 10,
+        "prefix": "8",
+        "dialCode": "7"
+    },
+    "la": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "856"
+    },
+    "lb": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "961"
+    },
+    "lc": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "li": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "423"
+    },
+    "lk": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "94"
+    },
+    "lr": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "231"
+    },
+    "ls": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "266"
+    },
+    "lt": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "370"
+    },
+    "lu": {
+        "max": 11,
+        "prefix": "",
+        "dialCode": "352"
+    },
+    "lv": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "371"
+    },
+    "ly": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "218"
+    },
+    "ma": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "212"
+    },
+    "mc": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "377"
+    },
+    "md": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "373"
+    },
+    "me": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "382"
+    },
+    "mf": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "590"
+    },
+    "mg": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "261"
+    },
+    "mh": {
+        "max": 7,
+        "prefix": "1",
+        "dialCode": "692"
+    },
+    "mk": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "389"
+    },
+    "ml": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "223"
+    },
+    "mm": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "95"
+    },
+    "mn": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "976"
+    },
+    "mo": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "853"
+    },
+    "mp": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "mq": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "596"
+    },
+    "mr": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "222"
+    },
+    "ms": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "mt": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "356"
+    },
+    "mu": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "230"
+    },
+    "mv": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "960"
+    },
+    "mw": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "265"
+    },
+    "mx": {
+        "max": 10,
+        "prefix": "",
+        "dialCode": "52"
+    },
+    "my": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "60"
+    },
+    "mz": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "258"
+    },
+    "na": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "264"
+    },
+    "nc": {
+        "max": 6,
+        "prefix": "",
+        "dialCode": "687"
+    },
+    "ne": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "227"
+    },
+    "nf": {
+        "max": 6,
+        "prefix": "",
+        "dialCode": "672"
+    },
+    "ng": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "234"
+    },
+    "ni": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "505"
+    },
+    "nl": {
+        "max": 11,
+        "prefix": "0",
+        "dialCode": "31"
+    },
+    "no": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "47"
+    },
+    "np": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "977"
+    },
+    "nr": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "674"
+    },
+    "nu": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "683"
+    },
+    "nz": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "64"
+    },
+    "om": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "968"
+    },
+    "pa": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "507"
+    },
+    "pe": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "51"
+    },
+    "pf": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "689"
+    },
+    "pg": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "675"
+    },
+    "ph": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "63"
+    },
+    "pk": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "92"
+    },
+    "pl": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "48"
+    },
+    "pm": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "508"
+    },
+    "pr": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "ps": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "970"
+    },
+    "pt": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "351"
+    },
+    "pw": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "680"
+    },
+    "py": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "595"
+    },
+    "qa": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "974"
+    },
+    "re": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "262"
+    },
+    "ro": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "40"
+    },
+    "rs": {
+        "max": 12,
+        "prefix": "0",
+        "dialCode": "381"
+    },
+    "ru": {
+        "max": 10,
+        "prefix": "8",
+        "dialCode": "7"
+    },
+    "rw": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "250"
+    },
+    "sa": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "966"
+    },
+    "sb": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "677"
+    },
+    "sc": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "248"
+    },
+    "sd": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "249"
+    },
+    "se": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "46"
+    },
+    "sg": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "65"
+    },
+    "sh": {
+        "max": 5,
+        "prefix": "",
+        "dialCode": "290"
+    },
+    "si": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "386"
+    },
+    "sj": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "47"
+    },
+    "sk": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "421"
+    },
+    "sl": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "232"
+    },
+    "sm": {
+        "max": 10,
+        "prefix": "",
+        "dialCode": "378"
+    },
+    "sn": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "221"
+    },
+    "so": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "252"
+    },
+    "sr": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "597"
+    },
+    "ss": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "211"
+    },
+    "st": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "239"
+    },
+    "sv": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "503"
+    },
+    "sx": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "sy": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "963"
+    },
+    "sz": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "268"
+    },
+    "ta": {
+        "max": 4,
+        "prefix": "",
+        "dialCode": "290"
+    },
+    "tc": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "td": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "235"
+    },
+    "tg": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "228"
+    },
+    "th": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "66"
+    },
+    "tj": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "992"
+    },
+    "tk": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "690"
+    },
+    "tl": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "670"
+    },
+    "tm": {
+        "max": 8,
+        "prefix": "8",
+        "dialCode": "993"
+    },
+    "tn": {
+        "max": 8,
+        "prefix": "",
+        "dialCode": "216"
+    },
+    "to": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "676"
+    },
+    "tr": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "90"
+    },
+    "tt": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "tv": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "688"
+    },
+    "tw": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "886"
+    },
+    "tz": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "255"
+    },
+    "ua": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "380"
+    },
+    "ug": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "256"
+    },
+    "us": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "uy": {
+        "max": 8,
+        "prefix": "0",
+        "dialCode": "598"
+    },
+    "uz": {
+        "max": 9,
+        "prefix": "",
+        "dialCode": "998"
+    },
+    "va": {
+        "max": 11,
+        "prefix": "",
+        "dialCode": "39"
+    },
+    "vc": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "ve": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "58"
+    },
+    "vg": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "vi": {
+        "max": 10,
+        "prefix": "1",
+        "dialCode": "1"
+    },
+    "vn": {
+        "max": 10,
+        "prefix": "0",
+        "dialCode": "84"
+    },
+    "vu": {
+        "max": 7,
+        "prefix": "",
+        "dialCode": "678"
+    },
+    "wf": {
+        "max": 6,
+        "prefix": "",
+        "dialCode": "681"
+    },
+    "ws": {
+        "max": 10,
+        "prefix": "",
+        "dialCode": "685"
+    },
+    "xk": {
+        "max": 12,
+        "prefix": "0",
+        "dialCode": "383"
+    },
+    "ye": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "967"
+    },
+    "yt": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "262"
+    },
+    "za": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "27"
+    },
+    "zm": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "260"
+    },
+    "zw": {
+        "max": 9,
+        "prefix": "0",
+        "dialCode": "263"
+    }
+}

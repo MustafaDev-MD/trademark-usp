@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <?php echo $__env->make('partials.gtm-head', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,6 +25,7 @@
 </head>
 
 <body>
+    <?php echo $__env->make('partials.gtm-body', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
     <!--<div id="global-loader">-->
     <!--    <div class="whirly-loader">-->
@@ -100,28 +102,21 @@
 
     
     <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(auth()->check() && auth()->user()->role === 'user'): ?>
-    <script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
-
         (function() {
             var s1 = document.createElement("script"),
                 s0 = document.getElementsByTagName("script")[0];
-
             s1.async = true;
-            s1.src = 'https://embed.tawk.to/65380268f2439e1631e7f736/1hdhciqtf';
+            s1.src = 'https://embed.tawk.to/6ab58264345f80344add99c7/1k3agamt5';
             s1.charset = 'UTF-8';
             s1.setAttribute('crossorigin', '*');
-
             s0.parentNode.insertBefore(s1, s0);
         })();
-
-        function triggerChat() {
-            if (typeof Tawk_API !== 'undefined') {
-                Tawk_API.toggle();
-            }
-        }
     </script>
+    <!--End of Tawk.to Script-->
     <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
     
